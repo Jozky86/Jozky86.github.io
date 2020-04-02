@@ -77,6 +77,80 @@
     
     
     
+    <article id="post-序列自动机-1" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/"
+    >序列自动机</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/" class="article-date">
+  <time datetime="2020-04-02T05:28:45.000Z" itemprop="datePublished">2020-04-02</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>题目：<br>给你a和b两个字符串，问b是不是a的子序列？</p>
+<ul>
+<li>题解：<br><a href="https://ac.nowcoder.com/discuss/396686" target="_blank" rel="noopener">参考题解</a><br>注意看，子序列不是子串，两者含义不一样</li>
+</ul>
+<blockquote>
+<p>一个字符串 s 被称作另一个字符串 S 的子串，表示 s 在 S中出现了。  一个字符串 s被称作另一个字符串 S 的子序列，说明从序列 S<br>通过去除某些元素但不破坏余下元素的相对位置（在前或在后）可得到序列 s 。</p>
+</blockquote>
+<p>可以理解成：abc是abcd的子串，abc是adbewc的子序列，而非子串<br>求子串可以用kmp<br>那求子序列就用今天要讲的序列自动机<br>字符串A：abcdefgh<br>字符串B：aez<br>当a匹配过后，再去枚举后面的bcd没有意义，因为我们要找的是A中是否要aez三个字符，并且是这样的顺序，无须是连着的。如果我们能在a之后直接跳到a后面的一个e，再跳到e后面第一个z，等到子串B遍历完，或者在a中找不到了，我们就可以结束啦。<br>注意：我们在往后跳找字母时，比如a后面有很多个e，那么我们选第一个，因为如果第一个不行的话，那第二个第三个也白瞎，我们选的越往前其实选择空间就越大<br>仔细想想怎么能实现跳跃查找这个呢：<br>开个数组next[i][j]表示主串第i个字母之后的第一个‘a’+j的坐标，<br>next的维护只需要从后向前扫描主串，到第i位时维护一个数组last[j]，j表示对应的‘a’~‘z’，last反映的是最靠前的字母j在哪里，然后把值赋给next就ok了<br>这样查找时顺着走就可以了<br>每次匹配B复杂度是O（|B|），<br>总复杂度O(26|A|+|B|)，因为A要用26个字母都循环一遍所以是26|A|<br>可以通过下图理解<br><img src="https://img-blog.csdnimg.cn/20200402131626533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>模板：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e6 + 10;</span><br><span class="line">int n, t, next[maxn][30];</span><br><span class="line">char s[maxn], str[maxn];</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	scanf(<span class="string">"%s"</span>, s+1);</span><br><span class="line">	int len = strlen(s+1);</span><br><span class="line">	<span class="keyword">for</span>(int i=len; i; i--) &#123;</span><br><span class="line">		<span class="keyword">for</span>(int j=0; j&lt;26; j++) </span><br><span class="line">		&#123;</span><br><span class="line">		next[i-1][j] = next[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		next[i-1][s[i]-<span class="string">'a'</span>] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		scanf(<span class="string">"%s"</span>, str);</span><br><span class="line">		int lenc = strlen(str), f = 0;</span><br><span class="line">		int now=0;</span><br><span class="line">		<span class="keyword">for</span>(int i=0; i&lt;lenc; i++)&#123;</span><br><span class="line">			now = next[now][str[i]-<span class="string">'a'</span>];</span><br><span class="line">			<span class="keyword">if</span>(!now) &#123;</span><br><span class="line">				f = 1;</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(f) puts(<span class="string">"No"</span>);</span><br><span class="line">		<span class="keyword">else</span> puts(<span class="string">"Yes"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/" rel="tag">序列自动机</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-牛客网【每日一题】4月2日-月月查华华的手机" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -135,7 +209,7 @@
 <p>输出</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Yes</span><br><span class="line">Yes</span><br><span class="line">Yes</span><br><span class="line">Yes</span><br><span class="line">No</span><br><span class="line">Yes</span><br><span class="line">No</span><br><span class="line">No</span><br></pre></td></tr></table></figure>
 
-<p>备注:<br><img src="https://img-blog.csdnimg.cn/20200402104928886.png" alt="在这里插入图片描述"><br><strong><em>题解：</em></strong><br>字符串问题<br>有两个解决方法，字典树和序列自动机都能做（我想到的）<br>这里就不讲字典树了<br>序列自动机：<br>序列自动机就是用一个数组next[i][j]来记录数组a第i位的字符j在i后第一次出现的坐标。<br>设串长为n,字符集大小为a，预处理时间复杂度为O(n*a)</p>
+<p>备注:<br><img src="https://img-blog.csdnimg.cn/20200402104928886.png" alt="在这里插入图片描述"><br><strong><em>题解：</em></strong><br>字符串问题<br>有两个解决方法，字典树和序列自动机都能做（我想到的）<br>这里就不讲字典树了<br>序列自动机：<br>序列自动机就是用一个数组next[i][j]来记录数组a第i位的字符j在i后第一次出现的坐标。<br>设串长为n,字符集大小为a，预处理时间复杂度为O(n*a)<br><a href="https://jozky.gitee.io/2020/04/02/序列自动机/" target="_blank" rel="noopener" title="序列自动机详细讲解">https://jozky.gitee.io/2020/04/02/序列自动机/</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(int i=n;i;i--)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(int j=1;j&lt;=a;j++) next[i-1][j]=next[i][j];</span><br><span class="line">	next[i-1][s[i]]=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>代码:</p>
