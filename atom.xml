@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jozky Home</title>
+  
+  <subtitle>һ��������ӵ��һ�����룬��һ������ȥ��֣�����û����Ϣ�ĵط������Ķ���������</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-04-04T09:28:43.110Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Jozky</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About Me</title>
+    <link href="http://yoursite.com/2020/04/04/About-Me/"/>
+    <id>http://yoursite.com/2020/04/04/About-Me/</id>
+    <published>2020-04-04T08:51:12.000Z</published>
+    <updated>2020-04-04T09:28:43.110Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;A acmer, live in liaocheng,China&lt;/li&gt;
+&lt;li&gt;70%山东+20%四川+10%深圳=Me&lt;br&gt;姓名：Jozky&lt;br&gt;现居：聊城&lt;br&gt;大学：QDU&lt;br&gt;QQ:2830872914&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>牛客练习赛60--斩杀线计算大师</title>
+    <link href="http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/"/>
+    <id>http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/</id>
+    <published>2020-04-02T12:57:47.000Z</published>
+    <updated>2020-04-03T14:48:02.394Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/4853/D&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目传送&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒
+        
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="exgcd" scheme="http://yoursite.com/tags/exgcd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>序列自动机</title>
+    <link href="http://yoursite.com/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/"/>
+    <id>http://yoursite.com/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/</id>
+    <published>2020-04-02T05:28:45.000Z</published>
+    <updated>2020-04-03T14:48:00.891Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;题目：&lt;br&gt;给你a和b两个字符串，问b是不是a的子序列？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;题解：&lt;br&gt;&lt;a href=&quot;https://ac.nowcoder.com/discuss/396686&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法讲解" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+      <category term="序列自动机" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牛客网【每日一题】4月2日 月月查华华的手机</title>
+    <link href="http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/"/>
+    <id>http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/</id>
+    <published>2020-04-02T05:20:40.000Z</published>
+    <updated>2020-04-03T14:48:01.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/23053&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网链接&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 2秒，其他语言4秒
+        
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="序列自动机" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recordering the Cows</title>
+    <link href="http://yoursite.com/2020/04/01/Recordering-the-Cows/"/>
+    <id>http://yoursite.com/2020/04/01/Recordering-the-Cows/</id>
+    <published>2020-04-01T14:05:21.000Z</published>
+    <updated>2020-04-04T01:39:24.766Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/4860/B&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网传送&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++
+        
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牛客网2020愚人节比赛</title>
+    <link href="http://yoursite.com/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/"/>
+    <id>http://yoursite.com/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/</id>
+    <published>2020-04-01T14:01:50.000Z</published>
+    <updated>2020-04-03T14:48:00.105Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;牛客2020年愚人节比赛2020-4-1-21-32-11&quot;&gt;&lt;a href=&quot;#牛客2020年愚人节比赛2020-4-1-21-32-11&quot; class=&quot;headerlink&quot; title=&quot;牛客2020年愚人节比赛2020/4/1 21 : 32 : 11
+        
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="欢乐局" scheme="http://yoursite.com/tags/%E6%AC%A2%E4%B9%90%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>滑动窗口</title>
+    <link href="http://yoursite.com/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    <id>http://yoursite.com/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</id>
+    <published>2020-04-01T02:13:38.008Z</published>
+    <updated>2020-04-03T14:48:03.710Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒&lt;br&gt; 空间限制：C/C++ 32768K  其他语言 65536K&lt;br&gt; 64bit IO Format:%lld&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="单调队列" scheme="http://yoursite.com/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+</feed>
