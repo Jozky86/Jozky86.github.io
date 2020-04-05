@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://jozky.top/"/>
   <updated>2020-04-05T11:56:01.376Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://jozky.top/</id>
   
   <author>
     <name>Jozky</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>牛客每日一题3.31 城市网络</title>
-    <link href="http://yoursite.com/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/"/>
-    <id>http://yoursite.com/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/</id>
+    <link href="http://jozky.top/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/"/>
+    <id>http://jozky.top/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/</id>
     <published>2020-04-05T11:42:46.000Z</published>
     <updated>2020-04-05T11:56:01.376Z</updated>
     
@@ -38,19 +38,19 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="牛客网每日一题" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="倍增" scheme="http://yoursite.com/tags/%E5%80%8D%E5%A2%9E/"/>
+      <category term="倍增" scheme="http://Jozky.top/tags/%E5%80%8D%E5%A2%9E/"/>
     
   </entry>
   
   <entry>
     <title>清明追思家国永念</title>
-    <link href="http://yoursite.com/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/"/>
-    <id>http://yoursite.com/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</id>
+    <link href="http://jozky.top/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/"/>
+    <id>http://jozky.top/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</id>
     <published>2020-04-04T14:59:20.000Z</published>
     <updated>2020-04-04T15:08:57.094Z</updated>
     
@@ -64,14 +64,14 @@
     
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://Jozky.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>牛客网【每日一题】Shortest Path 4月3日题目精讲 DFS </title>
-    <link href="http://yoursite.com/2020/04/04/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91Shortest-Path-4%E6%9C%883%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-DFS/"/>
-    <id>http://yoursite.com/2020/04/04/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91Shortest-Path-4%E6%9C%883%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-DFS/</id>
+    <link href="http://jozky.top/2020/04/04/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91Shortest-Path-4%E6%9C%883%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-DFS/"/>
+    <id>http://jozky.top/2020/04/04/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91Shortest-Path-4%E6%9C%883%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-DFS/</id>
     <published>2020-04-04T14:53:04.000Z</published>
     <updated>2020-04-04T14:55:17.159Z</updated>
     
@@ -84,19 +84,19 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="牛客网每日一题" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="树上dfs" scheme="http://yoursite.com/tags/%E6%A0%91%E4%B8%8Adfs/"/>
+      <category term="树上dfs" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adfs/"/>
     
   </entry>
   
   <entry>
     <title>About Me</title>
-    <link href="http://yoursite.com/2020/04/04/About-Me/"/>
-    <id>http://yoursite.com/2020/04/04/About-Me/</id>
+    <link href="http://jozky.top/2020/04/04/About-Me/"/>
+    <id>http://jozky.top/2020/04/04/About-Me/</id>
     <published>2020-04-04T08:51:12.000Z</published>
     <updated>2020-04-04T14:16:41.355Z</updated>
     
@@ -114,17 +114,17 @@
     </summary>
     
     
-      <category term="介绍" scheme="http://yoursite.com/categories/%E4%BB%8B%E7%BB%8D/"/>
+      <category term="介绍" scheme="http://Jozky.top/categories/%E4%BB%8B%E7%BB%8D/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://Jozky.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>牛客练习赛60--斩杀线计算大师</title>
-    <link href="http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/"/>
-    <id>http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/</id>
+    <link href="http://jozky.top/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/"/>
+    <id>http://jozky.top/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/</id>
     <published>2020-04-02T12:57:47.000Z</published>
     <updated>2020-04-04T15:08:57.805Z</updated>
     
@@ -144,17 +144,17 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="exgcd" scheme="http://yoursite.com/tags/exgcd/"/>
+      <category term="exgcd" scheme="http://Jozky.top/tags/exgcd/"/>
     
   </entry>
   
   <entry>
     <title>序列自动机</title>
-    <link href="http://yoursite.com/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/"/>
-    <id>http://yoursite.com/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/</id>
+    <link href="http://jozky.top/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/"/>
+    <id>http://jozky.top/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/</id>
     <published>2020-04-02T05:28:45.000Z</published>
     <updated>2020-04-04T14:52:31.131Z</updated>
     
@@ -173,17 +173,17 @@
     </summary>
     
     
-      <category term="算法讲解" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+      <category term="算法讲解" scheme="http://Jozky.top/categories/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     
-      <category term="序列自动机" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+      <category term="序列自动机" scheme="http://Jozky.top/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>牛客网【每日一题】4月2日 月月查华华的手机</title>
-    <link href="http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/"/>
-    <id>http://yoursite.com/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/</id>
+    <link href="http://jozky.top/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/"/>
+    <id>http://jozky.top/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/</id>
     <published>2020-04-02T05:20:40.000Z</published>
     <updated>2020-04-04T14:55:19.468Z</updated>
     
@@ -203,19 +203,19 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="牛客网每日一题" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="序列自动机" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+      <category term="序列自动机" scheme="http://Jozky.top/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>Recordering the Cows</title>
-    <link href="http://yoursite.com/2020/04/01/Recordering-the-Cows/"/>
-    <id>http://yoursite.com/2020/04/01/Recordering-the-Cows/</id>
+    <link href="http://jozky.top/2020/04/01/Recordering-the-Cows/"/>
+    <id>http://jozky.top/2020/04/01/Recordering-the-Cows/</id>
     <published>2020-04-01T14:05:21.000Z</published>
     <updated>2020-04-04T14:52:30.270Z</updated>
     
@@ -235,17 +235,17 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="并查集" scheme="http://Jozky.top/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>牛客网2020愚人节比赛</title>
-    <link href="http://yoursite.com/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/"/>
-    <id>http://yoursite.com/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/</id>
+    <link href="http://jozky.top/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/"/>
+    <id>http://jozky.top/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/</id>
     <published>2020-04-01T14:01:50.000Z</published>
     <updated>2020-04-04T14:52:31.732Z</updated>
     
@@ -258,17 +258,17 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="欢乐局" scheme="http://yoursite.com/tags/%E6%AC%A2%E4%B9%90%E5%B1%80/"/>
+      <category term="欢乐局" scheme="http://Jozky.top/tags/%E6%AC%A2%E4%B9%90%E5%B1%80/"/>
     
   </entry>
   
   <entry>
     <title>滑动窗口</title>
-    <link href="http://yoursite.com/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    <id>http://yoursite.com/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</id>
+    <link href="http://jozky.top/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    <id>http://jozky.top/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</id>
     <published>2020-04-01T02:13:38.008Z</published>
     <updated>2020-04-04T14:49:51.246Z</updated>
     
@@ -284,10 +284,10 @@
     </summary>
     
     
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="单调队列" scheme="http://yoursite.com/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
+      <category term="单调队列" scheme="http://Jozky.top/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
