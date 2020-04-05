@@ -39,7 +39,34 @@
   <entry>
     <title>牛客每日一题3.31 城市网络 树上倍增 </title>
     <url>/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/13331" target="_blank" rel="noopener">牛客网</a></p>
+<blockquote>
+<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 262144K，其他语言524288K 64bit IO Format:<br>%lld</p>
+</blockquote>
+<blockquote>
+<p>题目描述 有一个树状的城市网络（即 n 个城市由 n-1 条道路连接的连通图），首都为 1 号城市，每个城市售卖价值为 a_i 的珠宝。<br>你是一个珠宝商，现在安排有 q 次行程，每次行程为从 u 号城市前往 v 号城市（走最短路径），保证 v 在 u 前往首都的最短路径上。<br>在每次行程开始时，你手上有价值为 c 的珠宝（每次行程可能不同），并且每经过一个城市时（包括 u 和 v<br>），假如那个城市中售卖的珠宝比你现在手上的每一种珠宝都要优秀（价值更高，即严格大于），那么你就会选择购入。<br>现在你想要对每一次行程，求出会进行多少次购买事件。</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>第一行，两个正整数 n , q (2 ≤ n ≤ 10^5^ , 1 ≤ q ≤ 10^5^)。 第二行，n 个正整数 a_i (1 ≤<br>a_i ≤ 10^5) 描述每个城市售卖的珠宝的价值。 接下来 n-1 行，每行描述一条道路 x , y (1 ≤ x,y ≤<br>n)，表示有一条连接 x 和 y 的道路。 接下来 q 行，每行描述一次行程 u , v , c (1 ≤ u,v ≤ n , 1 ≤ c<br>≤ 10^5^)。</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>对于每次行程输出一行，为所购买次数。</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">5 4</span><br><span class="line">3 5 1 2 4</span><br><span class="line">1 2</span><br><span class="line">1 3</span><br><span class="line">2 4</span><br><span class="line">3 5</span><br><span class="line">4 2 1</span><br><span class="line">4 2 2</span><br><span class="line">4 2 3</span><br><span class="line">5 1 5</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+<p>题解:<br>毋庸置疑就是用倍增来做<br>那什么是倍增呢？<br>（先挖个坑，有空做个倍增的讲解）<br>递推式fa[i][j] = fa[fa[i][j-1]][j - 1],只要倍增得到fa[i][0]就行，因为有了这个后面都可以推出<br>fa[i][j] 代表i节点往上走2^j的距离，且比当前大的点<br>每次查询时，在所有需要问的点加一条新点，连在u的下方，新点的权值就是询问的初始权值，从这个新点往上倍增就可以了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">const int maxn=2e5+2;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[maxn];</span><br><span class="line">int dis[maxn];</span><br><span class="line">int fa[maxn][23];</span><br><span class="line">int n,q;</span><br><span class="line">int to[maxn];</span><br><span class="line">vector&lt;int&gt; W[2*maxn];</span><br><span class="line">void dfs(int u,int f)</span><br><span class="line">&#123;</span><br><span class="line">	int pos=f;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(int i=21;i&gt;=0;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(fa[pos][i]&amp;&amp;a[fa[pos][i]]&lt;=a[u])</span><br><span class="line">		pos=fa[pos][i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a[pos]&gt;a[u])fa[u][0]=f;</span><br><span class="line">	<span class="keyword">else</span> fa[u][0]=fa[pos][0];</span><br><span class="line">	<span class="keyword">for</span>(int i=1;fa[fa[u][i-1]][i-1];i++)</span><br><span class="line">	&#123;</span><br><span class="line">		fa[u][i]=fa[fa[u][i-1]][i-1];</span><br><span class="line">	&#125;</span><br><span class="line">		dis[u]=dis[f]+1;</span><br><span class="line">	<span class="keyword">for</span>(int v=0;v&lt;W[u].size();v++)</span><br><span class="line">	</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(W[u][v]==f)<span class="built_in">continue</span>;</span><br><span class="line">		dfs(W[u][v],u);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;q;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(int i = 1; i &lt;= n; ++i) </span><br><span class="line">	&#123;</span><br><span class="line">		scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">for</span>(int i = 1; i &lt; n; ++i) &#123;</span><br><span class="line">        int a;</span><br><span class="line">	  int b;</span><br><span class="line">        scanf(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">        W[a].push_back(b);</span><br><span class="line">        W[b].push_back(a);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(int i =1; i &lt;= q ; ++i)&#123;//增加新点</span><br><span class="line">        int aa,b,c;</span><br><span class="line">        scanf(<span class="string">"%d%d%d"</span>,&amp;aa,&amp;b,&amp;c);</span><br><span class="line">        W[n+i].push_back(aa);</span><br><span class="line">        W[aa].push_back(i+n);</span><br><span class="line">        a[n+i] = c;</span><br><span class="line">        to[n+i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(1,0);</span><br><span class="line">   int sum = 0; </span><br><span class="line">   int pos;</span><br><span class="line">    <span class="keyword">for</span>(int i = n+1; i &lt;= n+q; ++i)&#123;</span><br><span class="line">       pos=i;</span><br><span class="line">      sum=0;</span><br><span class="line">        <span class="keyword">for</span>(int j = 21; j &gt;= 0; --j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(dis[fa[pos][j]] &gt;= dis[to[i]]) &#123;</span><br><span class="line">                sum += (1 &lt;&lt; j);</span><br><span class="line">				pos= fa[pos][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>题解</category>
+        <category>牛客网每日一题</category>
+      </categories>
+      <tags>
+        <tag>倍增</tag>
+      </tags>
   </entry>
   <entry>
     <title>Recordering the Cows</title>
@@ -99,25 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title>清明追思家国永念</title>
-    <url>/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</url>
-    <content><![CDATA[<p>我站在窗边，竟然听着鸣笛声眼泪掉了下来，2020年好像我们什么都还没做就已经过了1/4，哪有什么岁月静好，只因有人为你负重前行<img src="https://img-blog.csdnimg.cn/20200404230205816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<a id="more"></a>
-<p>本来想睡觉，企鹅群不小心看见一些发言气醒了。</p>
-<p>4月4日默哀是形式主义?</p>
-<p>你知道什么是形式主义吗?这种公共活动都是形式主义?死去的同胞、牺牲的医护都配不上，那谁还配得上这样的国礼?这算哪门子形式?</p>
-<p>你可以说，我觉得宣传口的工作不够到位;你也可以说，我觉得现在才发布通知过于仓促;你还可以说，禁止的范围有待商榷。</p>
-<p>无动于衷不是罪过，没有感同身受不是罪过，做不到泪流满面不是罪过，私下继续娱乐活动也不是罪过。你可以不爱听歌功颂德的文本，可以用自己的方式怀缅，可以用其他途径玩得.昏天黑地。</p>
-<p>娱乐至死的时代，只有无聊才让人如临大敌，都懂。</p>
-<p>做了不代表尊重，没做也不代表不尊重。</p>
-<p>没有卫兵站在你家里用枪抵着你的后脑勺让你哭天抢地，没有条子叔叔把看电视打游戏听音乐的人逮起来，也没有人让你排着长队对着什么东西跪地哀嚎。事实上，没有人强迫你。只是有一点，自身的态度和对外界的要求要-致。若是不以流程怀念，就不要对着默哀的人喊你们是一群被形式主义迫害的粉红，缄默到底。若是以流程怀缅，也不必逼迫他人做超出公报内容的事，真挚只能自发。</p>
-<p>你可以不立正，可以不起床。但是在鸣笛的那几分钟里，你必须清楚，你还活着，没有失去年长的亲人、远方的朋友是因为谁。你也得清楚，这样的祭奠，那些人配得上。<br>———转载<br><img src="https://img-blog.csdnimg.cn/20200404230406288.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404230410721.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>牛客练习赛60--斩杀线计算大师</title>
     <url>/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/</url>
     <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/contest/4853/D" target="_blank" rel="noopener">题目传送</a></p>
@@ -169,6 +177,25 @@
       </categories>
       <tags>
         <tag>exgcd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>清明追思家国永念</title>
+    <url>/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</url>
+    <content><![CDATA[<p>我站在窗边，竟然听着鸣笛声眼泪掉了下来，2020年好像我们什么都还没做就已经过了1/4，哪有什么岁月静好，只因有人为你负重前行<img src="https://img-blog.csdnimg.cn/20200404230205816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p>本来想睡觉，企鹅群不小心看见一些发言气醒了。</p>
+<p>4月4日默哀是形式主义?</p>
+<p>你知道什么是形式主义吗?这种公共活动都是形式主义?死去的同胞、牺牲的医护都配不上，那谁还配得上这样的国礼?这算哪门子形式?</p>
+<p>你可以说，我觉得宣传口的工作不够到位;你也可以说，我觉得现在才发布通知过于仓促;你还可以说，禁止的范围有待商榷。</p>
+<p>无动于衷不是罪过，没有感同身受不是罪过，做不到泪流满面不是罪过，私下继续娱乐活动也不是罪过。你可以不爱听歌功颂德的文本，可以用自己的方式怀缅，可以用其他途径玩得.昏天黑地。</p>
+<p>娱乐至死的时代，只有无聊才让人如临大敌，都懂。</p>
+<p>做了不代表尊重，没做也不代表不尊重。</p>
+<p>没有卫兵站在你家里用枪抵着你的后脑勺让你哭天抢地，没有条子叔叔把看电视打游戏听音乐的人逮起来，也没有人让你排着长队对着什么东西跪地哀嚎。事实上，没有人强迫你。只是有一点，自身的态度和对外界的要求要-致。若是不以流程怀念，就不要对着默哀的人喊你们是一群被形式主义迫害的粉红，缄默到底。若是以流程怀缅，也不必逼迫他人做超出公报内容的事，真挚只能自发。</p>
+<p>你可以不立正，可以不起床。但是在鸣笛的那几分钟里，你必须清楚，你还活着，没有失去年长的亲人、远方的朋友是因为谁。你也得清楚，这样的祭奠，那些人配得上。<br>———转载<br><img src="https://img-blog.csdnimg.cn/20200404230406288.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404230410721.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
