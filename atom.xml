@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-05T16:20:28.242Z</updated>
+  <updated>2020-04-06T13:00:30.505Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【每日一题】4月6日数码</title>
+    <link href="http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/"/>
+    <id>http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/</id>
+    <published>2020-04-06T12:59:12.000Z</published>
+    <updated>2020-04-06T13:00:30.505Z</updated>
+    
+    <content type="html"><![CDATA[<p>题目：<a href="https://ac.nowcoder.com/acm/problem/13221" target="_blank" rel="noopener">数码</a><br>来源：<a href="https://ac.nowcoder.com/acm/contest/5#description" target="_blank" rel="noopener">美团2017年CodeM大赛-资格赛</a></p><blockquote><p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K<br> 64bit IO Format:%lld</p></blockquote><p>题目描述</p><blockquote><p>给定两个整数 l 和 r ，对于所有满足1 ≤ l ≤ x ≤ r ≤ 10^9 的 x ，把 x<br>的所有约数全部写下来。对于每个写下来的数，只保留最高位的那个数码。求1～9每个数码出现的次数。 </p></blockquote><a id="more"></a><p>输入描述:</p><blockquote><p>一行，两个整数 l 和 r (1 ≤ l ≤ r ≤ 10^9^)。</p></blockquote><p>输出描述:</p><p>输出9行。</p><blockquote><p>第 i 行，输出数码 i 出现的次数。</p></blockquote><p>示例1<br>输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 4</span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br></pre></td></tr></table></figure><p>题解：<br>先介绍一个函数：<br>solve（a，b）就是从1<del>a中数码b的倍数出现的次数<br>solve(a,b)=a/b<br>那么求[l,r]的话，就用solve(r,b)-solve(l-1,b)，大致可以理解成前缀和那种<br>num就是0</del>9，计算每个num对应的区间<br>最高位是1的话：1,10 ~ 19,100 ~ 199， 1000 ~ 1999….<br>最高位是2的话：2,20 ~ 29,200 ~ 299， 2000 ~ 2999….<br>….<br>因为我们只记录约数的最高位，像1999，约数就是1和1999，我们只记录最高位，那么就是有两个1<br>那么我们枚举以num开头的数，计算它的倍数在[l,r]中出现的次数。<br>按照几位数和最高位是几进行枚举，有多少这样的数直接统计就ok<br>solve(r,num)-solve(l-1,num)<br>枚举num的值<br>让最高位等于x时num枚举相对应的区间（从x<em>10^y-1^~(x+1)</em>10^y-1^-1）y=1.2.3….<br>有部分数会被算重复，因为有完全平方数存在，<br>再运用整除分块技巧，让复杂度降到O(根号n)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"><span class="comment">#define ll long long</span></span><br><span class="line">ll minn(ll a,ll b)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(a&gt;=b)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">return</span> b;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line">//cout&lt;&lt;a;</span><br><span class="line"> <span class="built_in">return</span> a;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">ll solve(ll a, ll b) &#123;</span><br><span class="line">  ll res = 0;</span><br><span class="line">   ll beg;</span><br><span class="line">   ll end;</span><br><span class="line">  <span class="keyword">for</span> (ll i = 1; i &lt;= a / b; i *= 10) &#123;</span><br><span class="line">    beg = b * i;//区间开头</span><br><span class="line">    </span><br><span class="line"> end = minn(a, beg + i - 1);//区间结尾</span><br><span class="line"> int k;</span><br><span class="line">    <span class="keyword">for</span> (int j = beg; j &lt;= end; j = k + 1) &#123;</span><br><span class="line">      k = min(a / (a / j), end);</span><br><span class="line">      //cout&lt;&lt;a/(a/i)&lt;&lt;<span class="string">" "</span>&lt;&lt;end&lt;&lt;endl;</span><br><span class="line">      res += (k - j + 1) * (a / j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">ll l,r;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">   cin&gt;&gt;l&gt;&gt;r;</span><br><span class="line">    <span class="keyword">for</span>(ll i=1;i&lt;=9;i++)&#123;</span><br><span class="line">        cout&lt;&lt;solve(r,i)-solve(l-1,i)&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目：&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/13221&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数码&lt;/a&gt;&lt;br&gt;来源：&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/5#description&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;美团2017年CodeM大赛-资格赛&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K&lt;br&gt; 64bit IO Format:%lld&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;题目描述&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给定两个整数 l 和 r ，对于所有满足1 ≤ l ≤ x ≤ r ≤ 10^9 的 x ，把 x&lt;br&gt;的所有约数全部写下来。对于每个写下来的数，只保留最高位的那个数码。求1～9每个数码出现的次数。 &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="整除分块" scheme="http://Jozky.top/tags/%E6%95%B4%E9%99%A4%E5%88%86%E5%9D%97/"/>
+    
+  </entry>
   
   <entry>
     <title>【每日一题】4月1日题目 Rinne Loves Edges </title>
