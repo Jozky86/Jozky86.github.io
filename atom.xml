@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-07T10:01:41.173Z</updated>
+  <updated>2020-04-07T11:10:32.813Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客网【每日一题】4月7号题目精讲 树</title>
+    <link href="http://jozky.top/2020/04/07/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%887%E5%8F%B7%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E6%A0%91/"/>
+    <id>http://jozky.top/2020/04/07/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%887%E5%8F%B7%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E6%A0%91/</id>
+    <published>2020-04-07T10:59:14.000Z</published>
+    <updated>2020-04-07T11:10:32.813Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/13611" target="_blank" rel="noopener">树</a></p><blockquote><p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 131072K<br>其他语言262144K<br>64bit IO Format:%lld</p></blockquote><p>题目描述</p><blockquote><p>shy有一颗树，树有n个结点。有k种不同颜色的染料给树染色。一个染色方案是合法的，当且仅当对于所有相同颜色的点对(x,y)，x到y的路径上的所有点的颜色都要与x和y相同。请统计方案数。</p></blockquote><a id="more"></a><p>输入描述:</p><blockquote><p>第一行两个整数n，k代表点数和颜色数； 接下来n-1行，每行两个整数x,y表示x与y之间存在一条边；</p></blockquote><p>输出描述:</p><blockquote><p>输出一个整数表示方案数（mod 1e9+7）。</p></blockquote><p>示例1<br>输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">4 3</span><br><span class="line">1 2</span><br><span class="line">2 3</span><br><span class="line">2 4</span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">39</span><br></pre></td></tr></table></figure><p>备注:</p><p>对于30%的数据，n≤10, k≤3；<br>对于100%的数据，n,k≤300。<br><strong>题解：</strong><br><del>shy爹有棵树</del><br>这个题也可以这么想，把相同颜色当成一个整体，连通块，问构成连通块的方案<br>我们用dp来计数<br>dp[i][j]表示i个点用了j个颜色的方案<br>那么转移方程就是<br>dp[i][j]=dp[i-1][j]+dp[i-1][j-1]*(k-(j-1))<br>dp[i][j]=第i个点和第i-1个点颜色相同或者第i-1个点所用的颜色与之前不同，之前用了（j-1）个颜色，这个点可用的颜色种类就是k-（j-1）<br>（可以理解成前者在一个连通块，后者不在一个连通块内）<br>因为数据给的肯定是棵树，那树的形状并不会影响结果，所以。。。也可以不输入那（n-1）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn=303;</span><br><span class="line">ll mod =1e9+7;</span><br><span class="line">ll dp[maxn][maxn];</span><br><span class="line">int n,k;</span><br><span class="line">ll sum=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(int j=1;j&lt;=k;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(i==1&amp;&amp;j==1)</span><br><span class="line">&#123;</span><br><span class="line">dp[i][j]=k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> dp[i][j]=(dp[i-1][j]+dp[i-1][j-1]*(k-(j-1)))%mod;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=k;i++)</span><br><span class="line">&#123;</span><br><span class="line">sum=(sum+dp[n][i])%mod;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld"</span>,sum);</span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>还有第二个办法：<br>一下为转载：<br>题目意思是用k个点把一个有n个节点的树染色,然后的地方必须联通,求有多少方案数?<br>下面给大家介绍两种做法..<br><img src="https://img-blog.csdnimg.cn/20200407185522399.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">切边表示染色用的颜色个数,比如我要用3种颜色染色,那么我就只要考虑切2条边,比如切2-4,和3和7这是一种方案。若将树分割为 i个连通块，则需要删去 i−1条边，故方案数为 C^i-1^ n−1然后考虑染色,假如我现在切的是i条边,要从k种颜色中选出i中颜色染色，而且是有顺序的，故方案数为A(k,i+1).<br>综上，总的方案数为：<br><img src="https://img-blog.csdnimg.cn/20200407190618154.png" alt="在这里插入图片描述">可以线性求逆元，枚举 i 实现。</p><p>时间复杂度：O(n)<br>代码如下:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#define ll long long</span></span><br><span class="line">using namespace std;</span><br><span class="line">const ll mod=1e9+7;</span><br><span class="line">const ll maxn=310;</span><br><span class="line">ll n,k,ans,inv[maxn],f[maxn];</span><br><span class="line">ll C(ll x,ll y)&#123;</span><br><span class="line">    <span class="built_in">return</span> f[x]*inv[y]%mod*inv[x-y]%mod;</span><br><span class="line">&#125;</span><br><span class="line">ll A(ll x,ll y)&#123;</span><br><span class="line">    <span class="built_in">return</span> f[x]*inv[x-y]%mod;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    inv[0]=f[0]=inv[1]=f[1]=1;</span><br><span class="line">    <span class="keyword">for</span>(ll i=2;i&lt;maxn;i++)</span><br><span class="line">        inv[i]=((mod-mod/i)*inv[mod%i])%mod,f[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(ll i=2;i&lt;maxn;i++)</span><br><span class="line">        inv[i]=(inv[i]*inv[i-1])%mod,f[i]=(f[i]*f[i-1])%mod;</span><br><span class="line">    <span class="keyword">for</span>(ll i=1;i&lt;=k&amp;&amp;i&lt;=n;i++)</span><br><span class="line">        ans=(ans+(C(n-1,i-1)*A(k,i)%mod))%mod;</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="https://blog.nowcoder.net/n/c76751c0215344ff99357aaee5235851" target="_blank" rel="noopener">转载地址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/13611&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;树&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 131072K&lt;br&gt;其他语言262144K&lt;br&gt;64bit IO Format:%lld&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;题目描述&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;shy有一颗树，树有n个结点。有k种不同颜色的染料给树染色。一个染色方案是合法的，当且仅当对于所有相同颜色的点对(x,y)，x到y的路径上的所有点的颜色都要与x和y相同。请统计方案数。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
+    
+      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="DFS序" scheme="http://Jozky.top/tags/DFS%E5%BA%8F/"/>
+    
+      <category term="连通块" scheme="http://Jozky.top/tags/%E8%BF%9E%E9%80%9A%E5%9D%97/"/>
+    
+  </entry>
   
   <entry>
     <title>DFS序讲解</title>
