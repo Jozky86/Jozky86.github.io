@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-06T15:01:52.303Z</updated>
+  <updated>2020-04-07T10:01:41.173Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DFS序讲解</title>
+    <link href="http://jozky.top/2020/04/07/DFS%E5%BA%8F%E8%AE%B2%E8%A7%A3/"/>
+    <id>http://jozky.top/2020/04/07/DFS%E5%BA%8F%E8%AE%B2%E8%A7%A3/</id>
+    <published>2020-04-07T10:00:26.000Z</published>
+    <updated>2020-04-07T10:01:41.173Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们经常会遇到树的问题，但树是非线性的结构，操作起来始终还是麻烦，如果我们能把树改造成线性结构，有什么方法？对，就是今天要讲的DSF序；<br>dfs序呢，就是把一棵树区间化，我们用dfs的方式将它区间化。</p><a id="more"></a><p>如图：<br><img src="https://img-blog.csdnimg.cn/20200407172327886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">dfs序就是：ABDDEEBCFHHFG<br>其实就是用dfs全部遍历一遍，不过我们不能光遍历还有动些小手脚，我们要在遍历的同时记录每个节点进栈与出栈的时间序列。</p><p>介绍两个基本函数：in[x],out[x]<br>dfs从根节点开始，这俩函数就分别记录每个节点x进入与离开的时间戳<br>还有num[x]，表示第x个节点的编号</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">inline int dfs(int x,int fa,int time)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">in</span>[x]=++time;</span><br><span class="line">num[time]=x;</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=e[x].size();i++)</span><br><span class="line">&#123;</span><br><span class="line">int w=e[x][i];</span><br><span class="line"><span class="keyword">if</span>(w==fa)<span class="built_in">continue</span>;//防止又从子节点找回去</span><br><span class="line">dfs(w,x,time); </span><br><span class="line">&#125;</span><br><span class="line">out[x]=time;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">dfs(s,0,0);</span><br></pre></td></tr></table></figure><p>（具体情况根据，根据题目来写）<br><img src="https://img-blog.csdnimg.cn/20200407174719197.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">num生成的就是一个新秩序，由每个节点进入关系而形成的<br>你仔细观察会发现：<br>序根节点的进栈时间&lt;子树的dfs&lt;根节点的出栈时间<br>这样不就成一个区间了<br>in[x]~out[x]是x为根节点的子树，划分为一个区间<br>然后什么单点修改，区间查询，莫队都可以用在树上，而且dfs序也是树链剖分的前驱知识</p><p>光说可能不怎么懂，我去找一些题，做完再更新例题</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们经常会遇到树的问题，但树是非线性的结构，操作起来始终还是麻烦，如果我们能把树改造成线性结构，有什么方法？对，就是今天要讲的DSF序；&lt;br&gt;dfs序呢，就是把一棵树区间化，我们用dfs的方式将它区间化。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="DFS序" scheme="http://Jozky.top/tags/DFS%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网【每日一题】3月27日 数学考试</title>
