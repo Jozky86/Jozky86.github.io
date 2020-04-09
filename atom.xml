@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-07T11:10:32.813Z</updated>
+  <updated>2020-04-09T11:00:07.425Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客网【每日一题】4月8日题目精讲 黑白树</title>
+    <link href="http://jozky.top/2020/04/09/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%888%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E9%BB%91%E7%99%BD%E6%A0%91/"/>
+    <id>http://jozky.top/2020/04/09/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%888%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E9%BB%91%E7%99%BD%E6%A0%91/</id>
+    <published>2020-04-09T10:54:52.000Z</published>
+    <updated>2020-04-09T11:00:07.425Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/13249" target="_blank" rel="noopener">试题链接</a></p><blockquote><p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K 64bit IO Format:%lld</p></blockquote><p>题目描述</p><blockquote><p>一棵n个点的有根树，1号点为根，相邻的两个节点之间的距离为1。树上每个节点i对应一个值k[i]。每个点都有一个颜色，初始的时候所有点都是白色的。<br>你需要通过一系列操作使得最终每个点变成黑色。每次操作需要选择一个节点i，i必须是白色的，然后i到根的链上（包括节点i与根）所有与节点i距离小于k[i]的点都会变黑，已经是黑的点保持为黑。问最少使用几次操作能把整棵树变黑。</p></blockquote><a id="more"></a><p>输入描述:</p><blockquote><p>第一行一个整数n (1 ≤ n ≤ 10^5^) 接下来n-1行，每行一个整数，依次为2号点到n号点父亲的编号。 最后一行n个整数为k[i]<br>(1 ≤ k[i] ≤ 10^5^)</p><p>样例解释:<br> 对节点3操作，导致节点2与节点3变黑 对节点4操作，导致节点4变黑 对节点1操作，导致节点1变黑</p></blockquote><p>输出描述:</p><p>一个数表示最少操作次数</p><p>示例1<br>输入</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure><p>题解：<br>一开始以为是红黑树的姐妹黑白树。。<br>求出最少的操作，用dfs</p><p>我们要不断更新染色的最远距离，还要把子节点的染色范围更新的父亲节点<br>比如1-&gt;2-&gt;3-.&gt;4-&gt;5-&gt;6-&gt;7<br>f[2]=5,f[3]=2<br>2节点就可以直接染色到6<br>操作完2之后，如果3就已经被染色了，如果3能染色的范围比fa[ 2 ]-1（因为2已经染色了本身，所以减一）还大，那染色范围可以更远<br>如果fa[3]&lt;fa[2]-1，就把f3的最远距离更新到fa[2]-1<br>总结就是fa[fa]=max（ fa [ fa ] , fa [ son ] - 1 ）<br>fa=0说明这个点无法被处理到<br>因为染色都是从下向上的。如果一个节点没办法被它子树的节点染色，那这个节点的父亲节点也没办法将它染色，他只能自己染色了</p><p>代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> forr(n) for(int i=1;i&lt;=n;i++)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100004</span>;</span><br><span class="line"><span class="keyword">int</span> fa[maxn];</span><br><span class="line"><span class="keyword">int</span> sum;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;w[maxn];</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;w[x].size();j++)</span><br><span class="line">&#123;</span><br><span class="line">dfs(w[x][j]);</span><br><span class="line">fa[x]=max( fa[ w[x][j] ]<span class="number">-1</span> , fa[x] );</span><br><span class="line">a[x]=max( a[ w[x][j] ]<span class="number">-1</span> , a[x] );</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(fa[x]==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">sum++;</span><br><span class="line">fa[x]=a[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">forr(n<span class="number">-1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">w[m].push_back(i+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">forr(n)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">&#125;</span><br><span class="line">dfs(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/13249&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;试题链接&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K 64bit IO Format:%lld&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;题目描述&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一棵n个点的有根树，1号点为根，相邻的两个节点之间的距离为1。树上每个节点i对应一个值k[i]。每个点都有一个颜色，初始的时候所有点都是白色的。&lt;br&gt;你需要通过一系列操作使得最终每个点变成黑色。每次操作需要选择一个节点i，i必须是白色的，然后i到根的链上（包括节点i与根）所有与节点i距离小于k[i]的点都会变黑，已经是黑的点保持为黑。问最少使用几次操作能把整棵树变黑。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="dfs" scheme="http://Jozky.top/tags/dfs/"/>
+    
+      <category term="贪心" scheme="http://Jozky.top/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网【每日一题】4月7号题目精讲 树</title>
@@ -44,11 +78,11 @@
       <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
+      <category term="DFS序" scheme="http://Jozky.top/tags/DFS%E5%BA%8F/"/>
+    
       <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
     
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
-    
-      <category term="DFS序" scheme="http://Jozky.top/tags/DFS%E5%BA%8F/"/>
     
       <category term="连通块" scheme="http://Jozky.top/tags/%E8%BF%9E%E9%80%9A%E5%9D%97/"/>
     
