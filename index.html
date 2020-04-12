@@ -317,15 +317,10 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 
     
     <p>@[TOC]</p>
-<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p>
-<h2 id="解决方法概括："><a href="#解决方法概括：" class="headerlink" title="解决方法概括："></a>解决方法概括：</h2><p>常用四种方法 ：</p>
-<ol>
-<li>用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。</li>
-<li>利用欧拉序转化为RMQ问题，用ST表求解RMQ问题，预处理复杂度 O(n+nlogn)，每次询问的复杂度为 O(1)，也是在线算法。</li>
-<li>采用Tarjan算法求解，复杂度 O(α(n)+Q)，属于离线算法。</li>
-<li>利用树链剖分求解，复杂度预处理O(n)，单次查询 O(logn) ，属于在线算法。</li>
-</ol>
-<h2 id="倍增法："><a href="#倍增法：" class="headerlink" title="倍增法："></a>倍增法：</h2>
+<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    
+    <a class="article-more-a" href="/2020/04/12/%E6%B5%85%E8%B0%88LCA/#more">more >></a>
+    
     
 
     
@@ -354,6 +349,10 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法讲解/数据结构//" class="article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -1339,7 +1338,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/算法//" class="article-tag-list-link color3">算法</a>
+        			<a href="/categories/数据结构/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
         		</li>
       		
 		</ul>
@@ -1532,11 +1531,11 @@ background: url('/img/biubiubiu.gif') no-repeat ;
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+                <a href="javascript:void(0)" class="js-tag color5">DFS序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">DFS序</a>
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1552,14 +1551,6 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">树上dp</a>
               </li>
              
@@ -1568,7 +1559,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1576,7 +1567,15 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">序列自动机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1584,11 +1583,11 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单调队列</a>
+                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
+                <a href="javascript:void(0)" class="js-tag color5">单调队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1600,14 +1599,6 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">前缀后缀和</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线性dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">区间dp</a>
               </li>
              
@@ -1616,11 +1607,15 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">优先队列</a>
+                <a href="javascript:void(0)" class="js-tag color1">前缀后缀和</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">树上dfs</a>
+                <a href="javascript:void(0)" class="js-tag color5">线性dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">优先队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1633,6 +1628,10 @@ background: url('/img/biubiubiu.gif') no-repeat ;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">树上dfs</a>
               </li>
             
             <div class="clearfix"></div>

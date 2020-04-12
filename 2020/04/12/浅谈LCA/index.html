@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="@[TOC] LCA介绍lca是啥？最近公共祖先就是：两个点在这棵树上距离最近的公共祖先节点LCA（x，y）&#x3D;z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）来看一个经典图LCA（4,5）&#x3D;2LCA（4,3）&#x3D;1LCA（2,1）&#x3D;1 解决方法概括：常用四种方法 ：  用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。 利用欧拉序转化为">
+  <meta name="description" content="@[TOC] LCA介绍lca是啥？最近公共祖先就是：两个点在这棵树上距离最近的公共祖先节点LCA（x，y）&#x3D;z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）来看一个经典图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈LCA">
 <meta property="og:url" content="http://jozky.top/2020/04/12/%E6%B5%85%E8%B0%88LCA/index.html">
 <meta property="og:site_name" content="Jozky Home">
-<meta property="og:description" content="@[TOC] LCA介绍lca是啥？最近公共祖先就是：两个点在这棵树上距离最近的公共祖先节点LCA（x，y）&#x3D;z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）来看一个经典图LCA（4,5）&#x3D;2LCA（4,3）&#x3D;1LCA（2,1）&#x3D;1 解决方法概括：常用四种方法 ：  用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。 利用欧拉序转化为">
+<meta property="og:description" content="@[TOC] LCA介绍lca是啥？最近公共祖先就是：两个点在这棵树上距离最近的公共祖先节点LCA（x，y）&#x3D;z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）来看一个经典图">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-04-12T09:30:59.000Z">
-<meta property="article:modified_time" content="2020-04-12T09:48:01.085Z">
+<meta property="article:modified_time" content="2020-04-12T10:21:22.428Z">
 <meta property="article:author" content="Jozky">
 <meta property="article:tag" content="LCA">
 <meta name="twitter:card" content="summary">
@@ -335,7 +335,9 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 
     
     <p>@[TOC]</p>
-<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p>
+<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p>
 <h2 id="解决方法概括："><a href="#解决方法概括：" class="headerlink" title="解决方法概括："></a>解决方法概括：</h2><p>常用四种方法 ：</p>
 <ol>
 <li>用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。</li>
@@ -414,6 +416,10 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法讲解/数据结构//" class="article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -704,11 +710,11 @@ background: url('/img/biubiubiu.gif') no-repeat ;
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+                <a href="javascript:void(0)" class="js-tag color5">DFS序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">DFS序</a>
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,14 +730,6 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">树上dp</a>
               </li>
              
@@ -740,7 +738,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,7 +746,15 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">序列自动机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,11 +762,11 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单调队列</a>
+                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
+                <a href="javascript:void(0)" class="js-tag color5">单调队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,14 +778,6 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">前缀后缀和</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线性dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">区间dp</a>
               </li>
              
@@ -788,11 +786,15 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">优先队列</a>
+                <a href="javascript:void(0)" class="js-tag color1">前缀后缀和</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">树上dfs</a>
+                <a href="javascript:void(0)" class="js-tag color5">线性dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">优先队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,6 +807,10 @@ background: url('/img/biubiubiu.gif') no-repeat ;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">树上dfs</a>
               </li>
             
             <div class="clearfix"></div>
