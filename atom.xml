@@ -149,9 +149,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -183,11 +183,11 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
+      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
     
       <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
     
   </entry>
   
