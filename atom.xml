@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-11T08:45:40.650Z</updated>
+  <updated>2020-04-12T09:33:16.027Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈LCA</title>
+    <link href="http://jozky.top/2020/04/12/%E6%B5%85%E8%B0%88LCA/"/>
+    <id>http://jozky.top/2020/04/12/%E6%B5%85%E8%B0%88LCA/</id>
+    <published>2020-04-12T09:30:59.000Z</published>
+    <updated>2020-04-12T09:33:16.027Z</updated>
+    
+    <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p><h2 id="解决方法概括："><a href="#解决方法概括：" class="headerlink" title="解决方法概括："></a>解决方法概括：</h2><p>常用四种方法 ：</p><ol><li>用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。</li><li>利用欧拉序转化为RMQ问题，用ST表求解RMQ问题，预处理复杂度 O(n+nlogn)，每次询问的复杂度为 O(1)，也是在线算法。</li><li>采用Tarjan算法求解，复杂度 O(α(n)+Q)，属于离线算法。</li><li>利用树链剖分求解，复杂度预处理O(n)，单次查询 O(logn) ，属于在线算法。</li></ol><h2 id="倍增法："><a href="#倍增法：" class="headerlink" title="倍增法："></a>倍增法：</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;@[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;LCA介绍&quot;&gt;&lt;a href=&quot;#LCA介绍&quot; class=&quot;headerlink&quot; title=&quot;LCA介绍&quot;&gt;&lt;/a&gt;LCA介绍&lt;/h2&gt;&lt;p&gt;lca是啥？最近公共祖先&lt;br&gt;就是：两个点在这棵树上距离最近的公共祖先节点&lt;br&gt;LC
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://Jozky.top/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="LCA" scheme="http://Jozky.top/tags/LCA/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客算法周周练1</title>
@@ -253,11 +280,11 @@
       <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="DFS序" scheme="http://Jozky.top/tags/DFS%E5%BA%8F/"/>
-    
       <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
     
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="DFS序" scheme="http://Jozky.top/tags/DFS%E5%BA%8F/"/>
     
       <category term="连通块" scheme="http://Jozky.top/tags/%E8%BF%9E%E9%80%9A%E5%9D%97/"/>
     
@@ -589,35 +616,6 @@
     
     
       <category term="exgcd" scheme="http://Jozky.top/tags/exgcd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>序列自动机</title>
-    <link href="http://jozky.top/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/"/>
-    <id>http://jozky.top/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/</id>
-    <published>2020-04-02T05:28:45.000Z</published>
-    <updated>2020-04-04T14:52:31.131Z</updated>
-    
-    <content type="html"><![CDATA[<p>题目：<br>给你a和b两个字符串，问b是不是a的子序列？</p><ul><li>题解：<br><a href="https://ac.nowcoder.com/discuss/396686" target="_blank" rel="noopener">参考题解</a><br>注意看，子序列不是子串，两者含义不一样</li></ul><blockquote><p>一个字符串 s 被称作另一个字符串 S 的子串，表示 s 在 S中出现了。  一个字符串 s被称作另一个字符串 S 的子序列，说明从序列 S<br>通过去除某些元素但不破坏余下元素的相对位置（在前或在后）可得到序列 s 。</p></blockquote><a id="more"></a><p>可以理解成：abc是abcd的子串，abc是adbewc的子序列，而非子串<br>求子串可以用kmp<br>那求子序列就用今天要讲的序列自动机<br>字符串A：abcdefgh<br>字符串B：aez<br>当a匹配过后，再去枚举后面的bcd没有意义，因为我们要找的是A中是否要aez三个字符，并且是这样的顺序，无须是连着的。如果我们能在a之后直接跳到a后面的一个e，再跳到e后面第一个z，等到子串B遍历完，或者在a中找不到了，我们就可以结束啦。<br>注意：我们在往后跳找字母时，比如a后面有很多个e，那么我们选第一个，因为如果第一个不行的话，那第二个第三个也白瞎，我们选的越往前其实选择空间就越大<br>仔细想想怎么能实现跳跃查找这个呢：<br>开个数组next[i][j]表示主串第i个字母之后的第一个‘a’+j的坐标，<br>next的维护只需要从后向前扫描主串，到第i位时维护一个数组last[j]，j表示对应的‘a’~‘z’，last反映的是最靠前的字母j在哪里，然后把值赋给next就ok了<br>这样查找时顺着走就可以了<br>每次匹配B复杂度是O（|B|），<br>总复杂度O(26|A|+|B|)，因为A要用26个字母都循环一遍所以是26|A|<br>可以通过下图理解<br><img src="https://img-blog.csdnimg.cn/20200402131626533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>模板：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e6 + 10;</span><br><span class="line">int n, t, next[maxn][30];</span><br><span class="line">char s[maxn], str[maxn];</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">scanf(<span class="string">"%s"</span>, s+1);</span><br><span class="line">int len = strlen(s+1);</span><br><span class="line"><span class="keyword">for</span>(int i=len; i; i--) &#123;</span><br><span class="line"><span class="keyword">for</span>(int j=0; j&lt;26; j++) </span><br><span class="line">&#123;</span><br><span class="line">next[i-1][j] = next[i][j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">next[i-1][s[i]-<span class="string">'a'</span>] = i;</span><br><span class="line">&#125;</span><br><span class="line">scanf(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line"><span class="keyword">while</span>(t--)&#123;</span><br><span class="line">scanf(<span class="string">"%s"</span>, str);</span><br><span class="line">int lenc = strlen(str), f = 0;</span><br><span class="line">int now=0;</span><br><span class="line"><span class="keyword">for</span>(int i=0; i&lt;lenc; i++)&#123;</span><br><span class="line">now = next[now][str[i]-<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">if</span>(!now) &#123;</span><br><span class="line">f = 1;</span><br><span class="line"><span class="built_in">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(f) puts(<span class="string">"No"</span>);</span><br><span class="line"><span class="keyword">else</span> puts(<span class="string">"Yes"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目：&lt;br&gt;给你a和b两个字符串，问b是不是a的子序列？&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;题解：&lt;br&gt;&lt;a href=&quot;https://ac.nowcoder.com/discuss/396686&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考题解&lt;/a&gt;&lt;br&gt;注意看，子序列不是子串，两者含义不一样&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一个字符串 s 被称作另一个字符串 S 的子串，表示 s 在 S中出现了。  一个字符串 s被称作另一个字符串 S 的子序列，说明从序列 S&lt;br&gt;通过去除某些元素但不破坏余下元素的相对位置（在前或在后）可得到序列 s 。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="算法讲解" scheme="http://Jozky.top/categories/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
-    
-    
-      <category term="序列自动机" scheme="http://Jozky.top/tags/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
     
   </entry>
   
