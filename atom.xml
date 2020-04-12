@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-12T09:33:16.027Z</updated>
+  <updated>2020-04-12T09:48:01.085Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://jozky.top/2020/04/12/%E6%B5%85%E8%B0%88LCA/"/>
     <id>http://jozky.top/2020/04/12/%E6%B5%85%E8%B0%88LCA/</id>
     <published>2020-04-12T09:30:59.000Z</published>
-    <updated>2020-04-12T09:33:16.027Z</updated>
+    <updated>2020-04-12T09:48:01.085Z</updated>
     
     <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p><h2 id="解决方法概括："><a href="#解决方法概括：" class="headerlink" title="解决方法概括："></a>解决方法概括：</h2><p>常用四种方法 ：</p><ol><li>用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。</li><li>利用欧拉序转化为RMQ问题，用ST表求解RMQ问题，预处理复杂度 O(n+nlogn)，每次询问的复杂度为 O(1)，也是在线算法。</li><li>采用Tarjan算法求解，复杂度 O(α(n)+Q)，属于离线算法。</li><li>利用树链剖分求解，复杂度预处理O(n)，单次查询 O(logn) ，属于在线算法。</li></ol><h2 id="倍增法："><a href="#倍增法：" class="headerlink" title="倍增法："></a>倍增法：</h2>]]></content>
     
@@ -36,7 +36,7 @@
     </summary>
     
     
-      <category term="算法" scheme="http://Jozky.top/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法讲解" scheme="http://Jozky.top/categories/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     
       <category term="LCA" scheme="http://Jozky.top/tags/LCA/"/>
@@ -176,9 +176,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -210,11 +210,11 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
+      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
     
       <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
     
   </entry>
   
