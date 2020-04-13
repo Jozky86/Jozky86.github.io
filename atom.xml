@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-12T16:33:31.012Z</updated>
+  <updated>2020-04-13T16:08:15.437Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用一段时间牛客网的心得</title>
+    <link href="http://jozky.top/2020/04/14/%E4%BD%BF%E7%94%A8%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%89%9B%E5%AE%A2%E7%BD%91%E7%9A%84%E5%BF%83%E5%BE%97/"/>
+    <id>http://jozky.top/2020/04/14/%E4%BD%BF%E7%94%A8%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%89%9B%E5%AE%A2%E7%BD%91%E7%9A%84%E5%BF%83%E5%BE%97/</id>
+    <published>2020-04-13T16:06:43.000Z</published>
+    <updated>2020-04-13T16:08:15.437Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近一段时间一直在写牛客网的题解，来获牛币，终于换了在牛客网的第一个奖品，一个三合一数据线，斥资我250个币（<del>心痛</del> ）<br>牛客网早就知道，但之前用的很少，最近才逐渐多起来，感觉牛客网的运营方式以及题目比赛质量都很不错，也有很多企业招聘的信息试题（在我心目中逐渐取代洛谷）。之前也有个华为云白嫖的活动，可以错过了ε=(´ο｀*)))唉<br>一直有想当牛客网的校园代理，不过这个学期任务时间都很紧，事情也很多，等一会抽出空来再申请。<br>等攒牛币到破千（估计要暑假了），换个背包T恤啥的，嘿嘿嘿，但愿早日实现<br><img src="https://img-blog.csdnimg.cn/20200414000658411.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200414000643124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>背包等着我<del>~</del></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近一段时间一直在写牛客网的题解，来获牛币，终于换了在牛客网的第一个奖品，一个三合一数据线，斥资我250个币（&lt;del&gt;心痛&lt;/del&gt; ）&lt;br&gt;牛客网早就知道，但之前用的很少，最近才逐渐多起来，感觉牛客网的运营方式以及题目比赛质量都很不错，也有很多企业招聘的信息试题（在
+      
+    
+    </summary>
+    
+    
+      <category term="文章" scheme="http://Jozky.top/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="随笔" scheme="http://Jozky.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网【每日一题】4月9日题目精讲 Running Median</title>
@@ -208,9 +234,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
-    
       <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
@@ -242,11 +268,11 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
     
       <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
+      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
@@ -552,7 +578,7 @@
     <link href="http://jozky.top/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/"/>
     <id>http://jozky.top/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</id>
     <published>2020-04-04T14:59:20.000Z</published>
-    <updated>2020-04-04T15:08:57.094Z</updated>
+    <updated>2020-04-13T16:08:13.148Z</updated>
     
     <content type="html"><![CDATA[<p>我站在窗边，竟然听着鸣笛声眼泪掉了下来，2020年好像我们什么都还没做就已经过了1/4，哪有什么岁月静好，只因有人为你负重前行<img src="https://img-blog.csdnimg.cn/20200404230205816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><a id="more"></a><p>本来想睡觉，企鹅群不小心看见一些发言气醒了。</p><p>4月4日默哀是形式主义?</p><p>你知道什么是形式主义吗?这种公共活动都是形式主义?死去的同胞、牺牲的医护都配不上，那谁还配得上这样的国礼?这算哪门子形式?</p><p>你可以说，我觉得宣传口的工作不够到位;你也可以说，我觉得现在才发布通知过于仓促;你还可以说，禁止的范围有待商榷。</p><p>无动于衷不是罪过，没有感同身受不是罪过，做不到泪流满面不是罪过，私下继续娱乐活动也不是罪过。你可以不爱听歌功颂德的文本，可以用自己的方式怀缅，可以用其他途径玩得.昏天黑地。</p><p>娱乐至死的时代，只有无聊才让人如临大敌，都懂。</p><p>做了不代表尊重，没做也不代表不尊重。</p><p>没有卫兵站在你家里用枪抵着你的后脑勺让你哭天抢地，没有条子叔叔把看电视打游戏听音乐的人逮起来，也没有人让你排着长队对着什么东西跪地哀嚎。事实上，没有人强迫你。只是有一点，自身的态度和对外界的要求要-致。若是不以流程怀念，就不要对着默哀的人喊你们是一群被形式主义迫害的粉红，缄默到底。若是以流程怀缅，也不必逼迫他人做超出公报内容的事，真挚只能自发。</p><p>你可以不立正，可以不起床。但是在鸣笛的那几分钟里，你必须清楚，你还活着，没有失去年长的亲人、远方的朋友是因为谁。你也得清楚，这样的祭奠，那些人配得上。<br>———转载<br><img src="https://img-blog.csdnimg.cn/20200404230406288.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404230410721.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
     
@@ -562,6 +588,8 @@
     
     </summary>
     
+    
+      <category term="文章" scheme="http://Jozky.top/categories/%E6%96%87%E7%AB%A0/"/>
     
     
       <category term="随笔" scheme="http://Jozky.top/tags/%E9%9A%8F%E7%AC%94/"/>
@@ -590,34 +618,6 @@
     
     
       <category term="树上dfs" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adfs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About Me</title>
-    <link href="http://jozky.top/2020/04/04/About-Me/"/>
-    <id>http://jozky.top/2020/04/04/About-Me/</id>
-    <published>2020-04-04T08:51:12.000Z</published>
-    <updated>2020-04-04T14:16:41.355Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>A acmer, live in liaocheng,China</li><li>70%山东+20%四川+10%深圳=Me<br>姓名：Jozky<br>现居：聊城<br>大学：QDU<br>QQ:2830872914<br><img src="https://img-blog.csdnimg.cn/20200404170050150.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;A acmer, live in liaocheng,China&lt;/li&gt;
-&lt;li&gt;70%山东+20%四川+10%深圳=Me&lt;br&gt;姓名：Jozky&lt;br&gt;现居：聊城&lt;br&gt;大学：QDU&lt;br&gt;QQ:2830872914&lt;br&gt;&lt;img src=&quot;https:/
-      
-    
-    </summary>
-    
-    
-      <category term="介绍" scheme="http://Jozky.top/categories/%E4%BB%8B%E7%BB%8D/"/>
-    
-    
-      <category term="随笔" scheme="http://Jozky.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
