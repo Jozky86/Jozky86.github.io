@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>About Me</title>
+    <url>/2020/04/04/About-Me/</url>
+    <content><![CDATA[<ul>
+<li>A acmer, live in liaocheng,China</li>
+<li>70%山东+20%四川+10%深圳=Me<br>姓名：Jozky<br>现居：聊城<br>大学：QDU<br>QQ:2830872914<br><img src="https://img-blog.csdnimg.cn/20200404170050150.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>介绍</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DFS序讲解</title>
+    <url>/2020/04/07/DFS%E5%BA%8F%E8%AE%B2%E8%A7%A3/</url>
+    <content><![CDATA[<p>我们经常会遇到树的问题，但树是非线性的结构，操作起来始终还是麻烦，如果我们能把树改造成线性结构，有什么方法？对，就是今天要讲的DSF序；<br>dfs序呢，就是把一棵树区间化，我们用dfs的方式将它区间化。</p>
+<a id="more"></a>
+<p>如图：<br><img src="https://img-blog.csdnimg.cn/20200407172327886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">dfs序就是：ABDDEEBCFHHFG<br>其实就是用dfs全部遍历一遍，不过我们不能光遍历还有动些小手脚，我们要在遍历的同时记录每个节点进栈与出栈的时间序列。</p>
+<p>介绍两个基本函数：in[x],out[x]<br>dfs从根节点开始，这俩函数就分别记录每个节点x进入与离开的时间戳<br>还有num[x]，表示第x个节点的编号</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">inline int dfs(int x,int fa,int time)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">in</span>[x]=++time;</span><br><span class="line">	num[time]=x;</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=e[x].size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int w=e[x][i];</span><br><span class="line">		<span class="keyword">if</span>(w==fa)<span class="built_in">continue</span>;//防止又从子节点找回去</span><br><span class="line">		dfs(w,x,time); </span><br><span class="line">	&#125;</span><br><span class="line">	out[x]=time;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">dfs(s,0,0);</span><br></pre></td></tr></table></figure>
+<p>（具体情况根据，根据题目来写）<br><img src="https://img-blog.csdnimg.cn/20200407174719197.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">num生成的就是一个新秩序，由每个节点进入关系而形成的<br>你仔细观察会发现：<br>序根节点的进栈时间&lt;子树的dfs&lt;根节点的出栈时间<br>这样不就成一个区间了<br>in[x]~out[x]是x为根节点的子树，划分为一个区间<br>然后什么单点修改，区间查询，莫队都可以用在树上，而且dfs序也是树链剖分的前驱知识</p>
+<p>光说可能不怎么懂，我去找一些题，做完再更新例题</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>算法讲解</category>
+      </categories>
+      <tags>
+        <tag>DFS序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Maximize The Beautiful Value </title>
     <url>/2020/04/11/Maximize-The-Beautiful-Value/</url>
     <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/contest/5086/A" target="_blank" rel="noopener">传送</a></p>
@@ -41,76 +75,6 @@
       </categories>
       <tags>
         <tag>前缀和</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>About Me</title>
-    <url>/2020/04/04/About-Me/</url>
-    <content><![CDATA[<ul>
-<li>A acmer, live in liaocheng,China</li>
-<li>70%山东+20%四川+10%深圳=Me<br>姓名：Jozky<br>现居：聊城<br>大学：QDU<br>QQ:2830872914<br><img src="https://img-blog.csdnimg.cn/20200404170050150.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>介绍</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DFS序讲解</title>
-    <url>/2020/04/07/DFS%E5%BA%8F%E8%AE%B2%E8%A7%A3/</url>
-    <content><![CDATA[<p>我们经常会遇到树的问题，但树是非线性的结构，操作起来始终还是麻烦，如果我们能把树改造成线性结构，有什么方法？对，就是今天要讲的DSF序；<br>dfs序呢，就是把一棵树区间化，我们用dfs的方式将它区间化。</p>
-<a id="more"></a>
-<p>如图：<br><img src="https://img-blog.csdnimg.cn/20200407172327886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">dfs序就是：ABDDEEBCFHHFG<br>其实就是用dfs全部遍历一遍，不过我们不能光遍历还有动些小手脚，我们要在遍历的同时记录每个节点进栈与出栈的时间序列。</p>
-<p>介绍两个基本函数：in[x],out[x]<br>dfs从根节点开始，这俩函数就分别记录每个节点x进入与离开的时间戳<br>还有num[x]，表示第x个节点的编号</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">inline int dfs(int x,int fa,int time)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">in</span>[x]=++time;</span><br><span class="line">	num[time]=x;</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=e[x].size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int w=e[x][i];</span><br><span class="line">		<span class="keyword">if</span>(w==fa)<span class="built_in">continue</span>;//防止又从子节点找回去</span><br><span class="line">		dfs(w,x,time); </span><br><span class="line">	&#125;</span><br><span class="line">	out[x]=time;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">dfs(s,0,0);</span><br></pre></td></tr></table></figure>
-<p>（具体情况根据，根据题目来写）<br><img src="https://img-blog.csdnimg.cn/20200407174719197.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">num生成的就是一个新秩序，由每个节点进入关系而形成的<br>你仔细观察会发现：<br>序根节点的进栈时间&lt;子树的dfs&lt;根节点的出栈时间<br>这样不就成一个区间了<br>in[x]~out[x]是x为根节点的子树，划分为一个区间<br>然后什么单点修改，区间查询，莫队都可以用在树上，而且dfs序也是树链剖分的前驱知识</p>
-<p>光说可能不怎么懂，我去找一些题，做完再更新例题</p>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>算法讲解</category>
-      </categories>
-      <tags>
-        <tag>DFS序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[SDOI2008]仪仗队</title>
-    <url>/2020/04/09/SDOI2008-%E4%BB%AA%E4%BB%97%E9%98%9F/</url>
-    <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/20313" target="_blank" rel="noopener">牛客网</a><br>题目描述</p>
-<blockquote>
-<p>作为体育委员，C君负责这次运动会仪仗队的训练。 仪仗队是由学生组成的N *<br>N的方阵，为了保证队伍在行进中整齐划一，C君会跟在仪仗队的左后方，根据其视线所及的学生人数来判断队伍是否整齐(如下图)。</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200409214206553.png" alt="在这里插入图片描述"><br>  <a id="more"></a><br>现在，C君希望你告诉他队伍整齐时能看到的学生人数。<br>输入描述:</p>
-<p>共一个数N。</p>
-<p>输出描述:</p>
-<p>共一个数，即C君应看到的学生人数。</p>
-<p>示例1<br>输入</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
-
-<p>题解：<br>无限接近裸的欧拉函数<br>可以自己画图看看<br><img src="https://img-blog.csdnimg.cn/20200409214430241.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">我来解释下我这个图，我把n=4和5画在了一起，紫色区域是4<em>4区域，红色区域（也是整个区域）是5</em>5，左上角围成一个三角形区域，我们暂时不考虑对角线上的情况（因为对角线只能看见一个，后面的都被挡住了）。<br>左下角坐标是（0,0），我们发现能看的坐标（x，y），x与y为互质，如果不是互质，就一定会被挡住，（比如（2,4）会被（1,2）挡住，而1与2互质，（1,2）就不会被挡住）<br>我们用ans记录三角区域的情况数<br>就是ans=每行的情况加一起<br>那每行有多少种，可以用欧拉函数求<br>欧拉函数的ϕ(x)表示小于x的且与x互质的数有多少个<br>ϕ(3)=2（与3互质的有1和2，一共有两个）<br>特别注意ϕ(1)=1<br>公式法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e4</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, phi[maxn];</span><br><span class="line"><span class="comment">// 直接求3</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Euler</span><span class="params">( <span class="keyword">long</span> <span class="keyword">long</span> n )</span></span>&#123;</span><br><span class="line">  	 <span class="keyword">long</span> <span class="keyword">long</span> res = n;</span><br><span class="line">	 <span class="keyword">for</span>( <span class="keyword">long</span> <span class="keyword">long</span> i =<span class="number">2</span> ;i*i&lt;=n;i++)&#123;</span><br><span class="line">	 	<span class="keyword">if</span>( n %i == <span class="number">0</span> )&#123;</span><br><span class="line">			n/=i;</span><br><span class="line">			res = res - res/i;</span><br><span class="line">		&#125;</span><br><span class="line"> 		<span class="keyword">while</span>( n % i==<span class="number">0</span>)</span><br><span class="line">		 n/=i;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="keyword">if</span>( n &gt; <span class="number">1</span> )</span><br><span class="line">	     res = res - res/n;</span><br><span class="line">     <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) ans += Euler(i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>筛法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e4</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, phi[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) <span class="keyword">if</span>(!phi[i]) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!phi[j]) phi[j] = j;</span><br><span class="line">            phi[j] = phi[j] / i * (i<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    get_phi(n);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) ans += phi[i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>记录下欧拉函数的模板：<br>筛法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">特性 :</span></span><br><span class="line"><span class="comment">1.若a为质数,phi[a]=a-1;</span></span><br><span class="line"><span class="comment">2.若a为质数,b mod a=0,phi[a*b]=phi[b]*a</span></span><br><span class="line"><span class="comment">3.若a,b互质,phi[a*b]=phi[a]*phi[b](当a为质数时,if b mod a!=0 ,phi[a*b]=phi[a]*phi[b])</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span> m[n],phi[n],p[n],nump;</span><br><span class="line"><span class="comment">//m[i]标记i是否为素数,0为素数,1不为素数;p是存放素数的数组;nump是当前素数个数;phi[i]为欧拉函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        phi[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!m[i])<span class="comment">//i为素数</span></span><br><span class="line">        &#123;</span><br><span class="line">            p[++nump]=i;<span class="comment">//将i加入素数数组p中</span></span><br><span class="line">            phi[i]=i<span class="number">-1</span>;<span class="comment">//因为i是素数,由特性得知    </span></span><br><span class="line">        &#125;    </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=nump&amp;&amp;p[j]*i&lt;n;j++)  <span class="comment">//用当前已的到的素数数组p筛,筛去p[j]*i</span></span><br><span class="line">        &#123;</span><br><span class="line">            m[p[j]*i]=<span class="number">1</span>;<span class="comment">//可以确定i*p[j]不是素数 </span></span><br><span class="line">            <span class="keyword">if</span> (i%p[j]==<span class="number">0</span>) <span class="comment">//看p[j]是否是i的约数,因为素数p[j],等于判断i和p[j]是否互质 </span></span><br><span class="line">            &#123;</span><br><span class="line">                phi[p[j]*i]=phi[i]*p[j]; <span class="comment">//特性2</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> phi[p[j]*i]=phi[i]*(p[j]<span class="number">-1</span>); <span class="comment">//互质,特性3其,p[j]-1就是phi[p[j]]   </span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>公式法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">eular</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>,i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i*i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            n/=i,ret*=i<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(n%i==<span class="number">0</span>) n/=i,ret*=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;<span class="number">1</span>) ret*=n<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Phi</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>(N + <span class="number">0.5</span>), ans = N;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=m; i++)</span><br><span class="line">        <span class="keyword">if</span>(N % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i<span class="number">-1</span>);</span><br><span class="line">            <span class="keyword">while</span>(N % i == <span class="number">0</span>) N /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(N &gt; <span class="number">1</span>) ans = ans / N * (N<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>欧拉函数</tag>
-        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -221,9 +185,128 @@
         <category>题解</category>
       </categories>
       <tags>
-        <tag>欧拉函数</tag>
-        <tag>数论</tag>
         <tag>组合数</tag>
+        <tag>数论</tag>
+        <tag>欧拉函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[SDOI2008]仪仗队</title>
+    <url>/2020/04/09/SDOI2008-%E4%BB%AA%E4%BB%97%E9%98%9F/</url>
+    <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/20313" target="_blank" rel="noopener">牛客网</a><br>题目描述</p>
+<blockquote>
+<p>作为体育委员，C君负责这次运动会仪仗队的训练。 仪仗队是由学生组成的N *<br>N的方阵，为了保证队伍在行进中整齐划一，C君会跟在仪仗队的左后方，根据其视线所及的学生人数来判断队伍是否整齐(如下图)。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200409214206553.png" alt="在这里插入图片描述"><br>  <a id="more"></a><br>现在，C君希望你告诉他队伍整齐时能看到的学生人数。<br>输入描述:</p>
+<p>共一个数N。</p>
+<p>输出描述:</p>
+<p>共一个数，即C君应看到的学生人数。</p>
+<p>示例1<br>输入</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<p>题解：<br>无限接近裸的欧拉函数<br>可以自己画图看看<br><img src="https://img-blog.csdnimg.cn/20200409214430241.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">我来解释下我这个图，我把n=4和5画在了一起，紫色区域是4<em>4区域，红色区域（也是整个区域）是5</em>5，左上角围成一个三角形区域，我们暂时不考虑对角线上的情况（因为对角线只能看见一个，后面的都被挡住了）。<br>左下角坐标是（0,0），我们发现能看的坐标（x，y），x与y为互质，如果不是互质，就一定会被挡住，（比如（2,4）会被（1,2）挡住，而1与2互质，（1,2）就不会被挡住）<br>我们用ans记录三角区域的情况数<br>就是ans=每行的情况加一起<br>那每行有多少种，可以用欧拉函数求<br>欧拉函数的ϕ(x)表示小于x的且与x互质的数有多少个<br>ϕ(3)=2（与3互质的有1和2，一共有两个）<br>特别注意ϕ(1)=1<br>公式法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e4</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, phi[maxn];</span><br><span class="line"><span class="comment">// 直接求3</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Euler</span><span class="params">( <span class="keyword">long</span> <span class="keyword">long</span> n )</span></span>&#123;</span><br><span class="line">  	 <span class="keyword">long</span> <span class="keyword">long</span> res = n;</span><br><span class="line">	 <span class="keyword">for</span>( <span class="keyword">long</span> <span class="keyword">long</span> i =<span class="number">2</span> ;i*i&lt;=n;i++)&#123;</span><br><span class="line">	 	<span class="keyword">if</span>( n %i == <span class="number">0</span> )&#123;</span><br><span class="line">			n/=i;</span><br><span class="line">			res = res - res/i;</span><br><span class="line">		&#125;</span><br><span class="line"> 		<span class="keyword">while</span>( n % i==<span class="number">0</span>)</span><br><span class="line">		 n/=i;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="keyword">if</span>( n &gt; <span class="number">1</span> )</span><br><span class="line">	     res = res - res/n;</span><br><span class="line">     <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) ans += Euler(i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>筛法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e4</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, phi[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) <span class="keyword">if</span>(!phi[i]) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!phi[j]) phi[j] = j;</span><br><span class="line">            phi[j] = phi[j] / i * (i<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    get_phi(n);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) ans += phi[i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>记录下欧拉函数的模板：<br>筛法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">特性 :</span></span><br><span class="line"><span class="comment">1.若a为质数,phi[a]=a-1;</span></span><br><span class="line"><span class="comment">2.若a为质数,b mod a=0,phi[a*b]=phi[b]*a</span></span><br><span class="line"><span class="comment">3.若a,b互质,phi[a*b]=phi[a]*phi[b](当a为质数时,if b mod a!=0 ,phi[a*b]=phi[a]*phi[b])</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span> m[n],phi[n],p[n],nump;</span><br><span class="line"><span class="comment">//m[i]标记i是否为素数,0为素数,1不为素数;p是存放素数的数组;nump是当前素数个数;phi[i]为欧拉函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        phi[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!m[i])<span class="comment">//i为素数</span></span><br><span class="line">        &#123;</span><br><span class="line">            p[++nump]=i;<span class="comment">//将i加入素数数组p中</span></span><br><span class="line">            phi[i]=i<span class="number">-1</span>;<span class="comment">//因为i是素数,由特性得知    </span></span><br><span class="line">        &#125;    </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=nump&amp;&amp;p[j]*i&lt;n;j++)  <span class="comment">//用当前已的到的素数数组p筛,筛去p[j]*i</span></span><br><span class="line">        &#123;</span><br><span class="line">            m[p[j]*i]=<span class="number">1</span>;<span class="comment">//可以确定i*p[j]不是素数 </span></span><br><span class="line">            <span class="keyword">if</span> (i%p[j]==<span class="number">0</span>) <span class="comment">//看p[j]是否是i的约数,因为素数p[j],等于判断i和p[j]是否互质 </span></span><br><span class="line">            &#123;</span><br><span class="line">                phi[p[j]*i]=phi[i]*p[j]; <span class="comment">//特性2</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> phi[p[j]*i]=phi[i]*(p[j]<span class="number">-1</span>); <span class="comment">//互质,特性3其,p[j]-1就是phi[p[j]]   </span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>公式法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">eular</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>,i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i*i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            n/=i,ret*=i<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(n%i==<span class="number">0</span>) n/=i,ret*=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;<span class="number">1</span>) ret*=n<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Phi</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>(N + <span class="number">0.5</span>), ans = N;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=m; i++)</span><br><span class="line">        <span class="keyword">if</span>(N % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i<span class="number">-1</span>);</span><br><span class="line">            <span class="keyword">while</span>(N % i == <span class="number">0</span>) N /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(N &gt; <span class="number">1</span>) ans = ans / N * (N<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>欧拉函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序列自动机</title>
+    <url>/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/</url>
+    <content><![CDATA[<p>题目：<br>给你a和b两个字符串，问b是不是a的子序列？</p>
+<ul>
+<li>题解：<br><a href="https://ac.nowcoder.com/discuss/396686" target="_blank" rel="noopener">参考题解</a><br>注意看，子序列不是子串，两者含义不一样</li>
+</ul>
+<blockquote>
+<p>一个字符串 s 被称作另一个字符串 S 的子串，表示 s 在 S中出现了。  一个字符串 s被称作另一个字符串 S 的子序列，说明从序列 S<br>通过去除某些元素但不破坏余下元素的相对位置（在前或在后）可得到序列 s 。</p>
+</blockquote>
+<a id="more"></a>
+<p>可以理解成：abc是abcd的子串，abc是adbewc的子序列，而非子串<br>求子串可以用kmp<br>那求子序列就用今天要讲的序列自动机<br>字符串A：abcdefgh<br>字符串B：aez<br>当a匹配过后，再去枚举后面的bcd没有意义，因为我们要找的是A中是否要aez三个字符，并且是这样的顺序，无须是连着的。如果我们能在a之后直接跳到a后面的一个e，再跳到e后面第一个z，等到子串B遍历完，或者在a中找不到了，我们就可以结束啦。<br>注意：我们在往后跳找字母时，比如a后面有很多个e，那么我们选第一个，因为如果第一个不行的话，那第二个第三个也白瞎，我们选的越往前其实选择空间就越大<br>仔细想想怎么能实现跳跃查找这个呢：<br>开个数组next[i][j]表示主串第i个字母之后的第一个‘a’+j的坐标，<br>next的维护只需要从后向前扫描主串，到第i位时维护一个数组last[j]，j表示对应的‘a’~‘z’，last反映的是最靠前的字母j在哪里，然后把值赋给next就ok了<br>这样查找时顺着走就可以了<br>每次匹配B复杂度是O（|B|），<br>总复杂度O(26|A|+|B|)，因为A要用26个字母都循环一遍所以是26|A|<br>可以通过下图理解<br><img src="https://img-blog.csdnimg.cn/20200402131626533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>模板：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e6 + 10;</span><br><span class="line">int n, t, next[maxn][30];</span><br><span class="line">char s[maxn], str[maxn];</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	scanf(<span class="string">"%s"</span>, s+1);</span><br><span class="line">	int len = strlen(s+1);</span><br><span class="line">	<span class="keyword">for</span>(int i=len; i; i--) &#123;</span><br><span class="line">		<span class="keyword">for</span>(int j=0; j&lt;26; j++) </span><br><span class="line">		&#123;</span><br><span class="line">		next[i-1][j] = next[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		next[i-1][s[i]-<span class="string">'a'</span>] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		scanf(<span class="string">"%s"</span>, str);</span><br><span class="line">		int lenc = strlen(str), f = 0;</span><br><span class="line">		int now=0;</span><br><span class="line">		<span class="keyword">for</span>(int i=0; i&lt;lenc; i++)&#123;</span><br><span class="line">			now = next[now][str[i]-<span class="string">'a'</span>];</span><br><span class="line">			<span class="keyword">if</span>(!now) &#123;</span><br><span class="line">				f = 1;</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(f) puts(<span class="string">"No"</span>);</span><br><span class="line">		<span class="keyword">else</span> puts(<span class="string">"Yes"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法讲解</category>
+      </categories>
+      <tags>
+        <tag>序列自动机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浅谈LCA</title>
+    <url>/2020/04/12/%E6%B5%85%E8%B0%88LCA/</url>
+    <content><![CDATA[<p>@[TOC]</p>
+<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p>
+<h2 id="解决方法概括："><a href="#解决方法概括：" class="headerlink" title="解决方法概括："></a>解决方法概括：</h2><p>常用四种方法 ：</p>
+<ol>
+<li>用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。</li>
+<li>利用欧拉序转化为RMQ问题，用ST表求解RMQ问题，预处理复杂度 O(n+nlogn)，每次询问的复杂度为 O(1)，也是在线算法。</li>
+<li>采用Tarjan算法求解，复杂度 O(α(n)+Q)，属于离线算法。</li>
+<li>利用树链剖分求解，复杂度预处理O(n)，单次查询 O(logn) ，属于在线算法。</li>
+</ol>
+<h2 id="倍增法："><a href="#倍增法：" class="headerlink" title="倍增法："></a>倍增法：</h2>]]></content>
+      <categories>
+        <category>算法讲解</category>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>LCA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日一题】4月6日数码</title>
+    <url>/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/</url>
+    <content><![CDATA[<p>题目：<a href="https://ac.nowcoder.com/acm/problem/13221" target="_blank" rel="noopener">数码</a><br>来源：<a href="https://ac.nowcoder.com/acm/contest/5#description" target="_blank" rel="noopener">美团2017年CodeM大赛-资格赛</a></p>
+<blockquote>
+<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K<br> 64bit IO Format:%lld</p>
+</blockquote>
+<p>题目描述</p>
+<blockquote>
+<p>给定两个整数 l 和 r ，对于所有满足1 ≤ l ≤ x ≤ r ≤ 10^9 的 x ，把 x<br>的所有约数全部写下来。对于每个写下来的数，只保留最高位的那个数码。求1～9每个数码出现的次数。 </p>
+</blockquote>
+<a id="more"></a>
+<p>输入描述:</p>
+<blockquote>
+<p>一行，两个整数 l 和 r (1 ≤ l ≤ r ≤ 10^9^)。</p>
+</blockquote>
+<p>输出描述:</p>
+<p>输出9行。</p>
+<blockquote>
+<p>第 i 行，输出数码 i 出现的次数。</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 4</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">4</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+<p>题解：<br>先介绍一个函数：<br>solve（a，b）就是从1<del>a中数码b的倍数出现的次数<br>solve(a,b)=a/b<br>那么求[l,r]的话，就用solve(r,b)-solve(l-1,b)，大致可以理解成前缀和那种<br>num就是0</del>9，计算每个num对应的区间<br>最高位是1的话：1,10 ~ 19,100 ~ 199， 1000 ~ 1999….<br>最高位是2的话：2,20 ~ 29,200 ~ 299， 2000 ~ 2999….</p>
+<p>因为我们只记录约数的最高位，像1999，约数就是1和1999，我们只记录最高位，那么就是有两个1<br>那么我们枚举以num开头的数，计算它的倍数在[l,r]中出现的次数。<br>按照几位数和最高位是几进行枚举，有多少这样的数直接统计就ok<br>solve(r,num)-solve(l-1,num)<br>枚举num的值<br>让最高位等于x时num枚举相对应的区间（从x<em>10^y-1^~(x+1)</em>10^y-1^-1）y=1.2.3….<br>有部分数会被算重复，因为有完全平方数存在，<br>再运用整除分块技巧，让复杂度降到O(根号n)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"><span class="comment">#define ll long long</span></span><br><span class="line">ll minn(ll a,ll b)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=b)</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="built_in">return</span> b;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">	//	cout&lt;&lt;a;</span><br><span class="line">	 <span class="built_in">return</span> a;</span><br><span class="line">	 	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">ll solve(ll a, ll b) &#123;</span><br><span class="line">  ll res = 0;</span><br><span class="line">   ll beg;</span><br><span class="line">   ll end;</span><br><span class="line">  <span class="keyword">for</span> (ll i = 1; i &lt;= a / b; i *= 10) &#123;</span><br><span class="line">    beg = b * i;//区间开头</span><br><span class="line">    </span><br><span class="line">	 end = minn(a, beg + i - 1);//区间结尾</span><br><span class="line">	 int k;</span><br><span class="line">    <span class="keyword">for</span> (int j = beg; j &lt;= end; j = k + 1) &#123;</span><br><span class="line">      k = min(a / (a / j), end);</span><br><span class="line">      //cout&lt;&lt;a/(a/i)&lt;&lt;<span class="string">" "</span>&lt;&lt;end&lt;&lt;endl;</span><br><span class="line">      res += (k - j + 1) * (a / j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">ll l,r;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">   cin&gt;&gt;l&gt;&gt;r;</span><br><span class="line">    <span class="keyword">for</span>(ll i=1;i&lt;=9;i++)&#123;</span><br><span class="line">        cout&lt;&lt;solve(r,i)-solve(l-1,i)&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>题解</category>
+        <category>牛客网每日一题</category>
+      </categories>
+      <tags>
+        <tag>整除分块</tag>
       </tags>
   </entry>
   <entry>
@@ -327,27 +410,19 @@
       </tags>
   </entry>
   <entry>
-    <title>浅谈LCA</title>
-    <url>/2020/04/12/%E6%B5%85%E8%B0%88LCA/</url>
+    <title>牛客算法周周练1</title>
+    <url>/2020/04/11/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%831/</url>
     <content><![CDATA[<p>@[TOC]</p>
-<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="A-Maximize-The-Beautiful-Value"><a href="#A-Maximize-The-Beautiful-Value" class="headerlink" title="A Maximize The Beautiful Value"></a>A Maximize The Beautiful Value</h2><p><a href="http://jozky.top/2020/04/11/Maximize-The-Beautiful-Value/">站内题解</a></p>
+<h2 id="B-身体训练"><a href="#B-身体训练" class="headerlink" title="B 身体训练"></a>B 身体训练</h2><p><a href="http://jozky.top/2020/04/11/%E8%BA%AB%E4%BD%93%E8%AE%AD%E7%BB%83/">站内题解</a></p>
 <a id="more"></a>
-<p>LCA（4,5）=2<br>LCA（4,3）=1<br>LCA（2,1）=1</p>
-<h2 id="解决方法概括："><a href="#解决方法概括：" class="headerlink" title="解决方法概括："></a>解决方法概括：</h2><p>常用四种方法 ：</p>
-<ol>
-<li>用倍增法求解，预处理复杂度是 O(nlogn) ,每次询问的复杂度是 O(logn), 属于在线解法。</li>
-<li>利用欧拉序转化为RMQ问题，用ST表求解RMQ问题，预处理复杂度 O(n+nlogn)，每次询问的复杂度为 O(1)，也是在线算法。</li>
-<li>采用Tarjan算法求解，复杂度 O(α(n)+Q)，属于离线算法。</li>
-<li>利用树链剖分求解，复杂度预处理O(n)，单次查询 O(logn) ，属于在线算法。</li>
-</ol>
-<h2 id="倍增法："><a href="#倍增法：" class="headerlink" title="倍增法："></a>倍增法：</h2>]]></content>
+<h2 id="C-Borrow-Classroom"><a href="#C-Borrow-Classroom" class="headerlink" title="C Borrow Classroom"></a>C Borrow Classroom</h2><p>待定。。。</p>
+<h2 id="D-景区路线规划"><a href="#D-景区路线规划" class="headerlink" title="D 景区路线规划"></a>D 景区路线规划</h2><p>待定。。。</p>
+<h2 id="E-幸运数字Ⅱ"><a href="#E-幸运数字Ⅱ" class="headerlink" title="E 幸运数字Ⅱ"></a>E 幸运数字Ⅱ</h2><p><a href="http://jozky.top/2020/04/11/%E5%B9%B8%E8%BF%90%E6%95%B0%E5%AD%97%E2%85%A1/">站内题解</a></p>
+]]></content>
       <categories>
-        <category>算法讲解</category>
-        <category>数据结构</category>
+        <category>比赛</category>
       </categories>
-      <tags>
-        <tag>LCA</tag>
-      </tags>
   </entry>
   <entry>
     <title>牛客每日一题3.31 城市网络</title>
@@ -386,143 +461,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序列自动机</title>
-    <url>/2020/04/02/%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%9C%BA-1/</url>
-    <content><![CDATA[<p>题目：<br>给你a和b两个字符串，问b是不是a的子序列？</p>
-<ul>
-<li>题解：<br><a href="https://ac.nowcoder.com/discuss/396686" target="_blank" rel="noopener">参考题解</a><br>注意看，子序列不是子串，两者含义不一样</li>
-</ul>
-<blockquote>
-<p>一个字符串 s 被称作另一个字符串 S 的子串，表示 s 在 S中出现了。  一个字符串 s被称作另一个字符串 S 的子序列，说明从序列 S<br>通过去除某些元素但不破坏余下元素的相对位置（在前或在后）可得到序列 s 。</p>
-</blockquote>
-<a id="more"></a>
-<p>可以理解成：abc是abcd的子串，abc是adbewc的子序列，而非子串<br>求子串可以用kmp<br>那求子序列就用今天要讲的序列自动机<br>字符串A：abcdefgh<br>字符串B：aez<br>当a匹配过后，再去枚举后面的bcd没有意义，因为我们要找的是A中是否要aez三个字符，并且是这样的顺序，无须是连着的。如果我们能在a之后直接跳到a后面的一个e，再跳到e后面第一个z，等到子串B遍历完，或者在a中找不到了，我们就可以结束啦。<br>注意：我们在往后跳找字母时，比如a后面有很多个e，那么我们选第一个，因为如果第一个不行的话，那第二个第三个也白瞎，我们选的越往前其实选择空间就越大<br>仔细想想怎么能实现跳跃查找这个呢：<br>开个数组next[i][j]表示主串第i个字母之后的第一个‘a’+j的坐标，<br>next的维护只需要从后向前扫描主串，到第i位时维护一个数组last[j]，j表示对应的‘a’~‘z’，last反映的是最靠前的字母j在哪里，然后把值赋给next就ok了<br>这样查找时顺着走就可以了<br>每次匹配B复杂度是O（|B|），<br>总复杂度O(26|A|+|B|)，因为A要用26个字母都循环一遍所以是26|A|<br>可以通过下图理解<br><img src="https://img-blog.csdnimg.cn/20200402131626533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>模板：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e6 + 10;</span><br><span class="line">int n, t, next[maxn][30];</span><br><span class="line">char s[maxn], str[maxn];</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	scanf(<span class="string">"%s"</span>, s+1);</span><br><span class="line">	int len = strlen(s+1);</span><br><span class="line">	<span class="keyword">for</span>(int i=len; i; i--) &#123;</span><br><span class="line">		<span class="keyword">for</span>(int j=0; j&lt;26; j++) </span><br><span class="line">		&#123;</span><br><span class="line">		next[i-1][j] = next[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		next[i-1][s[i]-<span class="string">'a'</span>] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		scanf(<span class="string">"%s"</span>, str);</span><br><span class="line">		int lenc = strlen(str), f = 0;</span><br><span class="line">		int now=0;</span><br><span class="line">		<span class="keyword">for</span>(int i=0; i&lt;lenc; i++)&#123;</span><br><span class="line">			now = next[now][str[i]-<span class="string">'a'</span>];</span><br><span class="line">			<span class="keyword">if</span>(!now) &#123;</span><br><span class="line">				f = 1;</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(f) puts(<span class="string">"No"</span>);</span><br><span class="line">		<span class="keyword">else</span> puts(<span class="string">"Yes"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法讲解</category>
-      </categories>
-      <tags>
-        <tag>序列自动机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日一题】4月6日数码</title>
-    <url>/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/</url>
-    <content><![CDATA[<p>题目：<a href="https://ac.nowcoder.com/acm/problem/13221" target="_blank" rel="noopener">数码</a><br>来源：<a href="https://ac.nowcoder.com/acm/contest/5#description" target="_blank" rel="noopener">美团2017年CodeM大赛-资格赛</a></p>
-<blockquote>
-<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K<br> 64bit IO Format:%lld</p>
-</blockquote>
-<p>题目描述</p>
-<blockquote>
-<p>给定两个整数 l 和 r ，对于所有满足1 ≤ l ≤ x ≤ r ≤ 10^9 的 x ，把 x<br>的所有约数全部写下来。对于每个写下来的数，只保留最高位的那个数码。求1～9每个数码出现的次数。 </p>
-</blockquote>
-<a id="more"></a>
-<p>输入描述:</p>
-<blockquote>
-<p>一行，两个整数 l 和 r (1 ≤ l ≤ r ≤ 10^9^)。</p>
-</blockquote>
-<p>输出描述:</p>
-<p>输出9行。</p>
-<blockquote>
-<p>第 i 行，输出数码 i 出现的次数。</p>
-</blockquote>
-<p>示例1<br>输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1 4</span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">4</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
-<p>题解：<br>先介绍一个函数：<br>solve（a，b）就是从1<del>a中数码b的倍数出现的次数<br>solve(a,b)=a/b<br>那么求[l,r]的话，就用solve(r,b)-solve(l-1,b)，大致可以理解成前缀和那种<br>num就是0</del>9，计算每个num对应的区间<br>最高位是1的话：1,10 ~ 19,100 ~ 199， 1000 ~ 1999….<br>最高位是2的话：2,20 ~ 29,200 ~ 299， 2000 ~ 2999….</p>
-<p>因为我们只记录约数的最高位，像1999，约数就是1和1999，我们只记录最高位，那么就是有两个1<br>那么我们枚举以num开头的数，计算它的倍数在[l,r]中出现的次数。<br>按照几位数和最高位是几进行枚举，有多少这样的数直接统计就ok<br>solve(r,num)-solve(l-1,num)<br>枚举num的值<br>让最高位等于x时num枚举相对应的区间（从x<em>10^y-1^~(x+1)</em>10^y-1^-1）y=1.2.3….<br>有部分数会被算重复，因为有完全平方数存在，<br>再运用整除分块技巧，让复杂度降到O(根号n)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"><span class="comment">#define ll long long</span></span><br><span class="line">ll minn(ll a,ll b)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=b)</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="built_in">return</span> b;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">	//	cout&lt;&lt;a;</span><br><span class="line">	 <span class="built_in">return</span> a;</span><br><span class="line">	 	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">ll solve(ll a, ll b) &#123;</span><br><span class="line">  ll res = 0;</span><br><span class="line">   ll beg;</span><br><span class="line">   ll end;</span><br><span class="line">  <span class="keyword">for</span> (ll i = 1; i &lt;= a / b; i *= 10) &#123;</span><br><span class="line">    beg = b * i;//区间开头</span><br><span class="line">    </span><br><span class="line">	 end = minn(a, beg + i - 1);//区间结尾</span><br><span class="line">	 int k;</span><br><span class="line">    <span class="keyword">for</span> (int j = beg; j &lt;= end; j = k + 1) &#123;</span><br><span class="line">      k = min(a / (a / j), end);</span><br><span class="line">      //cout&lt;&lt;a/(a/i)&lt;&lt;<span class="string">" "</span>&lt;&lt;end&lt;&lt;endl;</span><br><span class="line">      res += (k - j + 1) * (a / j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">ll l,r;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">   cin&gt;&gt;l&gt;&gt;r;</span><br><span class="line">    <span class="keyword">for</span>(ll i=1;i&lt;=9;i++)&#123;</span><br><span class="line">        cout&lt;&lt;solve(r,i)-solve(l-1,i)&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>题解</category>
-        <category>牛客网每日一题</category>
-      </categories>
-      <tags>
-        <tag>整除分块</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>牛客网 【每日一题】4月10日 二分图染色(弱化版)</title>
-    <url>/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/</url>
-    <content><![CDATA[<p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/13229" target="_blank" rel="noopener">题目传送</a></p>
-<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><blockquote>
-<p>时间限制：C/C++ 1秒，其他语言2秒<br>空间限制：C/C++ 524288K，其他语言1048576K<br>64bit IO Format: %lld</p>
-</blockquote>
-<p>题目描述 </p>
-<blockquote>
-<p>给定一个完全二分图，图的左右两边的顶点数目相同。我们要给图中的每条边染成红色、蓝色、或者绿色，并使得任意两条红边不共享端点、同时任意两条蓝边也不共享端点。<br>计算所有满足条件的染色的方案数，并对10^9^+7取模。 (ps：本题数据量与实际比赛中数据量相比，少了一些)</p>
-</blockquote>
-<a id="more"></a>
-<p>输入描述:</p>
-<blockquote>
-<p>二分图单边的顶点数目n(n ≤ 10^7)</p>
-</blockquote>
-<p>输出描述:</p>
-<blockquote>
-<p>输出一个整数,即所求的答案。</p>
-</blockquote>
-<p>示例1<br>输入</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">35</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="题意-amp-amp-题解：："><a href="#题意-amp-amp-题解：：" class="headerlink" title="题意&amp;&amp;题解：："></a>题意&amp;&amp;题解：：</h2><p>完全二分图:是一种特殊的二分图，可以把图中的顶点分成两个集合，使得第一个集合中的所有顶点都与第二个集合中的所有顶点相连。<br>我们可以把左右各有n个点的二分图的题转化成n*n的棋盘问题。（离散上学过）<br>题目：让染三个颜色，红蓝绿，但是绿色并没有什么要求，我们可以最后再随便放。所以我们先考虑红和蓝。<br>红和蓝都是不能共享端点，同步到棋盘上（行和列分别表示二分图两个集合），也就是棋盘上行和列只能有一个红或蓝</p>
-<p>现在的题目就是：<br>在n*n的棋盘上，放任意红和蓝棋子，任一行和列不能有相同颜色的棋子，有多少种放的方法？<br>F<del>n</del>表示棋盘大小为 n * n时的答案<br>先只考虑一个颜色： F<del>n</del>=<img src="https://img-blog.csdnimg.cn/20200416162741561.png" alt="在这里插入图片描述">)种方案(先在n行里选若干行，然后每一行选若干列，行没有顺序区分，就是选两行，选第一行和第三行与选第一行和第二行没差，所以选行用组合；而列不一样，因为行列只能放一个，我们可以先放在一行上，然后分散到其他行，所以选列的时候要考虑顺序问题，要用的是排列而不是组合)<br>如图：<br><img src="https://img-blog.csdnimg.cn/20200416164224892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>比如我们选两行（C^2^ <del>n</del> ），然后每行放一个，我们先考虑都放在一行上，看图中最上面两行（黄色和绿色），都是选的第一个格和第二个格，但是分散开不一样，（图中4 * 4的表格）说明我们要考虑顺序，所以选列是A^2^<del>n</del>，将所以情况加起来就是选一个颜色的方案</p>
-<p>选两个颜色：从上面我们能得到一个颜色是F<del>n</del>，两个就是F<del>n</del>* F<del>n</del>，非也，因为这样会出现一个格子放两个棋子，我们还要将这种情况删去。需要容斥。<br>我们用g<del>i</del>表示最少有i个点放了两个棋子（颜色不一样）的方案数。那么除去i 行和i 列（i个点所在），我们在剩下n-i行与列里就不会有重复的，g<del>i</del> = f ^2^<del>n-i</del> 。被除去的 i 行与 i列选法和之前一样是 C^i^<del>n</del>A^i^<del>n</del> ，最后得到容斥公式：<br><img src="https://img-blog.csdnimg.cn/20200416170156368.png" alt="在这里插入图片描述"><br>（这一部分好好理解）</p>
-<p>C^k^<del>n</del>A^k^<del>n</del>都可以求好，但是Fn提前求会超时，说明上面的公式不能用，我们要换一个想法来求<br>我们来考虑F<del>n</del>能不能递推出来，从F<del>n-1</del>推出F<del>n</del><br>考虑n-1到n的过程：<br>一共增加了2n-1个格子（n^2^-(n-1)^2^）,n-1之前的格子都已经放好了，我们只需要考虑多出的这些格子该怎么放。<br>如果只放一个棋子，就有2n-1个方案，如果都不放，一个方案，一共是2n种方案，也就是2n<em>F<del>n-1</del>，（F<del>n-1</del>是之前n-1行列已经放好的方案数）<br>但是有限制条件，每一行不能有相同颜色，每放一个棋子，意味着这一行这一列都不能放了，就会出现n-1种重复情况（因为是从n-1的扩展来的），我们之前n-1行列的棋子都平移靠边，因为之前都是不同行同列，所以靠边后，正好占了一行一列，也就是我们在新增部分可以放的棋子，实际上是F<del>n-2</del>而非F<del>n-1</del>（这里可以看看图），那一共（n-1）F<del>n-2</del>次重复情况，可以选n-1行，而且每一列也可以进行相同操作,总的方案数就是2×(n−1) ^2^ ∗F(n−2)<br>借鉴邓老师的图：<br><img src="https://img-blog.csdnimg.cn/2020041617195483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们还要考虑放两个的情况;<br>即最后一行和列分别放一个，这样不重复嘛<br>方案就是：（n-1）^2^</em>F(n-2)<br><img src="https://img-blog.csdnimg.cn/20200416172115547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>总结：得到公式<br>F[n]=2<em>n</em>F[n-1]-(n-1)^2^F[n-2]<br>（<del>我真的是把我所能理解都写出来了</del> ）</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000004</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[N],s[N],F[N];</span><br><span class="line"><span class="function">ll <span class="title">C</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1l</span>l * g[n] * s[m] % mod * s[n - m] % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">A</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1l</span>l * g[n] * s[n - m] % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    g[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)</span><br><span class="line">        g[i] = <span class="number">1l</span>l * g[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">        </span><br><span class="line">         ll ans1 = <span class="number">1</span>;</span><br><span class="line">   		 <span class="keyword">for</span>(;y;y &gt;&gt;= <span class="number">1</span>,x = x * x % mod)</span><br><span class="line">   		 &#123;</span><br><span class="line">   		 	        <span class="keyword">if</span>(y &amp; <span class="number">1</span>) ans1 = ans1 * x % mod;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    s[n] = ans1;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>;i &gt;= <span class="number">0</span>;--i)</span><br><span class="line">        s[i] = <span class="number">1l</span>l * s[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % mod;</span><br><span class="line">        </span><br><span class="line">    F[<span class="number">0</span>] = <span class="number">1</span>;F[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n;++i)</span><br><span class="line">        F[i] = (<span class="number">2l</span>l * i * F[i - <span class="number">1</span>] - <span class="number">1l</span>l * F[i - <span class="number">2</span>] * (i - <span class="number">1</span>) % mod * (i - <span class="number">1</span>) % mod) % mod;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">     ll k ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;++i) &#123;</span><br><span class="line">       k=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(i &amp; <span class="number">1</span>) k = <span class="number">-1</span>;</span><br><span class="line">        ans += k * C(n,i) * A(n,i) % mod * F[n - i] % mod * F[n - i] % mod;</span><br><span class="line">        ans %= mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,(ans + mod) % mod);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>题解</category>
-        <category>牛客网每日一题</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>dp</tag>
-        <tag>组合</tag>
-        <tag>容斥</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>牛客算法周周练1</title>
-    <url>/2020/04/11/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%831/</url>
-    <content><![CDATA[<p>@[TOC]</p>
-<h2 id="A-Maximize-The-Beautiful-Value"><a href="#A-Maximize-The-Beautiful-Value" class="headerlink" title="A Maximize The Beautiful Value"></a>A Maximize The Beautiful Value</h2><p><a href="http://jozky.top/2020/04/11/Maximize-The-Beautiful-Value/">站内题解</a></p>
-<h2 id="B-身体训练"><a href="#B-身体训练" class="headerlink" title="B 身体训练"></a>B 身体训练</h2><p><a href="http://jozky.top/2020/04/11/%E8%BA%AB%E4%BD%93%E8%AE%AD%E7%BB%83/">站内题解</a></p>
-<a id="more"></a>
-<h2 id="C-Borrow-Classroom"><a href="#C-Borrow-Classroom" class="headerlink" title="C Borrow Classroom"></a>C Borrow Classroom</h2><p>待定。。。</p>
-<h2 id="D-景区路线规划"><a href="#D-景区路线规划" class="headerlink" title="D 景区路线规划"></a>D 景区路线规划</h2><p>待定。。。</p>
-<h2 id="E-幸运数字Ⅱ"><a href="#E-幸运数字Ⅱ" class="headerlink" title="E 幸运数字Ⅱ"></a>E 幸运数字Ⅱ</h2><p><a href="http://jozky.top/2020/04/11/%E5%B9%B8%E8%BF%90%E6%95%B0%E5%AD%97%E2%85%A1/">站内题解</a></p>
-]]></content>
-      <categories>
-        <category>比赛</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>牛客算法周周练2</title>
-    <url>/2020/04/15/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%832/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>牛客网2020愚人节比赛</title>
-    <url>/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/</url>
-    <content><![CDATA[<h2 id="牛客2020年愚人节比赛2020-4-1-21-32-11"><a href="#牛客2020年愚人节比赛2020-4-1-21-32-11" class="headerlink" title="牛客2020年愚人节比赛2020/4/1 21 : 32 : 11 "></a>牛客2020年愚人节比赛2020/4/1 21 : 32 : 11 </h2><p><del>欢乐的一晚上</del><br><a href="https://ac.nowcoder.com/acm/contest/4863#question" target="_blank" rel="noopener">题目链接</a><br>其实做做也挺好，脑筋急转弯，不需要算法不需要数据结构，纯娱乐，wa的快感<br><img src="https://img-blog.csdnimg.cn/20200401211211311.png" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200401211222213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200401211308221.png" alt="在这里插入图片描述">不知道这是哪位哥的，心疼一下</p>
-<a id="more"></a>
-<p><strong>题解</strong><br>注：一下题解没必要较劲，欢乐局而已<br>对不对无所谓，换了最重要奥<br>A题rand36：<br>我试了好几个数，最后3过了，以为答案3，结果发现答案是随机的，看命了有人一下就过。。。<br>B寻宝游戏：<br>要找的宝贝就在宝藏图上，输出题目中图的地址就ac了<br>C老铁安排上：<br>看图是什么手机？老年机，所以是九字输入法，字母按照九字输入法的对应数字<br>D神奇的字母<br>输出题目中的样例<br>“一个字符，表示神奇的字母（范围从’a’到’z’，保证小写）。”<br>即可<br>E return1；<br>不会（笑哭）貌似场上唯一一个没人做出来的题<br>F 抬头，答案在天上<br>天上就是指你浏览器的上面，也就是网址，按照顺序对应相应的数字<br>G抬头在地上<br>就是看字地下的标点符号，你会发现有个标点符号是超链接，输出超链接地址即可<br>H园<br>问你能套多少园，可没说不能套娃哦<del>，n是几就能套几个<br>I牛客搜索题<br>这里面最扯的题（个人感觉<img src="https://img-blog.csdnimg.cn/20200401212525727.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">）<br>J签到题<br>不会（笑哭）<br>K四万像素五角星<br>有个大佬手打出来了。。。<br>L positive-integer<br>经过证明<br>n=1时，输出1；<br>其他输出0<br>证明过程嘛。。。（</del>多尝试几次就OK了，不怕失败，都wa了多少次了）~~<br>好像官方出题解了，看官方题解吧<br><a href="https://ac.nowcoder.com/discuss/396514?type=101&order=0&pos=5&page=1" target="_blank" rel="noopener">题解</a></p>
-]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>欢乐局</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>树学</title>
     <url>/2020/04/14/%E6%A0%91%E5%AD%A6/</url>
     <content><![CDATA[<p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/201400" target="_blank" rel="noopener">传送</a></p>
@@ -558,6 +496,11 @@
       </tags>
   </entry>
   <entry>
+    <title>牛客算法周周练2</title>
+    <url>/2020/04/15/%E7%89%9B%E5%AE%A2%E7%AE%97%E6%B3%95%E5%91%A8%E5%91%A8%E7%BB%832/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>滑动窗口</title>
     <url>/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</url>
     <content><![CDATA[<blockquote>
@@ -589,6 +532,42 @@
       </categories>
       <tags>
         <tag>单调队列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客网2020愚人节比赛</title>
+    <url>/2020/04/01/%E7%89%9B%E5%AE%A2%E7%BD%912020%E6%84%9A%E4%BA%BA%E8%8A%82%E6%AF%94%E8%B5%9B/</url>
+    <content><![CDATA[<h2 id="牛客2020年愚人节比赛2020-4-1-21-32-11"><a href="#牛客2020年愚人节比赛2020-4-1-21-32-11" class="headerlink" title="牛客2020年愚人节比赛2020/4/1 21 : 32 : 11 "></a>牛客2020年愚人节比赛2020/4/1 21 : 32 : 11 </h2><p><del>欢乐的一晚上</del><br><a href="https://ac.nowcoder.com/acm/contest/4863#question" target="_blank" rel="noopener">题目链接</a><br>其实做做也挺好，脑筋急转弯，不需要算法不需要数据结构，纯娱乐，wa的快感<br><img src="https://img-blog.csdnimg.cn/20200401211211311.png" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200401211222213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200401211308221.png" alt="在这里插入图片描述">不知道这是哪位哥的，心疼一下</p>
+<a id="more"></a>
+<p><strong>题解</strong><br>注：一下题解没必要较劲，欢乐局而已<br>对不对无所谓，换了最重要奥<br>A题rand36：<br>我试了好几个数，最后3过了，以为答案3，结果发现答案是随机的，看命了有人一下就过。。。<br>B寻宝游戏：<br>要找的宝贝就在宝藏图上，输出题目中图的地址就ac了<br>C老铁安排上：<br>看图是什么手机？老年机，所以是九字输入法，字母按照九字输入法的对应数字<br>D神奇的字母<br>输出题目中的样例<br>“一个字符，表示神奇的字母（范围从’a’到’z’，保证小写）。”<br>即可<br>E return1；<br>不会（笑哭）貌似场上唯一一个没人做出来的题<br>F 抬头，答案在天上<br>天上就是指你浏览器的上面，也就是网址，按照顺序对应相应的数字<br>G抬头在地上<br>就是看字地下的标点符号，你会发现有个标点符号是超链接，输出超链接地址即可<br>H园<br>问你能套多少园，可没说不能套娃哦<del>，n是几就能套几个<br>I牛客搜索题<br>这里面最扯的题（个人感觉<img src="https://img-blog.csdnimg.cn/20200401212525727.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">）<br>J签到题<br>不会（笑哭）<br>K四万像素五角星<br>有个大佬手打出来了。。。<br>L positive-integer<br>经过证明<br>n=1时，输出1；<br>其他输出0<br>证明过程嘛。。。（</del>多尝试几次就OK了，不怕失败，都wa了多少次了）~~<br>好像官方出题解了，看官方题解吧<br><a href="https://ac.nowcoder.com/discuss/396514?type=101&order=0&pos=5&page=1" target="_blank" rel="noopener">题解</a></p>
+]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>欢乐局</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>清明追思家国永念</title>
+    <url>/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</url>
+    <content><![CDATA[<p>我站在窗边，竟然听着鸣笛声眼泪掉了下来，2020年好像我们什么都还没做就已经过了1/4，哪有什么岁月静好，只因有人为你负重前行<img src="https://img-blog.csdnimg.cn/20200404230205816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p>本来想睡觉，企鹅群不小心看见一些发言气醒了。</p>
+<p>4月4日默哀是形式主义?</p>
+<p>你知道什么是形式主义吗?这种公共活动都是形式主义?死去的同胞、牺牲的医护都配不上，那谁还配得上这样的国礼?这算哪门子形式?</p>
+<p>你可以说，我觉得宣传口的工作不够到位;你也可以说，我觉得现在才发布通知过于仓促;你还可以说，禁止的范围有待商榷。</p>
+<p>无动于衷不是罪过，没有感同身受不是罪过，做不到泪流满面不是罪过，私下继续娱乐活动也不是罪过。你可以不爱听歌功颂德的文本，可以用自己的方式怀缅，可以用其他途径玩得.昏天黑地。</p>
+<p>娱乐至死的时代，只有无聊才让人如临大敌，都懂。</p>
+<p>做了不代表尊重，没做也不代表不尊重。</p>
+<p>没有卫兵站在你家里用枪抵着你的后脑勺让你哭天抢地，没有条子叔叔把看电视打游戏听音乐的人逮起来，也没有人让你排着长队对着什么东西跪地哀嚎。事实上，没有人强迫你。只是有一点，自身的态度和对外界的要求要-致。若是不以流程怀念，就不要对着默哀的人喊你们是一群被形式主义迫害的粉红，缄默到底。若是以流程怀缅，也不必逼迫他人做超出公报内容的事，真挚只能自发。</p>
+<p>你可以不立正，可以不起床。但是在鸣笛的那几分钟里，你必须清楚，你还活着，没有失去年长的亲人、远方的朋友是因为谁。你也得清楚，这样的祭奠，那些人配得上。<br>———转载<br><img src="https://img-blog.csdnimg.cn/20200404230406288.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404230410721.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>文章</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -634,25 +613,84 @@
       </tags>
   </entry>
   <entry>
-    <title>清明追思家国永念</title>
-    <url>/2020/04/04/%E6%B8%85%E6%98%8E%E8%BF%BD%E6%80%9D%E5%AE%B6%E5%9B%BD%E6%B0%B8%E5%BF%B5/</url>
-    <content><![CDATA[<p>我站在窗边，竟然听着鸣笛声眼泪掉了下来，2020年好像我们什么都还没做就已经过了1/4，哪有什么岁月静好，只因有人为你负重前行<img src="https://img-blog.csdnimg.cn/20200404230205816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    <title>牛客网 【每日一题】4月10日 二分图染色(弱化版)</title>
+    <url>/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/</url>
+    <content><![CDATA[<p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/13229" target="_blank" rel="noopener">题目传送</a></p>
+<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><blockquote>
+<p>时间限制：C/C++ 1秒，其他语言2秒<br>空间限制：C/C++ 524288K，其他语言1048576K<br>64bit IO Format: %lld</p>
+</blockquote>
+<p>题目描述 </p>
+<blockquote>
+<p>给定一个完全二分图，图的左右两边的顶点数目相同。我们要给图中的每条边染成红色、蓝色、或者绿色，并使得任意两条红边不共享端点、同时任意两条蓝边也不共享端点。<br>计算所有满足条件的染色的方案数，并对10^9^+7取模。 (ps：本题数据量与实际比赛中数据量相比，少了一些)</p>
+</blockquote>
 <a id="more"></a>
-<p>本来想睡觉，企鹅群不小心看见一些发言气醒了。</p>
-<p>4月4日默哀是形式主义?</p>
-<p>你知道什么是形式主义吗?这种公共活动都是形式主义?死去的同胞、牺牲的医护都配不上，那谁还配得上这样的国礼?这算哪门子形式?</p>
-<p>你可以说，我觉得宣传口的工作不够到位;你也可以说，我觉得现在才发布通知过于仓促;你还可以说，禁止的范围有待商榷。</p>
-<p>无动于衷不是罪过，没有感同身受不是罪过，做不到泪流满面不是罪过，私下继续娱乐活动也不是罪过。你可以不爱听歌功颂德的文本，可以用自己的方式怀缅，可以用其他途径玩得.昏天黑地。</p>
-<p>娱乐至死的时代，只有无聊才让人如临大敌，都懂。</p>
-<p>做了不代表尊重，没做也不代表不尊重。</p>
-<p>没有卫兵站在你家里用枪抵着你的后脑勺让你哭天抢地，没有条子叔叔把看电视打游戏听音乐的人逮起来，也没有人让你排着长队对着什么东西跪地哀嚎。事实上，没有人强迫你。只是有一点，自身的态度和对外界的要求要-致。若是不以流程怀念，就不要对着默哀的人喊你们是一群被形式主义迫害的粉红，缄默到底。若是以流程怀缅，也不必逼迫他人做超出公报内容的事，真挚只能自发。</p>
-<p>你可以不立正，可以不起床。但是在鸣笛的那几分钟里，你必须清楚，你还活着，没有失去年长的亲人、远方的朋友是因为谁。你也得清楚，这样的祭奠，那些人配得上。<br>———转载<br><img src="https://img-blog.csdnimg.cn/20200404230406288.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404230410721.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>输入描述:</p>
+<blockquote>
+<p>二分图单边的顶点数目n(n ≤ 10^7)</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>输出一个整数,即所求的答案。</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">35</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="题意-amp-amp-题解：："><a href="#题意-amp-amp-题解：：" class="headerlink" title="题意&amp;&amp;题解：："></a>题意&amp;&amp;题解：：</h2><p>完全二分图:是一种特殊的二分图，可以把图中的顶点分成两个集合，使得第一个集合中的所有顶点都与第二个集合中的所有顶点相连。<br>我们可以把左右各有n个点的二分图的题转化成n*n的棋盘问题。（离散上学过）<br>题目：让染三个颜色，红蓝绿，但是绿色并没有什么要求，我们可以最后再随便放。所以我们先考虑红和蓝。<br>红和蓝都是不能共享端点，同步到棋盘上（行和列分别表示二分图两个集合），也就是棋盘上行和列只能有一个红或蓝</p>
+<p>现在的题目就是：<br>在n*n的棋盘上，放任意红和蓝棋子，任一行和列不能有相同颜色的棋子，有多少种放的方法？<br>F<del>n</del>表示棋盘大小为 n * n时的答案<br>先只考虑一个颜色： F<del>n</del>=<img src="https://img-blog.csdnimg.cn/20200416162741561.png" alt="在这里插入图片描述">)种方案(先在n行里选若干行，然后每一行选若干列，行没有顺序区分，就是选两行，选第一行和第三行与选第一行和第二行没差，所以选行用组合；而列不一样，因为行列只能放一个，我们可以先放在一行上，然后分散到其他行，所以选列的时候要考虑顺序问题，要用的是排列而不是组合)<br>如图：<br><img src="https://img-blog.csdnimg.cn/20200416164224892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>比如我们选两行（C^2^ <del>n</del> ），然后每行放一个，我们先考虑都放在一行上，看图中最上面两行（黄色和绿色），都是选的第一个格和第二个格，但是分散开不一样，（图中4 * 4的表格）说明我们要考虑顺序，所以选列是A^2^<del>n</del>，将所以情况加起来就是选一个颜色的方案</p>
+<p>选两个颜色：从上面我们能得到一个颜色是F<del>n</del>，两个就是F<del>n</del>* F<del>n</del>，非也，因为这样会出现一个格子放两个棋子，我们还要将这种情况删去。需要容斥。<br>我们用g<del>i</del>表示最少有i个点放了两个棋子（颜色不一样）的方案数。那么除去i 行和i 列（i个点所在），我们在剩下n-i行与列里就不会有重复的，g<del>i</del> = f ^2^<del>n-i</del> 。被除去的 i 行与 i列选法和之前一样是 C^i^<del>n</del>A^i^<del>n</del> ，最后得到容斥公式：<br><img src="https://img-blog.csdnimg.cn/20200416170156368.png" alt="在这里插入图片描述"><br>（这一部分好好理解）</p>
+<p>C^k^<del>n</del>A^k^<del>n</del>都可以求好，但是Fn提前求会超时，说明上面的公式不能用，我们要换一个想法来求<br>我们来考虑F<del>n</del>能不能递推出来，从F<del>n-1</del>推出F<del>n</del><br>考虑n-1到n的过程：<br>一共增加了2n-1个格子（n^2^-(n-1)^2^）,n-1之前的格子都已经放好了，我们只需要考虑多出的这些格子该怎么放。<br>如果只放一个棋子，就有2n-1个方案，如果都不放，一个方案，一共是2n种方案，也就是2n<em>F<del>n-1</del>，（F<del>n-1</del>是之前n-1行列已经放好的方案数）<br>但是有限制条件，每一行不能有相同颜色，每放一个棋子，意味着这一行这一列都不能放了，就会出现n-1种重复情况（因为是从n-1的扩展来的），我们之前n-1行列的棋子都平移靠边，因为之前都是不同行同列，所以靠边后，正好占了一行一列，也就是我们在新增部分可以放的棋子，实际上是F<del>n-2</del>而非F<del>n-1</del>（这里可以看看图），那一共（n-1）F<del>n-2</del>次重复情况，可以选n-1行，而且每一列也可以进行相同操作,总的方案数就是2×(n−1) ^2^ ∗F(n−2)<br>借鉴邓老师的图：<br><img src="https://img-blog.csdnimg.cn/2020041617195483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们还要考虑放两个的情况;<br>即最后一行和列分别放一个，这样不重复嘛<br>方案就是：（n-1）^2^</em>F(n-2)<br><img src="https://img-blog.csdnimg.cn/20200416172115547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>总结：得到公式<br>F[n]=2<em>n</em>F[n-1]-(n-1)^2^F[n-2]<br>（<del>我真的是把我所能理解都写出来了</del> ）</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000004</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[N],s[N],F[N];</span><br><span class="line"><span class="function">ll <span class="title">C</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1l</span>l * g[n] * s[m] % mod * s[n - m] % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">A</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1l</span>l * g[n] * s[n - m] % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    g[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)</span><br><span class="line">        g[i] = <span class="number">1l</span>l * g[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">        </span><br><span class="line">         ll ans1 = <span class="number">1</span>;</span><br><span class="line">   		 <span class="keyword">for</span>(;y;y &gt;&gt;= <span class="number">1</span>,x = x * x % mod)</span><br><span class="line">   		 &#123;</span><br><span class="line">   		 	        <span class="keyword">if</span>(y &amp; <span class="number">1</span>) ans1 = ans1 * x % mod;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    s[n] = ans1;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>;i &gt;= <span class="number">0</span>;--i)</span><br><span class="line">        s[i] = <span class="number">1l</span>l * s[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % mod;</span><br><span class="line">        </span><br><span class="line">    F[<span class="number">0</span>] = <span class="number">1</span>;F[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n;++i)</span><br><span class="line">        F[i] = (<span class="number">2l</span>l * i * F[i - <span class="number">1</span>] - <span class="number">1l</span>l * F[i - <span class="number">2</span>] * (i - <span class="number">1</span>) % mod * (i - <span class="number">1</span>) % mod) % mod;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">     ll k ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;++i) &#123;</span><br><span class="line">       k=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(i &amp; <span class="number">1</span>) k = <span class="number">-1</span>;</span><br><span class="line">        ans += k * C(n,i) * A(n,i) % mod * F[n - i] % mod * F[n - i] % mod;</span><br><span class="line">        ans %= mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,(ans + mod) % mod);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>文章</category>
+        <category>题解</category>
+        <category>牛客网每日一题</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>dp</tag>
+        <tag>数论</tag>
+        <tag>组合</tag>
+        <tag>容斥</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客网【每日一题】3月27日 数学考试</title>
+    <url>/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8827%E6%97%A5-%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95/</url>
+    <content><![CDATA[<blockquote>
+<p> 题号 NC15553<br> 名称 数学考试<br> 来源 2018年长沙理工大学第十三届程序设计竞赛<br>链接：<a href="https://ac.nowcoder.com/acm/problem/15553" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/problem/15553</a><br>来源：牛客网<br><a href="https://ac.nowcoder.com/acm/problem/15553" target="_blank" rel="noopener">试题传送门</a><br>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K 64bit IO Format:<br>%lld</p>
+</blockquote>
+<p>题目描述<br>今天qwb要参加一个数学考试，这套试卷一共有n道题，每道题qwb能获得的分数为ai，qwb并不打算把这些题全做完，<br>他想选总共2k道题来做，并且期望他能获得的分数尽可能的大，他准备选2个不连续的长度为k的区间,<br>即[L,L+1,L+2,….,L+k-1]，[R,R+1,R+2,…,R+k-1]（R &gt;= L+k）。</p>
+<a id="more"></a>
+<p>输入描述:</p>
+<blockquote>
+<p>第一行一个整数T（T&lt;=10）,代表有T组数据 接下来一行两个整数n,k,(1&lt;=n&lt;=200,000),(1&lt;=k,2k &lt;= n)<br>接下来一行n个整数a1,a2,…,an，（-100,000&lt;=ai&lt;=100,000）</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>输出一个整数，qwb能获得的最大分数</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">6 3</span><br><span class="line">1 1 1 1 1 1</span><br><span class="line">8 2</span><br><span class="line">-1 0 2 -1 -1 2 3 -1</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">6</span><br><span class="line">7</span><br></pre></td></tr></table></figure>
+<p><strong><em>题解：</em></strong><br>题意就是求不想交的前缀与后缀和的最大值<br>第一反应是线段树（<del>毕竟是有关区间查询</del> ） ，不过仔细想想也不能这么麻烦（<del>打线段树不累吗？</del> ） ，不过也有大佬用线段树做的。<br>根据题意知道前缀与后缀长度一样，依据朴素的原则单纯打暴力肯定不行，需要优化优化，怎么优化呢？</p>
+<p>我们先求出所有前缀和q[]<br>然后按照给定前后缀的长度k，求出每个k长区间的和<br>比如 -1 0 2 -1 -1 2 3 -1   k=2；<br>每个k长区间的和为：w[]-1 2 1 -2 1 5 2<br>我们所要求的最大值max=dp1+dp2<br>dp1是前缀和最大值<br>dp2是后缀和最大值<br>那其实就是在w中取一个dp1再取一个dp2，使他们和最大<br>但注意前缀与后缀不能相交和相连<br>方法一：<br>稍微处理下,可以先选后缀，然后前缀的范围就是去除已选的后缀，在里面取最大的前缀<br>maxx=(q[i]-q[i-k])+max(q[1],q[2],q[3]…..q[i-k-1])<br>(q[i]-q[i-k])后缀和<br>max(q[1],q[2],q[3]…..q[i-k-1])最大的前缀<br>然后求出maxx的最大值情况<br>诶，这不就是线性dp吗！wok做完才注意到<br>方法二：<br>求出前缀和所能取到的最大值（从头开始），放入数组w1<br>求出后缀和所能取到的最大值（从尾开始），放入w2中<br>然后再一个循环，求出w1[i]与w2[i+1]（即当前位i的前缀和与排在i之后的最大后缀和之和）的最大值<br>代码一</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstring&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string&gt;</span></span><br><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">const int inf=2e5+4;</span><br><span class="line">ll a[inf];</span><br><span class="line">ll q[inf];</span><br><span class="line">ll w[inf];</span><br><span class="line">ll w1[inf],w2[inf];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int t;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  int n,k;</span><br><span class="line">  ll cnt;</span><br><span class="line">  <span class="keyword">while</span>(t--)</span><br><span class="line">  &#123;</span><br><span class="line">	  	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	  	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		cin&gt;&gt;cnt;</span><br><span class="line">	  		q[i]=q[i-1]+cnt; </span><br><span class="line">		&#125;</span><br><span class="line">		memset(w1,-128,sizeof(w1));</span><br><span class="line">			memset(w2,-128,sizeof(w2));</span><br><span class="line">		cnt=-1e10;</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		w[i]=q[i]-q[i-k];</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">				w1[i]=w[i]&gt;w1[i-1]?w[i]:w1[i-1];</span><br><span class="line">				<span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(w[i]+w1[i-k]&gt;cnt)cnt=w[i]+w1[i-k];</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码二</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstring&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string&gt;</span></span><br><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">const int inf=2e5+4;</span><br><span class="line">ll a[inf];</span><br><span class="line">ll q[inf];</span><br><span class="line">ll w[inf];</span><br><span class="line">ll w1[inf],w2[inf];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int t;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  int n,k;</span><br><span class="line">  ll cnt;</span><br><span class="line">  <span class="keyword">while</span>(t--)</span><br><span class="line">  &#123;</span><br><span class="line">	  	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	  	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		cin&gt;&gt;cnt;</span><br><span class="line">	  		q[i]=q[i-1]+cnt; </span><br><span class="line">		&#125;</span><br><span class="line">		memset(w1,-128,sizeof(w1));</span><br><span class="line">			memset(w2,-128,sizeof(w2));</span><br><span class="line">		cnt=-1e10;</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		w[i]=q[i]-q[i-k];</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n-k+1;i++)</span><br><span class="line">			w1[i]=w[i]&gt;w1[i-1]?w[i]:w1[i-1];</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=n-k+1;i&gt;=k+1;i--)</span><br><span class="line">			w2[i]=w2[i+1]&gt;w[i+k-1]?w2[i+1]:w[i+k-1];</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n-k+1;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(w2[i+1]+w1[i]&gt;cnt)cnt=w2[i+1]+w1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对了还有变形的问题：<br><del>（等晚上有空再想吧）</del> </p>
+]]></content>
+      <categories>
+        <category>题解</category>
+        <category>牛客网每日一题</category>
+      </categories>
+      <tags>
+        <tag>dp</tag>
+        <tag>前缀后缀和</tag>
+        <tag>线性dp</tag>
       </tags>
   </entry>
   <entry>
@@ -715,84 +753,6 @@
       </tags>
   </entry>
   <entry>
-    <title>牛客网【每日一题】3月27日 数学考试</title>
-    <url>/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8827%E6%97%A5-%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95/</url>
-    <content><![CDATA[<blockquote>
-<p> 题号 NC15553<br> 名称 数学考试<br> 来源 2018年长沙理工大学第十三届程序设计竞赛<br>链接：<a href="https://ac.nowcoder.com/acm/problem/15553" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/problem/15553</a><br>来源：牛客网<br><a href="https://ac.nowcoder.com/acm/problem/15553" target="_blank" rel="noopener">试题传送门</a><br>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K 64bit IO Format:<br>%lld</p>
-</blockquote>
-<p>题目描述<br>今天qwb要参加一个数学考试，这套试卷一共有n道题，每道题qwb能获得的分数为ai，qwb并不打算把这些题全做完，<br>他想选总共2k道题来做，并且期望他能获得的分数尽可能的大，他准备选2个不连续的长度为k的区间,<br>即[L,L+1,L+2,….,L+k-1]，[R,R+1,R+2,…,R+k-1]（R &gt;= L+k）。</p>
-<a id="more"></a>
-<p>输入描述:</p>
-<blockquote>
-<p>第一行一个整数T（T&lt;=10）,代表有T组数据 接下来一行两个整数n,k,(1&lt;=n&lt;=200,000),(1&lt;=k,2k &lt;= n)<br>接下来一行n个整数a1,a2,…,an，（-100,000&lt;=ai&lt;=100,000）</p>
-</blockquote>
-<p>输出描述:</p>
-<blockquote>
-<p>输出一个整数，qwb能获得的最大分数</p>
-</blockquote>
-<p>示例1<br>输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">6 3</span><br><span class="line">1 1 1 1 1 1</span><br><span class="line">8 2</span><br><span class="line">-1 0 2 -1 -1 2 3 -1</span><br></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">6</span><br><span class="line">7</span><br></pre></td></tr></table></figure>
-<p><strong><em>题解：</em></strong><br>题意就是求不想交的前缀与后缀和的最大值<br>第一反应是线段树（<del>毕竟是有关区间查询</del> ） ，不过仔细想想也不能这么麻烦（<del>打线段树不累吗？</del> ） ，不过也有大佬用线段树做的。<br>根据题意知道前缀与后缀长度一样，依据朴素的原则单纯打暴力肯定不行，需要优化优化，怎么优化呢？</p>
-<p>我们先求出所有前缀和q[]<br>然后按照给定前后缀的长度k，求出每个k长区间的和<br>比如 -1 0 2 -1 -1 2 3 -1   k=2；<br>每个k长区间的和为：w[]-1 2 1 -2 1 5 2<br>我们所要求的最大值max=dp1+dp2<br>dp1是前缀和最大值<br>dp2是后缀和最大值<br>那其实就是在w中取一个dp1再取一个dp2，使他们和最大<br>但注意前缀与后缀不能相交和相连<br>方法一：<br>稍微处理下,可以先选后缀，然后前缀的范围就是去除已选的后缀，在里面取最大的前缀<br>maxx=(q[i]-q[i-k])+max(q[1],q[2],q[3]…..q[i-k-1])<br>(q[i]-q[i-k])后缀和<br>max(q[1],q[2],q[3]…..q[i-k-1])最大的前缀<br>然后求出maxx的最大值情况<br>诶，这不就是线性dp吗！wok做完才注意到<br>方法二：<br>求出前缀和所能取到的最大值（从头开始），放入数组w1<br>求出后缀和所能取到的最大值（从尾开始），放入w2中<br>然后再一个循环，求出w1[i]与w2[i+1]（即当前位i的前缀和与排在i之后的最大后缀和之和）的最大值<br>代码一</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstring&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string&gt;</span></span><br><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">const int inf=2e5+4;</span><br><span class="line">ll a[inf];</span><br><span class="line">ll q[inf];</span><br><span class="line">ll w[inf];</span><br><span class="line">ll w1[inf],w2[inf];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int t;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  int n,k;</span><br><span class="line">  ll cnt;</span><br><span class="line">  <span class="keyword">while</span>(t--)</span><br><span class="line">  &#123;</span><br><span class="line">	  	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	  	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		cin&gt;&gt;cnt;</span><br><span class="line">	  		q[i]=q[i-1]+cnt; </span><br><span class="line">		&#125;</span><br><span class="line">		memset(w1,-128,sizeof(w1));</span><br><span class="line">			memset(w2,-128,sizeof(w2));</span><br><span class="line">		cnt=-1e10;</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		w[i]=q[i]-q[i-k];</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">				w1[i]=w[i]&gt;w1[i-1]?w[i]:w1[i-1];</span><br><span class="line">				<span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(w[i]+w1[i-k]&gt;cnt)cnt=w[i]+w1[i-k];</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>代码二</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstring&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string&gt;</span></span><br><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">const int inf=2e5+4;</span><br><span class="line">ll a[inf];</span><br><span class="line">ll q[inf];</span><br><span class="line">ll w[inf];</span><br><span class="line">ll w1[inf],w2[inf];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int t;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  int n,k;</span><br><span class="line">  ll cnt;</span><br><span class="line">  <span class="keyword">while</span>(t--)</span><br><span class="line">  &#123;</span><br><span class="line">	  	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	  	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		cin&gt;&gt;cnt;</span><br><span class="line">	  		q[i]=q[i-1]+cnt; </span><br><span class="line">		&#125;</span><br><span class="line">		memset(w1,-128,sizeof(w1));</span><br><span class="line">			memset(w2,-128,sizeof(w2));</span><br><span class="line">		cnt=-1e10;</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n;i++)</span><br><span class="line">	  	&#123;</span><br><span class="line">	  		w[i]=q[i]-q[i-k];</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n-k+1;i++)</span><br><span class="line">			w1[i]=w[i]&gt;w1[i-1]?w[i]:w1[i-1];</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(int i=n-k+1;i&gt;=k+1;i--)</span><br><span class="line">			w2[i]=w2[i+1]&gt;w[i+k-1]?w2[i+1]:w[i+k-1];</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">for</span>(int i=k;i&lt;=n-k+1;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(w2[i+1]+w1[i]&gt;cnt)cnt=w2[i+1]+w1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对了还有变形的问题：<br><del>（等晚上有空再想吧）</del> </p>
-]]></content>
-      <categories>
-        <category>题解</category>
-        <category>牛客网每日一题</category>
-      </categories>
-      <tags>
-        <tag>dp</tag>
-        <tag>前缀后缀和</tag>
-        <tag>线性dp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>牛客网【每日一题】4月8日题目精讲 黑白树</title>
-    <url>/2020/04/09/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%888%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E9%BB%91%E7%99%BD%E6%A0%91/</url>
-    <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/13249" target="_blank" rel="noopener">试题链接</a></p>
-<blockquote>
-<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K 64bit IO Format:%lld</p>
-</blockquote>
-<p>题目描述</p>
-<blockquote>
-<p>一棵n个点的有根树，1号点为根，相邻的两个节点之间的距离为1。树上每个节点i对应一个值k[i]。每个点都有一个颜色，初始的时候所有点都是白色的。<br>你需要通过一系列操作使得最终每个点变成黑色。每次操作需要选择一个节点i，i必须是白色的，然后i到根的链上（包括节点i与根）所有与节点i距离小于k[i]的点都会变黑，已经是黑的点保持为黑。问最少使用几次操作能把整棵树变黑。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>输入描述:</p>
-<blockquote>
-<p>第一行一个整数n (1 ≤ n ≤ 10^5^) 接下来n-1行，每行一个整数，依次为2号点到n号点父亲的编号。 最后一行n个整数为k[i]<br>(1 ≤ k[i] ≤ 10^5^)</p>
-<p>样例解释:<br> 对节点3操作，导致节点2与节点3变黑 对节点4操作，导致节点4变黑 对节点1操作，导致节点1变黑</p>
-</blockquote>
-<p>输出描述:</p>
-<p>一个数表示最少操作次数</p>
-<p>示例1<br>输入</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>题解：<br>一开始以为是红黑树的姐妹黑白树。。<br>求出最少的操作，用dfs</p>
-<p>我们要不断更新染色的最远距离，还要把子节点的染色范围更新的父亲节点<br>比如1-&gt;2-&gt;3-.&gt;4-&gt;5-&gt;6-&gt;7<br>f[2]=5,f[3]=2<br>2节点就可以直接染色到6<br>操作完2之后，如果3就已经被染色了，如果3能染色的范围比fa[ 2 ]-1（因为2已经染色了本身，所以减一）还大，那染色范围可以更远<br>如果fa[3]&lt;fa[2]-1，就把f3的最远距离更新到fa[2]-1<br>总结就是fa[fa]=max（ fa [ fa ] , fa [ son ] - 1 ）<br>fa=0说明这个点无法被处理到<br>因为染色都是从下向上的。如果一个节点没办法被它子树的节点染色，那这个节点的父亲节点也没办法将它染色，他只能自己染色了</p>
-<p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> forr(n) for(int i=1;i&lt;=n;i++)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100004</span>;</span><br><span class="line"><span class="keyword">int</span> fa[maxn];</span><br><span class="line"><span class="keyword">int</span> sum;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;w[maxn];</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;w[x].size();j++)</span><br><span class="line">	&#123;</span><br><span class="line">		dfs(w[x][j]);</span><br><span class="line">		fa[x]=max( fa[ w[x][j] ]<span class="number">-1</span> , fa[x] );</span><br><span class="line">		a[x]=max( a[ w[x][j] ]<span class="number">-1</span> , a[x] );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(fa[x]==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		sum++;</span><br><span class="line">		fa[x]=a[x];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	forr(n<span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">		w[m].push_back(i+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	forr(n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>题解</category>
-        <category>牛客网每日一题</category>
-      </categories>
-      <tags>
-        <tag>dfs</tag>
-        <tag>贪心</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>牛客练习赛60--斩杀线计算大师</title>
     <url>/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B60-%E6%96%A9%E6%9D%80%E7%BA%BF%E8%AE%A1%E7%AE%97%E5%A4%A7%E5%B8%88/</url>
     <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/contest/4853/D" target="_blank" rel="noopener">题目传送</a></p>
@@ -847,40 +807,40 @@
       </tags>
   </entry>
   <entry>
-    <title>牛客网【每日一题】4月9日题目精讲 Running Median</title>
-    <url>/2020/04/13/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%889%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Running-Median/</url>
-    <content><![CDATA[<p>@[TOC]</p>
-<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><a href="https://ac.nowcoder.com/acm/problem/50940" target="_blank" rel="noopener">–&gt;链接&lt;—</a></p>
+    <title>牛客网【每日一题】3月26日 合并回文子串</title>
+    <url>/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</url>
+    <content><![CDATA[<p><strong>题号：NC13230<br>名称：合并回文子串<br>来源：美团2017年CodeM大赛-初赛A轮</strong><br><a href="https://ac.nowcoder.com/acm/problem/13230" target="_blank" rel="noopener">题目链接</a></p>
 <blockquote>
-<p>时间限制：C/C++ 5秒，其他语言10秒 空间限制：C/C++ 65536K，其他语言131072K 64bit<br> IO Format:%lld</p>
+<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 262144K，其他语言524288K 64bit IO Format:<br>%lld</p>
 </blockquote>
-<p>题目描述 </p>
+<p><strong>题目描述</strong></p>
 <blockquote>
-<p>For this problem, you will write a program that reads in a sequence of<br>32-bit signed integers. After each odd-indexed value is read, output<br>the median (middle value) of the elements received so far.</p>
+<p>输入两个字符串A和B，合并成一个串C，属于A和B的字符在C中顺序保持不变。如”abc”和”xyz”可以被组合成”axbycz”或”abxcyz”等。<br>我们定义字符串的价值为其最长回文子串的长度（回文串表示从正反两边看完全一致的字符串，如”aba”和”xyyx”）。<br>需要求出所有可能的C中价值最大的字符串，输出这个最大价值即可 输入描述:</p>
 </blockquote>
 <a id="more"></a>
-<p>输入描述:</p>
 <blockquote>
-<p>The first line of input contains a single integerP(1≤P≤1000), which is the number of data sets that follow. The<br>first line of each data set contains the data set number, followed by<br>a space, followed by an odd decimal integer (1≤M≤9999), giving the total number of signed integers to be<br>processed. The remaining line(s) in the dataset consists of the<br>values, 10 per line, separated by a single space. The last line in the<br>dataset may contain less than 10 values.</p>
+<p>第一行一个整数T(T ≤ 50)。 接下来2T行，每两行两个字符串分别代表A,B(|A|,|B| ≤ 50)，A,B的字符集为全体小写字母。</p>
 </blockquote>
 <p>输出描述:</p>
-<blockquote>
-<p>For each data set the first line of output contains the data set<br>number, a single space and the number of medians output (which should<br>be one-half the number of input values plus one). The output medians<br>will be on the following lines, 10 per line separated by a single<br>space. The last line may have less than 10 elements, but at least 1<br>element. There should be no blank lines in the output.</p>
-</blockquote>
-<p>示例1<br>输入<br>3<br>1 9<br>1 2 3 4 5 6 7 8 9<br>2 9<br>9 8 7 6 5 4 3 2 1<br>3 23<br>23 41 13 22 -3 24 -31 -11 -8 -7<br>3 5 103 211 -311 -45 -67 -73 -81 -99<br>-33 24 56<br>输出<br>1 5<br>1 2 3 4 5<br>2 5<br>9 8 7 6 5<br>3 12<br>23 23 22 22 13 3 5 5 3 -3<br>-7 -3</p>
-<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>给你m个数，一次输入，每当输入的个数为奇数时，输出按大小排列最中间的数<br>比如1 5 6 7 8<br>一开始输入1，输出1<br>然后输入1 5，不输出<br>输入1 5 6，输出5<br>输入1 5 6 7，不输出<br>输入1 5 6 7 8，输出6</p>
-<h2 id="题解一："><a href="#题解一：" class="headerlink" title="题解一："></a>题解一：</h2><p>可以用堆来做<br>w1为大堆，w1用于存放小值<br>w2为小堆，w2存放大值<br>比如上面那个例子1 5 6 7 8<br>奇数位存在w1，偶数存在w2<br>如果w1.top()&gt;w2.top(),就是w1的最大比w2的最小值大，就将这两个值互换，始终保证，w1的值比w2的任意一个都小，这样无论数据怎么读入，w1的最大值始终都是最中间的数<br>看下面模拟：<br>第一轮：<br>w1:1<br>w2：0<br>二：<br>w1:1<br>w2:5<br>三：<br>w1:1 6<br>w2:5<br>6&gt;5<br>w1:1 5<br>w2:6<br>四<br>w1:1 5<br>w2: 7 6<br>五<br>w1:1 5 8<br>w2: 7 6<br>8&gt;6<br>w1:1 5 6<br>w2; 7 8<br>这样每奇数轮，w1的top位就是答案</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt;w1;<span class="comment">//默认为大堆，从大到小</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;w2;<span class="comment">//默认为小堆</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen("in.txt","r",stdin);</span></span><br><span class="line">  <span class="comment">//ios::sync_with_stdio(0);</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">int</span> case1=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p,m,x;</span><br><span class="line">    <span class="keyword">int</span> minn,maxx;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;p&gt;&gt;m;</span><br><span class="line">        case1=<span class="number">0</span>;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,p,m/<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)w1.push(x);</span><br><span class="line">            <span class="keyword">else</span> w2.push(x);</span><br><span class="line">            <span class="keyword">if</span>(i!=<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">                minn=w1.top();</span><br><span class="line">                maxx=w2.top();</span><br><span class="line">                <span class="keyword">if</span>(minn&gt;maxx)</span><br><span class="line">                &#123;</span><br><span class="line">                    w1.pop();</span><br><span class="line">                    w2.pop();</span><br><span class="line">                    w1.push(maxx);</span><br><span class="line">                    w2.push(minn);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(case1!=<span class="number">0</span>&amp;&amp;case1%<span class="number">10</span>==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">                case1=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i==m)<span class="built_in">cout</span>&lt;&lt;w1.top();</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>,w1.top());</span><br><span class="line">                case1++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">while</span>(!w1.empty())w1.pop();</span><br><span class="line">        <span class="keyword">while</span>(!w2.empty())w2.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（这个题的格式我一开始一直没注意。。。）</p>
-<h2 id="题解二："><a href="#题解二：" class="headerlink" title="题解二："></a>题解二：</h2><p>我看很多人都是这么做的，但是只能过50%的数据。。包括我自己<br>我看了清楚姐姐的代码稍微改一下：<br>我们在读入一个数后，直接与w1.top比较，小于就存进去，大了就存w2里<br>当w1的数量多了，就把堆顶拿出给w2（小根堆）<br>w2多了就给大根堆<br>这样维护出来其实和上面的方法差不多<br>因为总数是奇数，两个堆数量一定不一样，多的那方，堆顶就是答案<br>代码：<br>清楚阿姨（<del>狗头</del> ）代码：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; q2; <span class="comment">//小根堆 ，存较大的一半的数</span></span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt; q1;  <span class="comment">//大根堆 ，存较小的一半的数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(!q1.empty()) q1.pop();</span><br><span class="line">        <span class="keyword">while</span>(!q2.empty()) q2.pop();  <span class="comment">//优先队列没有clear函数，要一个一个弹出</span></span><br><span class="line">        <span class="keyword">int</span> m, n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;m ,&amp;n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, m, (n+<span class="number">1</span>)/ <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">        q1.push(x);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> (x &lt;= q1.top()) q1.push(x); <span class="comment">//如果当前值比大根堆堆顶小，说明在小的这二分之一，塞进大根堆</span></span><br><span class="line">            <span class="keyword">else</span>  q2.push(x);</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">int</span> num1= q1.size();</span><br><span class="line">            <span class="keyword">int</span> num2= q2.size();</span><br><span class="line">            <span class="keyword">if</span> (num1 - num2 &gt; <span class="number">1</span>)   <span class="comment">//大根堆里面元素多了，把堆顶拿出来塞近小根堆</span></span><br><span class="line">            &#123;</span><br><span class="line">                q2.push(q1.top());</span><br><span class="line">                q1.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>  <span class="keyword">if</span>(num2 - num1 &gt;<span class="number">1</span>) <span class="comment">//小根堆里面元素多了，把堆顶拿出来塞近大根堆</span></span><br><span class="line">            &#123;</span><br><span class="line">                q1.push(q2.top());</span><br><span class="line">                q2.pop();</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">1</span>)  <span class="comment">//目前的元素个数是奇数</span></span><br><span class="line">            &#123;</span><br><span class="line">                num1 = q1.size();</span><br><span class="line">                num2 = q2.size();</span><br><span class="line">                <span class="keyword">if</span>(num1 &gt; num2) <span class="built_in">printf</span>(<span class="string">"%d "</span>, q1.top()); <span class="comment">//中位数在大根堆</span></span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d "</span>, q2.top());           <span class="comment">//中位数在小根堆</span></span><br><span class="line">                <span class="keyword">if</span> (i % <span class="number">20</span> == <span class="number">19</span> &amp;&amp; i!=n) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于每组数据输出一行一个整数表示价值最大的C的价值。<br>示例1</p>
+<p>输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">a</span><br><span class="line">aaaabcaa</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">4</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+<p><strong>思路：区间dp问题</strong><br>dp[i][j][m][n]表示A中下标i到j-1以及B中下标m到n-1的串，能否组成回文串<br>(dp值为零则表示不构成回文串，不为零则表示构成)<br>首先：字符本身是回文串<br>其次，分为四种情况<br>a[i]==a[j-1]        dp[i][j][m][n]+=c[i+1][j-1][m][n];<br>因为dp我们只考虑是否为0或非0，所以dp之间可以+=也可以|=,都不影响<br>（当A的第i为和第j-1位相同时，那么dp[i][j]是否为回文串就取决于比它小一层的dp[i+1][j-1]，这样一次往里推，就可以推到以一种情况）<br>b[m]==b[n-1]    dp[i][j][m][n]+=c[i][j][m+1][n-1];<br>(和上一个思路相同)</p>
+<p>a[i]==b[n-1]        dp[i][j][m][n]+=c[i+1][j][m][n-1];<br>（当A的i与B的n-1相同时，那么dp[i][][][n]是否为回文串就取决于A的后一位i+1和B的前一位n-1的情况）<br>a[m]==b[j-1]    dp[i][j][m][n]+=c[i][j-1][m+1][n];<br><strong>代码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="comment">#define maxn 100</span></span><br><span class="line">using namespace std;</span><br><span class="line">int t;</span><br><span class="line">char a[maxn],b[maxn];</span><br><span class="line">int c[maxn][maxn][maxn][maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	char ch=getchar();</span><br><span class="line">	int j;</span><br><span class="line">	int n;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		int ans=0;</span><br><span class="line">		cin&gt;&gt;a;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		cin&gt;&gt;b;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		int len1=strlen(a),len2=strlen(b);</span><br><span class="line">		<span class="keyword">for</span>(int tj=0;tj&lt;=len1;tj++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(int tn=0;tn&lt;=len2;tn++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(int i=0;i+tj&lt;=len1;i++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">for</span>(int m=0;m+tn&lt;=len2;m++)</span><br><span class="line">					&#123;</span><br><span class="line">						j=i+tj;</span><br><span class="line">						n=m+tn;</span><br><span class="line">						<span class="keyword">if</span>(tj+tn&lt;=1)c[i][j][m][n]=1;</span><br><span class="line">						<span class="keyword">else</span></span><br><span class="line">						&#123;</span><br><span class="line">							c[i][j][m][n]=0;</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=2&amp;&amp;a[i]==a[j-1])c[i][j][m][n]|=c[i+1][j-1][m][n];                                               </span><br><span class="line">							<span class="keyword">if</span>(tn&gt;=2&amp;&amp;b[m]==b[n-1])c[i][j][m][n]|=c[i][j][m+1][n-1];</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=1&amp;&amp;tn&gt;=1&amp;&amp;a[i]==b[n-1])c[i][j][m][n]|=c[i+1][j][m][n-1];</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=1&amp;&amp;tn&gt;=1&amp;&amp;a[m]==b[j-1])c[i][j][m][n]|=c[i][j-1][m+1][n];</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span>(c[i][j][m][n])ans=max(ans,tj+tn);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		 &#125; </span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>另外</strong><br>tj和tn从0开始，不断讨论A中i到i+tj和B中m到tn的回文字符串</p>
 ]]></content>
       <categories>
         <category>题解</category>
         <category>牛客网每日一题</category>
       </categories>
       <tags>
-        <tag>堆</tag>
+        <tag>dp</tag>
+        <tag>区间dp</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -929,27 +889,44 @@
       </tags>
   </entry>
   <entry>
-    <title>牛客网【每日一题】合集</title>
-    <url>/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<p>@[TOC]</p>
-<h2 id="2020年3月25日-NC50439-tokitsukaze-and-Soldier-牛客练习赛50-C"><a href="#2020年3月25日-NC50439-tokitsukaze-and-Soldier-牛客练习赛50-C" class="headerlink" title="2020年3月25日 NC50439 tokitsukaze and Soldier 牛客练习赛50-C"></a>2020年3月25日 NC50439 tokitsukaze and Soldier 牛客练习赛50-C</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8825%E6%97%A5-tokitsukaze-and-Soldier/">题解</a></p>
-<h2 id="2020年3月26日-NC13230-合并回文子串-美团2017年CodeM大赛-初赛A轮"><a href="#2020年3月26日-NC13230-合并回文子串-美团2017年CodeM大赛-初赛A轮" class="headerlink" title="2020年3月26日 NC13230 合并回文子串 美团2017年CodeM大赛-初赛A轮"></a>2020年3月26日 NC13230 合并回文子串 美团2017年CodeM大赛-初赛A轮</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">题解</a></p>
+    <title>牛客网【每日一题】4月8日题目精讲 黑白树</title>
+    <url>/2020/04/09/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%888%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E9%BB%91%E7%99%BD%E6%A0%91/</url>
+    <content><![CDATA[<p><a href="https://ac.nowcoder.com/acm/problem/13249" target="_blank" rel="noopener">试题链接</a></p>
+<blockquote>
+<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K 64bit IO Format:%lld</p>
+</blockquote>
+<p>题目描述</p>
+<blockquote>
+<p>一棵n个点的有根树，1号点为根，相邻的两个节点之间的距离为1。树上每个节点i对应一个值k[i]。每个点都有一个颜色，初始的时候所有点都是白色的。<br>你需要通过一系列操作使得最终每个点变成黑色。每次操作需要选择一个节点i，i必须是白色的，然后i到根的链上（包括节点i与根）所有与节点i距离小于k[i]的点都会变黑，已经是黑的点保持为黑。问最少使用几次操作能把整棵树变黑。</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="2020年3月27日-NC15553-数学考试-2018年长沙理工大学程序设计竞赛"><a href="#2020年3月27日-NC15553-数学考试-2018年长沙理工大学程序设计竞赛" class="headerlink" title="2020年3月27日 NC15553 数学考试 2018年长沙理工大学程序设计竞赛"></a>2020年3月27日 NC15553 数学考试 2018年长沙理工大学程序设计竞赛</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8827%E6%97%A5-%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95/">题解</a></p>
-<h2 id="2020年3月30日-NC50528-滑动窗口-《信息学奥赛一本通》Part5-5"><a href="#2020年3月30日-NC50528-滑动窗口-《信息学奥赛一本通》Part5-5" class="headerlink" title="2020年3月30日 NC50528 滑动窗口 《信息学奥赛一本通》Part5.5"></a>2020年3月30日 NC50528 滑动窗口 《信息学奥赛一本通》Part5.5</h2><p><a href="http://jozky.top/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">题解</a></p>
-<h2 id="2020年3月31日-NC13331-城市网络-美团2017年CodeM大赛-复赛"><a href="#2020年3月31日-NC13331-城市网络-美团2017年CodeM大赛-复赛" class="headerlink" title="2020年3月31日 NC13331 城市网络 美团2017年CodeM大赛-复赛"></a>2020年3月31日 NC13331 城市网络 美团2017年CodeM大赛-复赛</h2><p><a href="http://jozky.top/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/">题解</a></p>
-<h2 id="2020年4月1日-NC22598-Rinne-Loves-Edges-牛客小白月赛11"><a href="#2020年4月1日-NC22598-Rinne-Loves-Edges-牛客小白月赛11" class="headerlink" title="2020年4月1日 NC22598 Rinne Loves Edges 牛客小白月赛11"></a>2020年4月1日 NC22598 Rinne Loves Edges 牛客小白月赛11</h2><p><a href="http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%881%E6%97%A5%E9%A2%98%E7%9B%AE-Rinne-Loves-Edges/">题解</a></p>
-<h2 id="2020年4月2日-NC23053-月月查华华的手机-牛客小白月赛12"><a href="#2020年4月2日-NC23053-月月查华华的手机-牛客小白月赛12" class="headerlink" title="2020年4月2日 NC23053 月月查华华的手机 牛客小白月赛12"></a>2020年4月2日 NC23053 月月查华华的手机 牛客小白月赛12</h2><p><a href="http://jozky.top/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/">题解</a></p>
-<h2 id="2020年4月3日-NC13886-Shortest-Path-西南交通大学第十三届ACM决赛"><a href="#2020年4月3日-NC13886-Shortest-Path-西南交通大学第十三届ACM决赛" class="headerlink" title="2020年4月3日 NC13886 Shortest Path 西南交通大学第十三届ACM决赛"></a>2020年4月3日 NC13886 Shortest Path 西南交通大学第十三届ACM决赛</h2><p><a href="http://jozky.top/2020/04/04/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91Shortest-Path-4%E6%9C%883%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-DFS/">题解</a></p>
-<h2 id="2020年4月6日-NC13221-数码-美团2017年CodeM大赛-资格赛"><a href="#2020年4月6日-NC13221-数码-美团2017年CodeM大赛-资格赛" class="headerlink" title="2020年4月6日 NC13221 数码 美团2017年CodeM大赛-资格赛"></a>2020年4月6日 NC13221 数码 美团2017年CodeM大赛-资格赛</h2><p><a href="http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/">题解</a></p>
-<h2 id="2020年4月7日-NC13611-树-牛客练习赛1"><a href="#2020年4月7日-NC13611-树-牛客练习赛1" class="headerlink" title="2020年4月7日 NC13611 树 牛客练习赛1"></a>2020年4月7日 NC13611 树 牛客练习赛1</h2><p><a href="http://jozky.top/2020/04/07/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%887%E5%8F%B7%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E6%A0%91/">题解</a></p>
-<h2 id="2020年4月8日-NC13249-黑白树-美团2017年CodeM大赛-初赛B轮"><a href="#2020年4月8日-NC13249-黑白树-美团2017年CodeM大赛-初赛B轮" class="headerlink" title="2020年4月8日 NC13249 黑白树 美团2017年CodeM大赛-初赛B轮"></a>2020年4月8日 NC13249 黑白树 美团2017年CodeM大赛-初赛B轮</h2><p><a href="http://jozky.top/2020/04/09/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%888%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E9%BB%91%E7%99%BD%E6%A0%91/">题解</a></p>
-<h2 id="2020年4月9日-NC50940-Running-Median-《算法竞赛进阶指南》0x05"><a href="#2020年4月9日-NC50940-Running-Median-《算法竞赛进阶指南》0x05" class="headerlink" title="2020年4月9日 NC50940 Running Median 《算法竞赛进阶指南》0x05"></a>2020年4月9日 NC50940 Running Median 《算法竞赛进阶指南》0x05</h2><p><a href="http://jozky.top/2020/04/13/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%889%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Running-Median/">题解</a></p>
-<h2 id="2020年4月10日-NC13229-二分图染色-美团2017年CodeM大赛-初赛A轮"><a href="#2020年4月10日-NC13229-二分图染色-美团2017年CodeM大赛-初赛A轮" class="headerlink" title="2020年4月10日 NC13229 二分图染色 美团2017年CodeM大赛-初赛A轮"></a>2020年4月10日 NC13229 二分图染色 美团2017年CodeM大赛-初赛A轮</h2><h2 id="2020年4月13日-NC51180-Accumulation-Degree-《算法竞赛进阶指南》0x54"><a href="#2020年4月13日-NC51180-Accumulation-Degree-《算法竞赛进阶指南》0x54" class="headerlink" title="2020年4月13日 NC51180 Accumulation Degree 《算法竞赛进阶指南》0x54"></a>2020年4月13日 NC51180 Accumulation Degree 《算法竞赛进阶指南》0x54</h2><p><a href="http://jozky.top/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8813%E5%8F%B7-Accumulation-Degree/">题解</a></p>
-<h2 id="2020年4月14日-NC14247-Xorto-Wannafly挑战赛1"><a href="#2020年4月14日-NC14247-Xorto-Wannafly挑战赛1" class="headerlink" title="2020年4月14日 NC14247 Xorto Wannafly挑战赛1"></a>2020年4月14日 NC14247 Xorto Wannafly挑战赛1</h2><h2 id="2020年4月15日-NC14248-Treepath-Wannafly挑战赛1"><a href="#2020年4月15日-NC14248-Treepath-Wannafly挑战赛1" class="headerlink" title="2020年4月15日 NC14248 Treepath Wannafly挑战赛1"></a>2020年4月15日 NC14248 Treepath Wannafly挑战赛1</h2><h2 id="2020年4月16日-NC14731-逆序对-Wannafly挑战赛6"><a href="#2020年4月16日-NC14731-逆序对-Wannafly挑战赛6" class="headerlink" title="2020年4月16日 NC14731 逆序对 Wannafly挑战赛6"></a>2020年4月16日 NC14731 逆序对 Wannafly挑战赛6</h2><h2 id="未完再续。。。"><a href="#未完再续。。。" class="headerlink" title="未完再续。。。"></a>未完再续。。。</h2>]]></content>
+
+<p>输入描述:</p>
+<blockquote>
+<p>第一行一个整数n (1 ≤ n ≤ 10^5^) 接下来n-1行，每行一个整数，依次为2号点到n号点父亲的编号。 最后一行n个整数为k[i]<br>(1 ≤ k[i] ≤ 10^5^)</p>
+<p>样例解释:<br> 对节点3操作，导致节点2与节点3变黑 对节点4操作，导致节点4变黑 对节点1操作，导致节点1变黑</p>
+</blockquote>
+<p>输出描述:</p>
+<p>一个数表示最少操作次数</p>
+<p>示例1<br>输入</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>题解：<br>一开始以为是红黑树的姐妹黑白树。。<br>求出最少的操作，用dfs</p>
+<p>我们要不断更新染色的最远距离，还要把子节点的染色范围更新的父亲节点<br>比如1-&gt;2-&gt;3-.&gt;4-&gt;5-&gt;6-&gt;7<br>f[2]=5,f[3]=2<br>2节点就可以直接染色到6<br>操作完2之后，如果3就已经被染色了，如果3能染色的范围比fa[ 2 ]-1（因为2已经染色了本身，所以减一）还大，那染色范围可以更远<br>如果fa[3]&lt;fa[2]-1，就把f3的最远距离更新到fa[2]-1<br>总结就是fa[fa]=max（ fa [ fa ] , fa [ son ] - 1 ）<br>fa=0说明这个点无法被处理到<br>因为染色都是从下向上的。如果一个节点没办法被它子树的节点染色，那这个节点的父亲节点也没办法将它染色，他只能自己染色了</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> forr(n) for(int i=1;i&lt;=n;i++)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100004</span>;</span><br><span class="line"><span class="keyword">int</span> fa[maxn];</span><br><span class="line"><span class="keyword">int</span> sum;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;w[maxn];</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;w[x].size();j++)</span><br><span class="line">	&#123;</span><br><span class="line">		dfs(w[x][j]);</span><br><span class="line">		fa[x]=max( fa[ w[x][j] ]<span class="number">-1</span> , fa[x] );</span><br><span class="line">		a[x]=max( a[ w[x][j] ]<span class="number">-1</span> , a[x] );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(fa[x]==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		sum++;</span><br><span class="line">		fa[x]=a[x];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	forr(n<span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">		w[m].push_back(i+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	forr(n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
-        <category>比赛</category>
+        <category>题解</category>
+        <category>牛客网每日一题</category>
       </categories>
+      <tags>
+        <tag>dfs</tag>
+        <tag>贪心</tag>
+      </tags>
   </entry>
   <entry>
     <title>身体训练 </title>
@@ -990,40 +967,64 @@
       </tags>
   </entry>
   <entry>
-    <title>牛客网【每日一题】3月26日 合并回文子串</title>
-    <url>/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</url>
-    <content><![CDATA[<p><strong>题号：NC13230<br>名称：合并回文子串<br>来源：美团2017年CodeM大赛-初赛A轮</strong><br><a href="https://ac.nowcoder.com/acm/problem/13230" target="_blank" rel="noopener">题目链接</a></p>
+    <title>牛客网【每日一题】合集</title>
+    <url>/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<p>@[TOC]</p>
+<h2 id="2020年3月25日-NC50439-tokitsukaze-and-Soldier-牛客练习赛50-C"><a href="#2020年3月25日-NC50439-tokitsukaze-and-Soldier-牛客练习赛50-C" class="headerlink" title="2020年3月25日 NC50439 tokitsukaze and Soldier 牛客练习赛50-C"></a>2020年3月25日 NC50439 tokitsukaze and Soldier 牛客练习赛50-C</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8825%E6%97%A5-tokitsukaze-and-Soldier/">题解</a></p>
+<h2 id="2020年3月26日-NC13230-合并回文子串-美团2017年CodeM大赛-初赛A轮"><a href="#2020年3月26日-NC13230-合并回文子串-美团2017年CodeM大赛-初赛A轮" class="headerlink" title="2020年3月26日 NC13230 合并回文子串 美团2017年CodeM大赛-初赛A轮"></a>2020年3月26日 NC13230 合并回文子串 美团2017年CodeM大赛-初赛A轮</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">题解</a></p>
+<a id="more"></a>
+<h2 id="2020年3月27日-NC15553-数学考试-2018年长沙理工大学程序设计竞赛"><a href="#2020年3月27日-NC15553-数学考试-2018年长沙理工大学程序设计竞赛" class="headerlink" title="2020年3月27日 NC15553 数学考试 2018年长沙理工大学程序设计竞赛"></a>2020年3月27日 NC15553 数学考试 2018年长沙理工大学程序设计竞赛</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8827%E6%97%A5-%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95/">题解</a></p>
+<h2 id="2020年3月30日-NC50528-滑动窗口-《信息学奥赛一本通》Part5-5"><a href="#2020年3月30日-NC50528-滑动窗口-《信息学奥赛一本通》Part5-5" class="headerlink" title="2020年3月30日 NC50528 滑动窗口 《信息学奥赛一本通》Part5.5"></a>2020年3月30日 NC50528 滑动窗口 《信息学奥赛一本通》Part5.5</h2><p><a href="http://jozky.top/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">题解</a></p>
+<h2 id="2020年3月31日-NC13331-城市网络-美团2017年CodeM大赛-复赛"><a href="#2020年3月31日-NC13331-城市网络-美团2017年CodeM大赛-复赛" class="headerlink" title="2020年3月31日 NC13331 城市网络 美团2017年CodeM大赛-复赛"></a>2020年3月31日 NC13331 城市网络 美团2017年CodeM大赛-复赛</h2><p><a href="http://jozky.top/2020/04/05/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%983-31-%E5%9F%8E%E5%B8%82%E7%BD%91%E7%BB%9C-%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/">题解</a></p>
+<h2 id="2020年4月1日-NC22598-Rinne-Loves-Edges-牛客小白月赛11"><a href="#2020年4月1日-NC22598-Rinne-Loves-Edges-牛客小白月赛11" class="headerlink" title="2020年4月1日 NC22598 Rinne Loves Edges 牛客小白月赛11"></a>2020年4月1日 NC22598 Rinne Loves Edges 牛客小白月赛11</h2><p><a href="http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%881%E6%97%A5%E9%A2%98%E7%9B%AE-Rinne-Loves-Edges/">题解</a></p>
+<h2 id="2020年4月2日-NC23053-月月查华华的手机-牛客小白月赛12"><a href="#2020年4月2日-NC23053-月月查华华的手机-牛客小白月赛12" class="headerlink" title="2020年4月2日 NC23053 月月查华华的手机 牛客小白月赛12"></a>2020年4月2日 NC23053 月月查华华的手机 牛客小白月赛12</h2><p><a href="http://jozky.top/2020/04/02/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%882%E6%97%A5-%E6%9C%88%E6%9C%88%E6%9F%A5%E5%8D%8E%E5%8D%8E%E7%9A%84%E6%89%8B%E6%9C%BA/">题解</a></p>
+<h2 id="2020年4月3日-NC13886-Shortest-Path-西南交通大学第十三届ACM决赛"><a href="#2020年4月3日-NC13886-Shortest-Path-西南交通大学第十三届ACM决赛" class="headerlink" title="2020年4月3日 NC13886 Shortest Path 西南交通大学第十三届ACM决赛"></a>2020年4月3日 NC13886 Shortest Path 西南交通大学第十三届ACM决赛</h2><p><a href="http://jozky.top/2020/04/04/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91Shortest-Path-4%E6%9C%883%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-DFS/">题解</a></p>
+<h2 id="2020年4月6日-NC13221-数码-美团2017年CodeM大赛-资格赛"><a href="#2020年4月6日-NC13221-数码-美团2017年CodeM大赛-资格赛" class="headerlink" title="2020年4月6日 NC13221 数码 美团2017年CodeM大赛-资格赛"></a>2020年4月6日 NC13221 数码 美团2017年CodeM大赛-资格赛</h2><p><a href="http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/">题解</a></p>
+<h2 id="2020年4月7日-NC13611-树-牛客练习赛1"><a href="#2020年4月7日-NC13611-树-牛客练习赛1" class="headerlink" title="2020年4月7日 NC13611 树 牛客练习赛1"></a>2020年4月7日 NC13611 树 牛客练习赛1</h2><p><a href="http://jozky.top/2020/04/07/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%887%E5%8F%B7%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E6%A0%91/">题解</a></p>
+<h2 id="2020年4月8日-NC13249-黑白树-美团2017年CodeM大赛-初赛B轮"><a href="#2020年4月8日-NC13249-黑白树-美团2017年CodeM大赛-初赛B轮" class="headerlink" title="2020年4月8日 NC13249 黑白树 美团2017年CodeM大赛-初赛B轮"></a>2020年4月8日 NC13249 黑白树 美团2017年CodeM大赛-初赛B轮</h2><p><a href="http://jozky.top/2020/04/09/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%888%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-%E9%BB%91%E7%99%BD%E6%A0%91/">题解</a></p>
+<h2 id="2020年4月9日-NC50940-Running-Median-《算法竞赛进阶指南》0x05"><a href="#2020年4月9日-NC50940-Running-Median-《算法竞赛进阶指南》0x05" class="headerlink" title="2020年4月9日 NC50940 Running Median 《算法竞赛进阶指南》0x05"></a>2020年4月9日 NC50940 Running Median 《算法竞赛进阶指南》0x05</h2><p><a href="http://jozky.top/2020/04/13/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%889%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Running-Median/">题解</a></p>
+<h2 id="2020年4月10日-NC13229-二分图染色-美团2017年CodeM大赛-初赛A轮"><a href="#2020年4月10日-NC13229-二分图染色-美团2017年CodeM大赛-初赛A轮" class="headerlink" title="2020年4月10日 NC13229 二分图染色 美团2017年CodeM大赛-初赛A轮"></a>2020年4月10日 NC13229 二分图染色 美团2017年CodeM大赛-初赛A轮</h2><p><a href="http://jozky.top/2020/04/16/牛客网-【每日一题】4月10日-二分图染色-弱化版/">题解</a></p>
+<h2 id="2020年4月13日-NC51180-Accumulation-Degree-《算法竞赛进阶指南》0x54"><a href="#2020年4月13日-NC51180-Accumulation-Degree-《算法竞赛进阶指南》0x54" class="headerlink" title="2020年4月13日 NC51180 Accumulation Degree 《算法竞赛进阶指南》0x54"></a>2020年4月13日 NC51180 Accumulation Degree 《算法竞赛进阶指南》0x54</h2><p><a href="http://jozky.top/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8813%E5%8F%B7-Accumulation-Degree/">题解</a></p>
+<h2 id="2020年4月14日-NC14247-Xorto-Wannafly挑战赛1"><a href="#2020年4月14日-NC14247-Xorto-Wannafly挑战赛1" class="headerlink" title="2020年4月14日 NC14247 Xorto Wannafly挑战赛1"></a>2020年4月14日 NC14247 Xorto Wannafly挑战赛1</h2><h2 id="2020年4月15日-NC14248-Treepath-Wannafly挑战赛1"><a href="#2020年4月15日-NC14248-Treepath-Wannafly挑战赛1" class="headerlink" title="2020年4月15日 NC14248 Treepath Wannafly挑战赛1"></a>2020年4月15日 NC14248 Treepath Wannafly挑战赛1</h2><h2 id="2020年4月16日-NC14731-逆序对-Wannafly挑战赛6"><a href="#2020年4月16日-NC14731-逆序对-Wannafly挑战赛6" class="headerlink" title="2020年4月16日 NC14731 逆序对 Wannafly挑战赛6"></a>2020年4月16日 NC14731 逆序对 Wannafly挑战赛6</h2><h2 id="未完再续。。。"><a href="#未完再续。。。" class="headerlink" title="未完再续。。。"></a>未完再续。。。</h2>]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>牛客网【每日一题】4月9日题目精讲 Running Median</title>
+    <url>/2020/04/13/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%889%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Running-Median/</url>
+    <content><![CDATA[<p>@[TOC]</p>
+<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><a href="https://ac.nowcoder.com/acm/problem/50940" target="_blank" rel="noopener">–&gt;链接&lt;—</a></p>
 <blockquote>
-<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 262144K，其他语言524288K 64bit IO Format:<br>%lld</p>
+<p>时间限制：C/C++ 5秒，其他语言10秒 空间限制：C/C++ 65536K，其他语言131072K 64bit<br> IO Format:%lld</p>
 </blockquote>
-<p><strong>题目描述</strong></p>
+<p>题目描述 </p>
 <blockquote>
-<p>输入两个字符串A和B，合并成一个串C，属于A和B的字符在C中顺序保持不变。如”abc”和”xyz”可以被组合成”axbycz”或”abxcyz”等。<br>我们定义字符串的价值为其最长回文子串的长度（回文串表示从正反两边看完全一致的字符串，如”aba”和”xyyx”）。<br>需要求出所有可能的C中价值最大的字符串，输出这个最大价值即可 输入描述:</p>
+<p>For this problem, you will write a program that reads in a sequence of<br>32-bit signed integers. After each odd-indexed value is read, output<br>the median (middle value) of the elements received so far.</p>
 </blockquote>
 <a id="more"></a>
+<p>输入描述:</p>
 <blockquote>
-<p>第一行一个整数T(T ≤ 50)。 接下来2T行，每两行两个字符串分别代表A,B(|A|,|B| ≤ 50)，A,B的字符集为全体小写字母。</p>
+<p>The first line of input contains a single integerP(1≤P≤1000), which is the number of data sets that follow. The<br>first line of each data set contains the data set number, followed by<br>a space, followed by an odd decimal integer (1≤M≤9999), giving the total number of signed integers to be<br>processed. The remaining line(s) in the dataset consists of the<br>values, 10 per line, separated by a single space. The last line in the<br>dataset may contain less than 10 values.</p>
 </blockquote>
 <p>输出描述:</p>
-<p>对于每组数据输出一行一个整数表示价值最大的C的价值。<br>示例1</p>
-<p>输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">a</span><br><span class="line">aaaabcaa</span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">4</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-<p><strong>思路：区间dp问题</strong><br>dp[i][j][m][n]表示A中下标i到j-1以及B中下标m到n-1的串，能否组成回文串<br>(dp值为零则表示不构成回文串，不为零则表示构成)<br>首先：字符本身是回文串<br>其次，分为四种情况<br>a[i]==a[j-1]        dp[i][j][m][n]+=c[i+1][j-1][m][n];<br>因为dp我们只考虑是否为0或非0，所以dp之间可以+=也可以|=,都不影响<br>（当A的第i为和第j-1位相同时，那么dp[i][j]是否为回文串就取决于比它小一层的dp[i+1][j-1]，这样一次往里推，就可以推到以一种情况）<br>b[m]==b[n-1]    dp[i][j][m][n]+=c[i][j][m+1][n-1];<br>(和上一个思路相同)</p>
-<p>a[i]==b[n-1]        dp[i][j][m][n]+=c[i+1][j][m][n-1];<br>（当A的i与B的n-1相同时，那么dp[i][][][n]是否为回文串就取决于A的后一位i+1和B的前一位n-1的情况）<br>a[m]==b[j-1]    dp[i][j][m][n]+=c[i][j-1][m+1][n];<br><strong>代码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="comment">#define maxn 100</span></span><br><span class="line">using namespace std;</span><br><span class="line">int t;</span><br><span class="line">char a[maxn],b[maxn];</span><br><span class="line">int c[maxn][maxn][maxn][maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	char ch=getchar();</span><br><span class="line">	int j;</span><br><span class="line">	int n;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		int ans=0;</span><br><span class="line">		cin&gt;&gt;a;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		cin&gt;&gt;b;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		int len1=strlen(a),len2=strlen(b);</span><br><span class="line">		<span class="keyword">for</span>(int tj=0;tj&lt;=len1;tj++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(int tn=0;tn&lt;=len2;tn++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(int i=0;i+tj&lt;=len1;i++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">for</span>(int m=0;m+tn&lt;=len2;m++)</span><br><span class="line">					&#123;</span><br><span class="line">						j=i+tj;</span><br><span class="line">						n=m+tn;</span><br><span class="line">						<span class="keyword">if</span>(tj+tn&lt;=1)c[i][j][m][n]=1;</span><br><span class="line">						<span class="keyword">else</span></span><br><span class="line">						&#123;</span><br><span class="line">							c[i][j][m][n]=0;</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=2&amp;&amp;a[i]==a[j-1])c[i][j][m][n]|=c[i+1][j-1][m][n];                                               </span><br><span class="line">							<span class="keyword">if</span>(tn&gt;=2&amp;&amp;b[m]==b[n-1])c[i][j][m][n]|=c[i][j][m+1][n-1];</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=1&amp;&amp;tn&gt;=1&amp;&amp;a[i]==b[n-1])c[i][j][m][n]|=c[i+1][j][m][n-1];</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=1&amp;&amp;tn&gt;=1&amp;&amp;a[m]==b[j-1])c[i][j][m][n]|=c[i][j-1][m+1][n];</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span>(c[i][j][m][n])ans=max(ans,tj+tn);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		 &#125; </span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>另外</strong><br>tj和tn从0开始，不断讨论A中i到i+tj和B中m到tn的回文字符串</p>
+<blockquote>
+<p>For each data set the first line of output contains the data set<br>number, a single space and the number of medians output (which should<br>be one-half the number of input values plus one). The output medians<br>will be on the following lines, 10 per line separated by a single<br>space. The last line may have less than 10 elements, but at least 1<br>element. There should be no blank lines in the output.</p>
+</blockquote>
+<p>示例1<br>输入<br>3<br>1 9<br>1 2 3 4 5 6 7 8 9<br>2 9<br>9 8 7 6 5 4 3 2 1<br>3 23<br>23 41 13 22 -3 24 -31 -11 -8 -7<br>3 5 103 211 -311 -45 -67 -73 -81 -99<br>-33 24 56<br>输出<br>1 5<br>1 2 3 4 5<br>2 5<br>9 8 7 6 5<br>3 12<br>23 23 22 22 13 3 5 5 3 -3<br>-7 -3</p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h2><p>给你m个数，一次输入，每当输入的个数为奇数时，输出按大小排列最中间的数<br>比如1 5 6 7 8<br>一开始输入1，输出1<br>然后输入1 5，不输出<br>输入1 5 6，输出5<br>输入1 5 6 7，不输出<br>输入1 5 6 7 8，输出6</p>
+<h2 id="题解一："><a href="#题解一：" class="headerlink" title="题解一："></a>题解一：</h2><p>可以用堆来做<br>w1为大堆，w1用于存放小值<br>w2为小堆，w2存放大值<br>比如上面那个例子1 5 6 7 8<br>奇数位存在w1，偶数存在w2<br>如果w1.top()&gt;w2.top(),就是w1的最大比w2的最小值大，就将这两个值互换，始终保证，w1的值比w2的任意一个都小，这样无论数据怎么读入，w1的最大值始终都是最中间的数<br>看下面模拟：<br>第一轮：<br>w1:1<br>w2：0<br>二：<br>w1:1<br>w2:5<br>三：<br>w1:1 6<br>w2:5<br>6&gt;5<br>w1:1 5<br>w2:6<br>四<br>w1:1 5<br>w2: 7 6<br>五<br>w1:1 5 8<br>w2: 7 6<br>8&gt;6<br>w1:1 5 6<br>w2; 7 8<br>这样每奇数轮，w1的top位就是答案</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt;w1;<span class="comment">//默认为大堆，从大到小</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;w2;<span class="comment">//默认为小堆</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen("in.txt","r",stdin);</span></span><br><span class="line">  <span class="comment">//ios::sync_with_stdio(0);</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">int</span> case1=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p,m,x;</span><br><span class="line">    <span class="keyword">int</span> minn,maxx;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;p&gt;&gt;m;</span><br><span class="line">        case1=<span class="number">0</span>;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,p,m/<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)w1.push(x);</span><br><span class="line">            <span class="keyword">else</span> w2.push(x);</span><br><span class="line">            <span class="keyword">if</span>(i!=<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">                minn=w1.top();</span><br><span class="line">                maxx=w2.top();</span><br><span class="line">                <span class="keyword">if</span>(minn&gt;maxx)</span><br><span class="line">                &#123;</span><br><span class="line">                    w1.pop();</span><br><span class="line">                    w2.pop();</span><br><span class="line">                    w1.push(maxx);</span><br><span class="line">                    w2.push(minn);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(case1!=<span class="number">0</span>&amp;&amp;case1%<span class="number">10</span>==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">                case1=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i==m)<span class="built_in">cout</span>&lt;&lt;w1.top();</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>,w1.top());</span><br><span class="line">                case1++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">while</span>(!w1.empty())w1.pop();</span><br><span class="line">        <span class="keyword">while</span>(!w2.empty())w2.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（这个题的格式我一开始一直没注意。。。）</p>
+<h2 id="题解二："><a href="#题解二：" class="headerlink" title="题解二："></a>题解二：</h2><p>我看很多人都是这么做的，但是只能过50%的数据。。包括我自己<br>我看了清楚姐姐的代码稍微改一下：<br>我们在读入一个数后，直接与w1.top比较，小于就存进去，大了就存w2里<br>当w1的数量多了，就把堆顶拿出给w2（小根堆）<br>w2多了就给大根堆<br>这样维护出来其实和上面的方法差不多<br>因为总数是奇数，两个堆数量一定不一样，多的那方，堆顶就是答案<br>代码：<br>清楚阿姨（<del>狗头</del> ）代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; q2; <span class="comment">//小根堆 ，存较大的一半的数</span></span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt; q1;  <span class="comment">//大根堆 ，存较小的一半的数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(!q1.empty()) q1.pop();</span><br><span class="line">        <span class="keyword">while</span>(!q2.empty()) q2.pop();  <span class="comment">//优先队列没有clear函数，要一个一个弹出</span></span><br><span class="line">        <span class="keyword">int</span> m, n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;m ,&amp;n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, m, (n+<span class="number">1</span>)/ <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">        q1.push(x);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> (x &lt;= q1.top()) q1.push(x); <span class="comment">//如果当前值比大根堆堆顶小，说明在小的这二分之一，塞进大根堆</span></span><br><span class="line">            <span class="keyword">else</span>  q2.push(x);</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">int</span> num1= q1.size();</span><br><span class="line">            <span class="keyword">int</span> num2= q2.size();</span><br><span class="line">            <span class="keyword">if</span> (num1 - num2 &gt; <span class="number">1</span>)   <span class="comment">//大根堆里面元素多了，把堆顶拿出来塞近小根堆</span></span><br><span class="line">            &#123;</span><br><span class="line">                q2.push(q1.top());</span><br><span class="line">                q1.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>  <span class="keyword">if</span>(num2 - num1 &gt;<span class="number">1</span>) <span class="comment">//小根堆里面元素多了，把堆顶拿出来塞近大根堆</span></span><br><span class="line">            &#123;</span><br><span class="line">                q1.push(q2.top());</span><br><span class="line">                q2.pop();</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">1</span>)  <span class="comment">//目前的元素个数是奇数</span></span><br><span class="line">            &#123;</span><br><span class="line">                num1 = q1.size();</span><br><span class="line">                num2 = q2.size();</span><br><span class="line">                <span class="keyword">if</span>(num1 &gt; num2) <span class="built_in">printf</span>(<span class="string">"%d "</span>, q1.top()); <span class="comment">//中位数在大根堆</span></span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d "</span>, q2.top());           <span class="comment">//中位数在小根堆</span></span><br><span class="line">                <span class="keyword">if</span> (i % <span class="number">20</span> == <span class="number">19</span> &amp;&amp; i!=n) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>题解</category>
         <category>牛客网每日一题</category>
       </categories>
       <tags>
-        <tag>dp</tag>
-        <tag>区间dp</tag>
-        <tag>字符串</tag>
+        <tag>堆</tag>
       </tags>
   </entry>
   <entry>
