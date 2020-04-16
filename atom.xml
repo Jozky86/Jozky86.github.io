@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-15T12:06:26.887Z</updated>
+  <updated>2020-04-16T09:34:12.627Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客网 【每日一题】4月10日 二分图染色(弱化版)</title>
+    <link href="http://jozky.top/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/"/>
+    <id>http://jozky.top/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/</id>
+    <published>2020-04-16T09:31:39.000Z</published>
+    <updated>2020-04-16T09:34:12.627Z</updated>
+    
+    <content type="html"><![CDATA[<p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/13229" target="_blank" rel="noopener">题目传送</a></p><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><blockquote><p>时间限制：C/C++ 1秒，其他语言2秒<br>空间限制：C/C++ 524288K，其他语言1048576K<br>64bit IO Format: %lld</p></blockquote><p>题目描述 </p><blockquote><p>给定一个完全二分图，图的左右两边的顶点数目相同。我们要给图中的每条边染成红色、蓝色、或者绿色，并使得任意两条红边不共享端点、同时任意两条蓝边也不共享端点。<br>计算所有满足条件的染色的方案数，并对10^9^+7取模。 (ps：本题数据量与实际比赛中数据量相比，少了一些)</p></blockquote><a id="more"></a><p>输入描述:</p><blockquote><p>二分图单边的顶点数目n(n ≤ 10^7)</p></blockquote><p>输出描述:</p><blockquote><p>输出一个整数,即所求的答案。</p></blockquote><p>示例1<br>输入</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">35</span></span><br></pre></td></tr></table></figure><h2 id="题意-amp-amp-题解：："><a href="#题意-amp-amp-题解：：" class="headerlink" title="题意&amp;&amp;题解：："></a>题意&amp;&amp;题解：：</h2><p>完全二分图:是一种特殊的二分图，可以把图中的顶点分成两个集合，使得第一个集合中的所有顶点都与第二个集合中的所有顶点相连。<br>我们可以把左右各有n个点的二分图的题转化成n*n的棋盘问题。（离散上学过）<br>题目：让染三个颜色，红蓝绿，但是绿色并没有什么要求，我们可以最后再随便放。所以我们先考虑红和蓝。<br>红和蓝都是不能共享端点，同步到棋盘上（行和列分别表示二分图两个集合），也就是棋盘上行和列只能有一个红或蓝</p><p>现在的题目就是：<br>在n*n的棋盘上，放任意红和蓝棋子，任一行和列不能有相同颜色的棋子，有多少种放的方法？<br>F<del>n</del>表示棋盘大小为 n * n时的答案<br>先只考虑一个颜色： F<del>n</del>=<img src="https://img-blog.csdnimg.cn/20200416162741561.png" alt="在这里插入图片描述">)种方案(先在n行里选若干行，然后每一行选若干列，行没有顺序区分，就是选两行，选第一行和第三行与选第一行和第二行没差，所以选行用组合；而列不一样，因为行列只能放一个，我们可以先放在一行上，然后分散到其他行，所以选列的时候要考虑顺序问题，要用的是排列而不是组合)<br>如图：<br><img src="https://img-blog.csdnimg.cn/20200416164224892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>比如我们选两行（C^2^ <del>n</del> ），然后每行放一个，我们先考虑都放在一行上，看图中最上面两行（黄色和绿色），都是选的第一个格和第二个格，但是分散开不一样，（图中4 * 4的表格）说明我们要考虑顺序，所以选列是A^2^<del>n</del>，将所以情况加起来就是选一个颜色的方案</p><p>选两个颜色：从上面我们能得到一个颜色是F<del>n</del>，两个就是F<del>n</del>* F<del>n</del>，非也，因为这样会出现一个格子放两个棋子，我们还要将这种情况删去。需要容斥。<br>我们用g<del>i</del>表示最少有i个点放了两个棋子（颜色不一样）的方案数。那么除去i 行和i 列（i个点所在），我们在剩下n-i行与列里就不会有重复的，g<del>i</del> = f ^2^<del>n-i</del> 。被除去的 i 行与 i列选法和之前一样是 C^i^<del>n</del>A^i^<del>n</del> ，最后得到容斥公式：<br><img src="https://img-blog.csdnimg.cn/20200416170156368.png" alt="在这里插入图片描述"><br>（这一部分好好理解）</p><p>C^k^<del>n</del>A^k^<del>n</del>都可以求好，但是Fn提前求会超时，说明上面的公式不能用，我们要换一个想法来求<br>我们来考虑F<del>n</del>能不能递推出来，从F<del>n-1</del>推出F<del>n</del><br>考虑n-1到n的过程：<br>一共增加了2n-1个格子（n^2^-(n-1)^2^）,n-1之前的格子都已经放好了，我们只需要考虑多出的这些格子该怎么放。<br>如果只放一个棋子，就有2n-1个方案，如果都不放，一个方案，一共是2n种方案，也就是2n<em>F<del>n-1</del>，（F<del>n-1</del>是之前n-1行列已经放好的方案数）<br>但是有限制条件，每一行不能有相同颜色，每放一个棋子，意味着这一行这一列都不能放了，就会出现n-1种重复情况（因为是从n-1的扩展来的），我们之前n-1行列的棋子都平移靠边，因为之前都是不同行同列，所以靠边后，正好占了一行一列，也就是我们在新增部分可以放的棋子，实际上是F<del>n-2</del>而非F<del>n-1</del>（这里可以看看图），那一共（n-1）F<del>n-2</del>次重复情况，可以选n-1行，而且每一列也可以进行相同操作,总的方案数就是2×(n−1) ^2^ ∗F(n−2)<br>借鉴邓老师的图：<br><img src="https://img-blog.csdnimg.cn/2020041617195483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们还要考虑放两个的情况;<br>即最后一行和列分别放一个，这样不重复嘛<br>方案就是：（n-1）^2^</em>F(n-2)<br><img src="https://img-blog.csdnimg.cn/20200416172115547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>总结：得到公式<br>F[n]=2<em>n</em>F[n-1]-(n-1)^2^F[n-2]<br>（<del>我真的是把我所能理解都写出来了</del> ）</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000004</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[N],s[N],F[N];</span><br><span class="line"><span class="function">ll <span class="title">C</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1l</span>l * g[n] * s[m] % mod * s[n - m] % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">A</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1l</span>l * g[n] * s[n - m] % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    g[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i)</span><br><span class="line">        g[i] = <span class="number">1l</span>l * g[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">        </span><br><span class="line">         ll ans1 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;y;y &gt;&gt;= <span class="number">1</span>,x = x * x % mod)</span><br><span class="line">    &#123;</span><br><span class="line">            <span class="keyword">if</span>(y &amp; <span class="number">1</span>) ans1 = ans1 * x % mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    s[n] = ans1;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>;i &gt;= <span class="number">0</span>;--i)</span><br><span class="line">        s[i] = <span class="number">1l</span>l * s[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % mod;</span><br><span class="line">        </span><br><span class="line">    F[<span class="number">0</span>] = <span class="number">1</span>;F[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n;++i)</span><br><span class="line">        F[i] = (<span class="number">2l</span>l * i * F[i - <span class="number">1</span>] - <span class="number">1l</span>l * F[i - <span class="number">2</span>] * (i - <span class="number">1</span>) % mod * (i - <span class="number">1</span>) % mod) % mod;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">     ll k ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;++i) &#123;</span><br><span class="line">       k=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(i &amp; <span class="number">1</span>) k = <span class="number">-1</span>;</span><br><span class="line">        ans += k * C(n,i) * A(n,i) % mod * F[n - i] % mod * F[n - i] % mod;</span><br><span class="line">        ans %= mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,(ans + mod) % mod);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;@[TOC]&lt;br&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/13229&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目传送&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;题目：&quot;&gt;&lt;a href=&quot;#题目：&quot; class=&quot;headerlink&quot; title=&quot;题目：&quot;&gt;&lt;/a&gt;题目：&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒&lt;br&gt;空间限制：C/C++ 524288K，其他语言1048576K&lt;br&gt;64bit IO Format: %lld&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;题目描述 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给定一个完全二分图，图的左右两边的顶点数目相同。我们要给图中的每条边染成红色、蓝色、或者绿色，并使得任意两条红边不共享端点、同时任意两条蓝边也不共享端点。&lt;br&gt;计算所有满足条件的染色的方案数，并对10^9^+7取模。 (ps：本题数据量与实际比赛中数据量相比，少了一些)&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="组合" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88/"/>
+    
+      <category term="容斥" scheme="http://Jozky.top/tags/%E5%AE%B9%E6%96%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网【每日一题】合集</title>
@@ -347,9 +385,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -381,11 +419,11 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
+      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
     
       <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+      <category term="组合数" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88%E6%95%B0/"/>
     
   </entry>
   
@@ -584,38 +622,6 @@
     
     
       <category term="优先队列" scheme="http://Jozky.top/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【每日一题】4月6日数码</title>
-    <link href="http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/"/>
-    <id>http://jozky.top/2020/04/06/%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%886%E6%97%A5%E6%95%B0%E7%A0%81/</id>
-    <published>2020-04-06T12:59:12.000Z</published>
-    <updated>2020-04-06T15:01:56.489Z</updated>
-    
-    <content type="html"><![CDATA[<p>题目：<a href="https://ac.nowcoder.com/acm/problem/13221" target="_blank" rel="noopener">数码</a><br>来源：<a href="https://ac.nowcoder.com/acm/contest/5#description" target="_blank" rel="noopener">美团2017年CodeM大赛-资格赛</a></p><blockquote><p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K<br> 64bit IO Format:%lld</p></blockquote><p>题目描述</p><blockquote><p>给定两个整数 l 和 r ，对于所有满足1 ≤ l ≤ x ≤ r ≤ 10^9 的 x ，把 x<br>的所有约数全部写下来。对于每个写下来的数，只保留最高位的那个数码。求1～9每个数码出现的次数。 </p></blockquote><a id="more"></a><p>输入描述:</p><blockquote><p>一行，两个整数 l 和 r (1 ≤ l ≤ r ≤ 10^9^)。</p></blockquote><p>输出描述:</p><p>输出9行。</p><blockquote><p>第 i 行，输出数码 i 出现的次数。</p></blockquote><p>示例1<br>输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 4</span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br></pre></td></tr></table></figure><p>题解：<br>先介绍一个函数：<br>solve（a，b）就是从1<del>a中数码b的倍数出现的次数<br>solve(a,b)=a/b<br>那么求[l,r]的话，就用solve(r,b)-solve(l-1,b)，大致可以理解成前缀和那种<br>num就是0</del>9，计算每个num对应的区间<br>最高位是1的话：1,10 ~ 19,100 ~ 199， 1000 ~ 1999….<br>最高位是2的话：2,20 ~ 29,200 ~ 299， 2000 ~ 2999….</p><p>因为我们只记录约数的最高位，像1999，约数就是1和1999，我们只记录最高位，那么就是有两个1<br>那么我们枚举以num开头的数，计算它的倍数在[l,r]中出现的次数。<br>按照几位数和最高位是几进行枚举，有多少这样的数直接统计就ok<br>solve(r,num)-solve(l-1,num)<br>枚举num的值<br>让最高位等于x时num枚举相对应的区间（从x<em>10^y-1^~(x+1)</em>10^y-1^-1）y=1.2.3….<br>有部分数会被算重复，因为有完全平方数存在，<br>再运用整除分块技巧，让复杂度降到O(根号n)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"><span class="comment">#define ll long long</span></span><br><span class="line">ll minn(ll a,ll b)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(a&gt;=b)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">return</span> b;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line">//cout&lt;&lt;a;</span><br><span class="line"> <span class="built_in">return</span> a;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">ll solve(ll a, ll b) &#123;</span><br><span class="line">  ll res = 0;</span><br><span class="line">   ll beg;</span><br><span class="line">   ll end;</span><br><span class="line">  <span class="keyword">for</span> (ll i = 1; i &lt;= a / b; i *= 10) &#123;</span><br><span class="line">    beg = b * i;//区间开头</span><br><span class="line">    </span><br><span class="line"> end = minn(a, beg + i - 1);//区间结尾</span><br><span class="line"> int k;</span><br><span class="line">    <span class="keyword">for</span> (int j = beg; j &lt;= end; j = k + 1) &#123;</span><br><span class="line">      k = min(a / (a / j), end);</span><br><span class="line">      //cout&lt;&lt;a/(a/i)&lt;&lt;<span class="string">" "</span>&lt;&lt;end&lt;&lt;endl;</span><br><span class="line">      res += (k - j + 1) * (a / j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">ll l,r;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">   cin&gt;&gt;l&gt;&gt;r;</span><br><span class="line">    <span class="keyword">for</span>(ll i=1;i&lt;=9;i++)&#123;</span><br><span class="line">        cout&lt;&lt;solve(r,i)-solve(l-1,i)&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目：&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/13221&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数码&lt;/a&gt;&lt;br&gt;来源：&lt;a href=&quot;https://ac.nowcoder.com/acm/contest/5#description&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;美团2017年CodeM大赛-资格赛&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K&lt;br&gt; 64bit IO Format:%lld&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;题目描述&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;给定两个整数 l 和 r ，对于所有满足1 ≤ l ≤ x ≤ r ≤ 10^9 的 x ，把 x&lt;br&gt;的所有约数全部写下来。对于每个写下来的数，只保留最高位的那个数码。求1～9每个数码出现的次数。 &lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="整除分块" scheme="http://Jozky.top/tags/%E6%95%B4%E9%99%A4%E5%88%86%E5%9D%97/"/>
     
   </entry>
   
