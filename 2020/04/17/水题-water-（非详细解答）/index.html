@@ -6,23 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Jozky.top">
-  <title>牛客网【每日一题】3月26日 合并回文子串 | Jozky Home</title>
+  <title>水题(water)（非详细解答） | Jozky Home</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="题号：NC13230名称：合并回文子串来源：美团2017年CodeM大赛-初赛A轮题目链接  时间限制：C&#x2F;C++ 2秒，其他语言4秒 空间限制：C&#x2F;C++ 262144K，其他语言524288K 64bit IO Format:%lld  题目描述  输入两个字符串A和B，合并成一个串C，属于A和B的字符在C中顺序保持不变。如”abc”和”xyz”可以被组合成”axbycz”或”abxcyz”等">
+  <meta name="description" content="传送  时间限制：C&#x2F;C++ 1秒，其他语言2秒 空间限制：C&#x2F;C++ 32768K，其他语言65536K64bit IO Format: %lld  题目描述">
 <meta property="og:type" content="article">
-<meta property="og:title" content="牛客网【每日一题】3月26日 合并回文子串">
-<meta property="og:url" content="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/index.html">
+<meta property="og:title" content="水题(water)（非详细解答）">
+<meta property="og:url" content="http://jozky.top/2020/04/17/%E6%B0%B4%E9%A2%98-water-%EF%BC%88%E9%9D%9E%E8%AF%A6%E7%BB%86%E8%A7%A3%E7%AD%94%EF%BC%89/index.html">
 <meta property="og:site_name" content="Jozky Home">
-<meta property="og:description" content="题号：NC13230名称：合并回文子串来源：美团2017年CodeM大赛-初赛A轮题目链接  时间限制：C&#x2F;C++ 2秒，其他语言4秒 空间限制：C&#x2F;C++ 262144K，其他语言524288K 64bit IO Format:%lld  题目描述  输入两个字符串A和B，合并成一个串C，属于A和B的字符在C中顺序保持不变。如”abc”和”xyz”可以被组合成”axbycz”或”abxcyz”等">
-<meta property="article:published_time" content="2020-04-06T14:53:16.000Z">
-<meta property="article:modified_time" content="2020-04-06T14:59:35.451Z">
+<meta property="og:description" content="传送  时间限制：C&#x2F;C++ 1秒，其他语言2秒 空间限制：C&#x2F;C++ 32768K，其他语言65536K64bit IO Format: %lld  题目描述">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200417185530435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200417185538216.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200417185913695.png">
+<meta property="article:published_time" content="2020-04-17T12:37:45.000Z">
+<meta property="article:modified_time" content="2020-04-17T12:40:35.718Z">
 <meta property="article:author" content="Jozky">
-<meta property="article:tag" content="dp">
-<meta property="article:tag" content="区间dp">
-<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200417185530435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Jozky Home" type="application/atom+xml">
   
@@ -279,14 +281,14 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-牛客网【每日一题】3月26日-合并回文子串" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-水题-water-（非详细解答）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      牛客网【每日一题】3月26日 合并回文子串
+      水题(water)（非详细解答）
     </h1>
   
 
@@ -298,8 +300,8 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="archive-article-date">
-        <time datetime="2020-04-06T14:53:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
+<a href="/2020/04/17/%E6%B0%B4%E9%A2%98-water-%EF%BC%88%E9%9D%9E%E8%AF%A6%E7%BB%86%E8%A7%A3%E7%AD%94%EF%BC%89/" class="archive-article-date">
+        <time datetime="2020-04-17T12:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
 </a>
 
   
@@ -312,7 +314,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">819字</span>
+      <span class="post-count">695字</span>
     </span>
   </span>
 
@@ -334,29 +336,50 @@ background: url('/img/biubiubiu.gif') no-repeat ;
   
 
     
-    <p><strong>题号：NC13230<br>名称：合并回文子串<br>来源：美团2017年CodeM大赛-初赛A轮</strong><br><a href="https://ac.nowcoder.com/acm/problem/13230" target="_blank" rel="noopener">题目链接</a></p>
+    <p><a href="https://ac.nowcoder.com/acm/contest/5203/E" target="_blank" rel="noopener">传送</a></p>
 <blockquote>
-<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 262144K，其他语言524288K 64bit IO Format:<br>%lld</p>
+<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K<br>64bit IO Format: %lld</p>
 </blockquote>
-<p><strong>题目描述</strong></p>
+<p>题目描述<br><img src="https://img-blog.csdnimg.cn/20200417185530435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a> 
 <blockquote>
-<p>输入两个字符串A和B，合并成一个串C，属于A和B的字符在C中顺序保持不变。如”abc”和”xyz”可以被组合成”axbycz”或”abxcyz”等。<br>我们定义字符串的价值为其最长回文子串的长度（回文串表示从正反两边看完全一致的字符串，如”aba”和”xyyx”）。<br>需要求出所有可能的C中价值最大的字符串，输出这个最大价值即可 输入描述:</p>
+<p>其中，f(1)=1;f(2)=1;Z皇后的方案数：即在Z×Z的棋盘上放置Z个皇后，使其互不攻击的方案数。</p>
 </blockquote>
-<a id="more"></a>
+<p>输入描述:</p>
 <blockquote>
-<p>第一行一个整数T(T ≤ 50)。 接下来2T行，每两行两个字符串分别代表A,B(|A|,|B| ≤ 50)，A,B的字符集为全体小写字母。</p>
+<p>输入数据共一行，两个正整数x,m，意义如“题目描述”。</p>
 </blockquote>
 <p>输出描述:</p>
-<p>对于每组数据输出一行一个整数表示价值最大的C的价值。<br>示例1</p>
-<p>输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">a</span><br><span class="line">aaaabcaa</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>一个正整数k，表示输出结尾0 的个数或者放置皇后的方案数</p>
+</blockquote>
+<p>示例1<br>输入</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">375</span> <span class="number">16</span></span><br></pre></td></tr></table></figure>
 
 <p>输出</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-<p><strong>思路：区间dp问题</strong><br>dp[i][j][m][n]表示A中下标i到j-1以及B中下标m到n-1的串，能否组成回文串<br>(dp值为零则表示不构成回文串，不为零则表示构成)<br>首先：字符本身是回文串<br>其次，分为四种情况<br>a[i]==a[j-1]        dp[i][j][m][n]+=c[i+1][j-1][m][n];<br>因为dp我们只考虑是否为0或非0，所以dp之间可以+=也可以|=,都不影响<br>（当A的第i为和第j-1位相同时，那么dp[i][j]是否为回文串就取决于比它小一层的dp[i+1][j-1]，这样一次往里推，就可以推到以一种情况）<br>b[m]==b[n-1]    dp[i][j][m][n]+=c[i][j][m+1][n-1];<br>(和上一个思路相同)</p>
-<p>a[i]==b[n-1]        dp[i][j][m][n]+=c[i+1][j][m][n-1];<br>（当A的i与B的n-1相同时，那么dp[i][][][n]是否为回文串就取决于A的后一位i+1和B的前一位n-1的情况）<br>a[m]==b[j-1]    dp[i][j][m][n]+=c[i][j-1][m+1][n];<br><strong>代码</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="comment">#define maxn 100</span></span><br><span class="line">using namespace std;</span><br><span class="line">int t;</span><br><span class="line">char a[maxn],b[maxn];</span><br><span class="line">int c[maxn][maxn][maxn][maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	char ch=getchar();</span><br><span class="line">	int j;</span><br><span class="line">	int n;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		int ans=0;</span><br><span class="line">		cin&gt;&gt;a;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		cin&gt;&gt;b;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		int len1=strlen(a),len2=strlen(b);</span><br><span class="line">		<span class="keyword">for</span>(int tj=0;tj&lt;=len1;tj++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(int tn=0;tn&lt;=len2;tn++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(int i=0;i+tj&lt;=len1;i++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">for</span>(int m=0;m+tn&lt;=len2;m++)</span><br><span class="line">					&#123;</span><br><span class="line">						j=i+tj;</span><br><span class="line">						n=m+tn;</span><br><span class="line">						<span class="keyword">if</span>(tj+tn&lt;=1)c[i][j][m][n]=1;</span><br><span class="line">						<span class="keyword">else</span></span><br><span class="line">						&#123;</span><br><span class="line">							c[i][j][m][n]=0;</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=2&amp;&amp;a[i]==a[j-1])c[i][j][m][n]|=c[i+1][j-1][m][n];                                               </span><br><span class="line">							<span class="keyword">if</span>(tn&gt;=2&amp;&amp;b[m]==b[n-1])c[i][j][m][n]|=c[i][j][m+1][n-1];</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=1&amp;&amp;tn&gt;=1&amp;&amp;a[i]==b[n-1])c[i][j][m][n]|=c[i+1][j][m][n-1];</span><br><span class="line">							<span class="keyword">if</span>(tj&gt;=1&amp;&amp;tn&gt;=1&amp;&amp;a[m]==b[j-1])c[i][j][m][n]|=c[i][j-1][m+1][n];</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span>(c[i][j][m][n])ans=max(ans,tj+tn);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		 &#125; </span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>另外</strong><br>tj和tn从0开始，不断讨论A中i到i+tj和B中m到tn的回文字符串</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">14200</span></span><br></pre></td></tr></table></figure>
+
+<p>说明<br><img src="https://img-blog.csdnimg.cn/20200417185538216.png" alt="在这里插入图片描述"><br>题解：<br>看了一阵子没明白，也是从其他人那学完之后，自己总结着再写<br>这个题内含三个小题：<br>1.判断是否存在k使得f(k)=xf(k)=x<br>2.n!在m进制下末尾零的个数<br>3.Z皇后方案数<br>解答：（非详细）<br>1.F函数其实就是斐波那契数列</p>
+<p>斐波那契数列平方和的性质：（就是题目中所给公式）<br><img src="https://img-blog.csdnimg.cn/20200417185913695.png" alt="在这里插入图片描述"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fi[<span class="number">1</span>] = <span class="number">1</span>, fi[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>;; ++i) &#123;</span><br><span class="line">    fi[i] = fi[i - <span class="number">1</span>] + fi[i - <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> (fi[i] &gt; <span class="number">1e18</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>2.求n!在m进制的末尾0个数</p>
+<p>首先一个结论：n!的质因子p的个数等于：1~n中p的倍数(n/p)加上(n/p)!中质因子p的个数</p>
+<p>然后：<br>写出<br>将数W转化成m进制的末尾0的个数<br>的暴力代码是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(W%m==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">	tot++;</span><br><span class="line">	W/m;</span><br><span class="line">&#125;<span class="comment">//tot计数</span></span><br></pre></td></tr></table></figure>
+<p>可以得到 W=a * m^tot^（n是m^tot^的倍数）</p>
+<p>末尾几个0，tot就是几（tot是记录末尾0<br>的数量）</p>
+<p>我们看 n ! 最多可以分解出多少个m<br>质因数 pi<br>设m=p<del>1</del>^a1^ <em>p<del>2</del>^a2^ *….</em>p<del>k</del>^ak^<br>W = n!<br> n！= a  *  m ^tot^<br>n！=a * （p<del>1</del>^a1^ <em>p<del>2</del>^a2^ *….</em>p<del>k</del>^ak^）^tot^</p>
+<p>n!=a * p<del>1</del>^b1^ <em>p<del>2</del>^b2^ *….</em>p<del>k</del>^bk^</p>
+<p>b<del>k</del>=a<del>k</del> *tot</p>
+<p>求出！x最多可以分解出多少个p<del>i</del></p>
+<p>tot=min(b<del>k</del>/a<del>k</del>)<br>枚举k</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">ll prime[maxn] = &#123;<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">37</span>, <span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">53</span>, <span class="number">59</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">getsum</span><span class="params">(ll n,ll m)</span></span>&#123;</span><br><span class="line">    ll sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=n/m;</span><br><span class="line">        n/=m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;<span class="comment">//n!的质因子p的个数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ans_solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll ans=<span class="number">1e18</span>+<span class="number">3</span>;</span><br><span class="line">	M=m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; prime[i] &lt;= M; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (M % prime[i] == <span class="number">0</span>) </span><br><span class="line">		&#123;</span><br><span class="line">			++ans1[prime[i]];</span><br><span class="line">			M /= prime[i];</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">25</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ans1[prime[i]])</span><br><span class="line">		&#123;</span><br><span class="line">            ans2[prime[i]]=getsum(x,prime[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">25</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ans1[prime[i]])</span><br><span class="line">        ans=min(ans,ans2[prime[i]]/ans1[prime[i]]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>3.求z皇后方案数<br>z=x%min(13,m)+1<br>根据式子就能得到z的范围在1~13，范围不大直接打表就可以</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">dabiao</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	  z[<span class="number">1</span>]=<span class="number">1</span>;z[<span class="number">2</span>]=<span class="number">0</span>;z[<span class="number">3</span>]=<span class="number">0</span>;z[<span class="number">4</span>]=<span class="number">2</span>;</span><br><span class="line">      z[<span class="number">5</span>]=<span class="number">10</span>;z[<span class="number">6</span>]=<span class="number">4</span>;z[<span class="number">7</span>]=<span class="number">40</span>;z[<span class="number">8</span>]=<span class="number">92</span>;</span><br><span class="line">      z[<span class="number">9</span>]=<span class="number">352</span>;z[<span class="number">10</span>]=<span class="number">724</span>;z[<span class="number">11</span>]=<span class="number">2680</span>;</span><br><span class="line">	  z[<span class="number">12</span>]=<span class="number">14200</span>;z[<span class="number">13</span>]=<span class="number">73712</span>;</span><br><span class="line"> </span><br><span class="line"> &#125; </span><br><span class="line"><span class="built_in">cout</span>&lt;&lt; z[x%min(<span class="number">13</span>*<span class="number">1l</span>l,k)+<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
 
     
 
@@ -393,7 +416,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://Jozky.top/2020/04/06/牛客网【每日一题】3月26日-合并回文子串/" title="牛客网【每日一题】3月26日 合并回文子串" target="_blank">http://Jozky.top/2020/04/06/牛客网【每日一题】3月26日-合并回文子串/</a>
+          <a href="http://Jozky.top/2020/04/17/水题-water-（非详细解答）/" title="水题(water)（非详细解答）" target="_blank">http://Jozky.top/2020/04/17/水题-water-（非详细解答）/</a>
         </li>
         
         <li>
@@ -415,15 +438,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">区间dp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
         		</li>
       		
 		</ul>
@@ -436,10 +451,6 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解/牛客网每日一题//" class="article-tag-list-link color3">牛客网每日一题</a>
         		</li>
       		
 		</ul>
@@ -494,7 +505,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://jozky.top/2020/04/17/%E6%B0%B4%E9%A2%98-water-%EF%BC%88%E9%9D%9E%E8%AF%A6%E7%BB%86%E8%A7%A3%E7%AD%94%EF%BC%89/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -509,18 +520,9 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 
 <nav id="article-nav">
   
-    <a href="/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8827%E6%97%A5-%E6%95%B0%E5%AD%A6%E8%80%83%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          牛客网【每日一题】3月27日 数学考试
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8825%E6%97%A5-tokitsukaze-and-Soldier/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">牛客网【每日一题】3月25日 tokitsukaze and Soldier</div>
+    <a href="/2020/04/17/%E5%B0%8FH%E5%92%8C%E6%B8%B8%E6%88%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">小H和游戏</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -574,9 +576,9 @@ background: url('/img/biubiubiu.gif') no-repeat ;
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "牛客网【每日一题】3月26日 合并回文子串" -->
+    <!-- id: "水题(water)（非详细解答）" -->
     var gitment = new Gitment({
-      id: "20200406225316",
+      id: "20200417203745",
       owner: 'Jozky86',
       repo: 'Jozky.github.io',
       oauth: {
