@@ -6,21 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Jozky.top">
-  <title>Tag: 单调队列 | Jozky Home</title>
+  <title>最小生成树(模板) | Jozky Home</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jozky Home">
-<meta property="og:url" content="http://jozky.top/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/index.html">
+  <meta name="description" content="@[TOC]昨天做蓝桥杯的题，最后一题最小生成树，但好久没用一下子生疏了。。。最小生成树两种方法：Prim和Kruskal 关于时间复杂度：prim:该算法的时间复杂度为O(n2)。与图中边数无关，该算法适合于稠密图。 kruskal:需要对图的边进行访问，所以克鲁斯卡尔算法的时间复杂度只和边又关系，可以证明其时间复杂度为O（eloge）。适合稀疏图。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最小生成树(模板)">
+<meta property="og:url" content="http://jozky.top/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/index.html">
 <meta property="og:site_name" content="Jozky Home">
-<meta property="og:description" content="����">
+<meta property="og:description" content="@[TOC]昨天做蓝桥杯的题，最后一题最小生成树，但好久没用一下子生疏了。。。最小生成树两种方法：Prim和Kruskal 关于时间复杂度：prim:该算法的时间复杂度为O(n2)。与图中边数无关，该算法适合于稠密图。 kruskal:需要对图的边进行访问，所以克鲁斯卡尔算法的时间复杂度只和边又关系，可以证明其时间复杂度为O（eloge）。适合稀疏图。">
+<meta property="article:published_time" content="2020-04-19T15:38:24.000Z">
+<meta property="article:modified_time" content="2020-04-19T15:39:16.607Z">
 <meta property="article:author" content="Jozky">
-<meta property="article:tag" content="����">
-<meta property="article:tag" content="���">
-<meta property="article:tag" content="ACMer">
-<meta property="article:tag" content="OI">
+<meta property="article:tag" content="最小生成树">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Jozky Home" type="application/atom+xml">
@@ -278,80 +277,281 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-最小生成树-模板" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="archive-article-date">
-        <time datetime="2020-04-01T02:13:38.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/01/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" target="_blank">滑动窗口</a>
   
+    <h1 class="article-title" itemprop="name">
+      最小生成树(模板)
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/" class="archive-article-date">
+        <time datetime="2020-04-19T15:38:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">882字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">4分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>@[TOC]<br>昨天做蓝桥杯的题，最后一题最小生成树，但好久没用一下子生疏了。。。<br>最小生成树两种方法：<br>Prim和Kruskal</p>
+<h2 id="关于时间复杂度："><a href="#关于时间复杂度：" class="headerlink" title="关于时间复杂度："></a>关于时间复杂度：</h2><p>prim:该算法的时间复杂度为O(n2)。与图中边数无关，该算法适合于稠密图。</p>
+<p>kruskal:需要对图的边进行访问，所以克鲁斯卡尔算法的时间复杂度只和边又关系，可以证明其时间复杂度为O（eloge）。适合稀疏图。</p>
+<a id="more"></a>
+<p> <strong>模板：</strong></p>
+<h2 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,i,j,u,v,total;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> start,to;<span class="keyword">long</span> <span class="keyword">long</span> val;</span><br><span class="line">&#125;bian[<span class="number">2000005</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">100000</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span><span class="comment">//并查集部分</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (f[x]==x) <span class="keyword">return</span> x; </span><br><span class="line">	<span class="keyword">else</span>  <span class="keyword">return</span> find(f[x]);</span><br><span class="line">     </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(edge a,edge b)</span><span class="comment">//结构体快排时用到的</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.val&lt;b.val;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">kruskal</span><span class="params">()</span><span class="comment">//最小生成树</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        u=find(bian[i].start);</span><br><span class="line">        v=find(bian[i].to);</span><br><span class="line">        <span class="keyword">if</span>(u==v) <span class="keyword">continue</span>;<span class="comment">//判断在不在同一个并查集里面，在就下一个循环</span></span><br><span class="line">            ans+=bian[i].val;<span class="comment">//不在，就加上</span></span><br><span class="line">            f[u]=v;<span class="comment">//连接两个并查集</span></span><br><span class="line">            total++;</span><br><span class="line">            <span class="keyword">if</span>(total==n<span class="number">-1</span>) <span class="keyword">break</span>;<span class="comment">//当形成了最小生成树后，退出（之后做的也没用了）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) f[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;bian[i].start,&amp;bian[i].to,&amp;bian[i].val);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(bian+<span class="number">1</span>,bian+m+<span class="number">1</span>,cmp);<span class="comment">//快排边长</span></span><br><span class="line">    kruskal();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> il inline</span></span><br><span class="line"><span class="function">il <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    re <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> c=getchar();</span><br><span class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) f=<span class="number">-1</span>;c=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>) x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;<span class="comment">//快读，不理解的同学用cin代替即可</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 123456789</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 5005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxm 200005</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> v,w,next;</span><br><span class="line">&#125;e[maxm&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="comment">//注意是无向图，开两倍数组</span></span><br><span class="line"><span class="keyword">int</span> head[maxn],dis[maxn],cnt,n,m,tot,now=<span class="number">1</span>,ans;</span><br><span class="line"><span class="comment">//已经加入最小生成树的的点到没有加入的点的最短距离，比如说1和2号节点已经加入了最小生成树，那么dis[3]就等于min(1-&gt;3,2-&gt;3)</span></span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="comment">//链式前向星加边</span></span><br><span class="line"><span class="function">il <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[++cnt].v=v;</span><br><span class="line">    e[cnt].w=w;</span><br><span class="line">    e[cnt].next=head[u];</span><br><span class="line">    head[u]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//读入数据</span></span><br><span class="line"><span class="function">il <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=read(),m=read();</span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>,u,v,w;i&lt;=m;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        u=read(),v=read(),w=read();</span><br><span class="line">        add(u,v,w),add(v,u,w);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">il <span class="keyword">int</span> <span class="title">prim</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//先把dis数组附为极大值</span></span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        dis[i]=inf;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//这里要注意重边，所以要用到min</span></span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> i=head[<span class="number">1</span>];i;i=e[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        dis[e[i].v]=min(dis[e[i].v],e[i].w);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(++tot&lt;n)<span class="comment">//最小生成树边数等于点数-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        re <span class="keyword">int</span> minn=inf;<span class="comment">//把minn置为极大值</span></span><br><span class="line">        vis[now]=<span class="number">1</span>;<span class="comment">//标记点已经走过</span></span><br><span class="line">        <span class="comment">//枚举每一个没有使用的点</span></span><br><span class="line">        <span class="comment">//找出最小值作为新边</span></span><br><span class="line">        <span class="comment">//注意这里不是枚举now点的所有连边，而是1~n</span></span><br><span class="line">        <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!vis[i]&amp;&amp;minn&gt;dis[i])</span><br><span class="line">            &#123;</span><br><span class="line">                minn=dis[i];</span><br><span class="line">                now=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans+=minn;</span><br><span class="line">        <span class="comment">//枚举now的所有连边，更新dis数组</span></span><br><span class="line">        <span class="keyword">for</span>(re <span class="keyword">int</span> i=head[now];i;i=e[i].next)</span><br><span class="line">        &#123;</span><br><span class="line">            re <span class="keyword">int</span> v=e[i].v;</span><br><span class="line">            <span class="keyword">if</span>(dis[v]&gt;e[i].w&amp;&amp;!vis[v])</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v]=e[i].w;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,prim());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢 Thanks ?(&gt;ω&lt;)/<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Jozky
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://Jozky.top/2020/04/19/最小生成树-模板/" title="最小生成树(模板)" target="_blank">http://Jozky.top/2020/04/19/最小生成树-模板/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单调队列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解/牛客网每日一题//" class="article-tag-list-link color3">牛客网每日一题</a>
+        			<a href="/categories/算法模板//" class="article-tag-list-link color5">算法模板</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://jozky.top/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/19/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8816%E6%97%A5-%E9%80%86%E5%BA%8F%E5%AF%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">牛客网【每日一题】4月16日 逆序对</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于时间复杂度："><span class="toc-number">1.</span> <span class="toc-text">关于时间复杂度：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kruskal"><span class="toc-number">2.</span> <span class="toc-text">Kruskal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prim"><span class="toc-number">3.</span> <span class="toc-text">Prim</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "最小生成树(模板)" -->
+    var gitment = new Gitment({
+      id: "20200419233824",
+      owner: 'Jozky86',
+      repo: 'Jozky.github.io',
+      oauth: {
+        client_id: '7919665de0c875576411',
+        client_secret: '4a40a5ae99e409ef5d02ecc293db8804cc91f6a8',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
+  
+
 
 
           </div>
@@ -392,9 +592,9 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
