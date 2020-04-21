@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-04-21T16:06:04.398Z</updated>
+  <updated>2020-04-21T16:24:52.005Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>第一次cf之旅</title>
-    <link href="http://jozky.top/2020/04/21/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/"/>
-    <id>http://jozky.top/2020/04/21/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/</id>
-    <published>2020-04-21T15:56:48.000Z</published>
-    <updated>2020-04-21T16:06:04.398Z</updated>
+    <link href="http://jozky.top/2020/04/22/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/"/>
+    <id>http://jozky.top/2020/04/22/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/</id>
+    <published>2020-04-21T16:24:30.000Z</published>
+    <updated>2020-04-21T16:24:52.005Z</updated>
     
     <content type="html"><![CDATA[<p>之前一直想打cf，但都感觉自己太弱了，而且没有科学上网的途径。。。<br>后来知道今天有Codeforces Round #636 (Div. 3)，说不是很难，决定参加试试<br>网太卡（无奈），实在是不稳定，没办法<br>感觉前三个题目还是挺简单的，思维题，多活动大脑就能想明白。后三就还没看。。网卡，过夜，明天一早有课，最终选择放弃(笑哭）<br>还有不知道dev怎么了突然抽筋了，关键时候上不了场，还是codeblock救的场</p><a id="more"></a><p><img src="https://img-blog.csdnimg.cn/20200421235933360.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200422000347503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200422000415259.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
     
@@ -90,13 +90,13 @@
       <category term="算法讲解" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     
-      <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
+      <category term="LCA" scheme="http://Jozky.top/tags/LCA/"/>
     
       <category term="倍增" scheme="http://Jozky.top/tags/%E5%80%8D%E5%A2%9E/"/>
     
       <category term="欧拉序" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%BA%8F/"/>
     
-      <category term="LCA" scheme="http://Jozky.top/tags/LCA/"/>
+      <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
     
       <category term="Tarjan" scheme="http://Jozky.top/tags/Tarjan/"/>
     
@@ -126,9 +126,9 @@
       <category term="算法讲解" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     
-      <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
-    
       <category term="倍增" scheme="http://Jozky.top/tags/%E5%80%8D%E5%A2%9E/"/>
+    
+      <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
     
       <category term="RMQ" scheme="http://Jozky.top/tags/RMQ/"/>
     
@@ -223,9 +223,9 @@
       <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
-    
       <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
+    
+      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
     
   </entry>
   
@@ -575,9 +575,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
-    
       <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
+    
+      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
     
       <category term="树上dfs" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adfs/"/>
     
