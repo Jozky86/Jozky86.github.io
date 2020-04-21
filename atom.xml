@@ -90,13 +90,13 @@
       <category term="算法讲解" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     
-      <category term="LCA" scheme="http://Jozky.top/tags/LCA/"/>
+      <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
     
       <category term="倍增" scheme="http://Jozky.top/tags/%E5%80%8D%E5%A2%9E/"/>
     
       <category term="欧拉序" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%BA%8F/"/>
     
-      <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
+      <category term="LCA" scheme="http://Jozky.top/tags/LCA/"/>
     
       <category term="Tarjan" scheme="http://Jozky.top/tags/Tarjan/"/>
     
@@ -126,9 +126,9 @@
       <category term="算法讲解" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     
-      <category term="倍增" scheme="http://Jozky.top/tags/%E5%80%8D%E5%A2%9E/"/>
-    
       <category term="ST表" scheme="http://Jozky.top/tags/ST%E8%A1%A8/"/>
+    
+      <category term="倍增" scheme="http://Jozky.top/tags/%E5%80%8D%E5%A2%9E/"/>
     
       <category term="RMQ" scheme="http://Jozky.top/tags/RMQ/"/>
     
@@ -223,9 +223,9 @@
       <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
-    
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
     
   </entry>
   
@@ -457,9 +457,9 @@
       <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="组合" scheme="http://Jozky.top/tags/%E7%BB%84%E5%90%88/"/>
     
@@ -575,9 +575,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
-    
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
     
       <category term="树上dfs" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adfs/"/>
     
