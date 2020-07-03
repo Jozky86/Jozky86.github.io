@@ -285,6 +285,908 @@ background: url('/img/biubiubiu.gif') no-repeat ;
             
 
   
+    <article id="post-hdu-2844-Coins" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/06/16/hdu-2844-Coins/" target="_blank">hdu-2844 Coins</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/06/16/hdu-2844-Coins/" class="archive-article-date">
+        <time datetime="2020-06-16T14:41:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2844" target="_blank" rel="noopener">HDU链接</a><br><a href="https://ac.nowcoder.com/acm/problem/51167" target="_blank" rel="noopener">牛客网链接</a><br>@[toc]<br>出于种种原因，最近很少更新博客了，虽然一直在更新csdn。。。<br>从现在开始继续更新博客，坚持不断更</p>
+    
+    <a class="article-more-a" href="/2020/06/16/hdu-2844-Coins/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">背包问题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">混合背包</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">二进制优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/16/hdu-2844-Coins/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-求组合数C-n-m-mod的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/29/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0C-n-m-mod%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" target="_blank">求组合数C(n,m) % mod的几种方法</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/29/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0C-n-m-mod%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" class="archive-article-date">
+        <time datetime="2020-04-29T15:23:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p><a href="https://blog.csdn.net/cutedumpling/article/details/81840047?utm_source=distribute.pc_relevant.none-task-blog-baidujs-1" target="_blank" rel="noopener">转载</a></p>
+<p>@[TOC]</p>
+<h2 id="算法一：乘法逆元，在m-n和mod比较小的情况下适用"><a href="#算法一：乘法逆元，在m-n和mod比较小的情况下适用" class="headerlink" title="算法一：乘法逆元，在m,n和mod比较小的情况下适用"></a>算法一：乘法逆元，在m,n和mod比较小的情况下适用</h2><p>乘法逆元：（a/b）% mod = a * b^(mod-2)，mod为素数<br><img src="https://img-blog.csdnimg.cn/20200429232308242.png" alt="在这里插入图片描述"></p>
+    
+    <a class="article-more-a" href="/2020/04/29/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0C-n-m-mod%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">组合数</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">取模运算</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/29/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0C-n-m-mod%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第一次cf之旅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/22/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/" target="_blank">第一次cf之旅</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/22/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/" class="archive-article-date">
+        <time datetime="2020-04-21T16:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>之前一直想打cf，但都感觉自己太弱了，而且没有科学上网的途径。。。<br>后来知道今天有Codeforces Round #636 (Div. 3)，说不是很难，决定参加试试<br>网太卡（无奈），实在是不稳定，没办法<br>感觉前三个题目还是挺简单的，思维题，多活动大脑就能想明白。后三就还没看。。网卡，过夜，明天一早有课，最终选择放弃(笑哭）<br>还有不知道dev怎么了突然抽筋了，关键时候上不了场，还是codeblock救的场</p>
+    
+    <a class="article-more-a" href="/2020/04/22/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/文章//" class="article-tag-list-link color3">文章</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/22/%E7%AC%AC%E4%B8%80%E6%AC%A1cf%E4%B9%8B%E6%97%85/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-欧拉序与DFS序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/20/%E6%AC%A7%E6%8B%89%E5%BA%8F%E4%B8%8EDFS%E5%BA%8F/" target="_blank">欧拉序与DFS序</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/20/%E6%AC%A7%E6%8B%89%E5%BA%8F%E4%B8%8EDFS%E5%BA%8F/" class="archive-article-date">
+        <time datetime="2020-04-20T13:39:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>@[TOC]<br>欧拉序与DFS序相似又不同</p>
+<p>欧拉序的定义<br>树在dfs过程中的节点访问顺序称为欧拉序.<br>那有人会问：dfs序和欧拉序啥区别？</p>
+<p>dfs序：是指将一棵树被dfs时所经过的节点顺序（不绕回原点）。<br>欧拉序：就是从根结点出发，按dfs的顺序在绕回原点所经过所有点的顺序。</p>
+    
+    <a class="article-more-a" href="/2020/04/20/%E6%AC%A7%E6%8B%89%E5%BA%8F%E4%B8%8EDFS%E5%BA%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">欧拉序</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DFS序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/20/%E6%AC%A7%E6%8B%89%E5%BA%8F%E4%B8%8EDFS%E5%BA%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-LCA总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/20/LCA%E6%80%BB%E7%BB%93/" target="_blank">LCA总结</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/20/LCA%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-04-20T08:29:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>@[TOC]<br><strong>我们通过这个题<a href="https://www.luogu.com.cn/problem/P3379" target="_blank" rel="noopener">洛谷P3379 【模板】最近公共祖先来讲LCA</a></strong></p>
+<h2 id="LCA介绍"><a href="#LCA介绍" class="headerlink" title="LCA介绍"></a>LCA介绍</h2><p>lca是啥？最近公共祖先<br>就是：两个点在这棵树上距离最近的公共祖先节点<br>LCA（x，y）=z，z是x与y的最近公共祖先，（换句话说z的深度要尽可能大）<br>来看一个经典图<br><img src="https://img-blog.csdnimg.cn/20200411230206669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1OTc1MzY3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    
+    <a class="article-more-a" href="/2020/04/20/LCA%E6%80%BB%E7%BB%93/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">倍增</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">欧拉序</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ST表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tarjan</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树链剖分</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/20/LCA%E6%80%BB%E7%BB%93/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ST表讲解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/20/ST%E8%A1%A8%E8%AE%B2%E8%A7%A3/" target="_blank">ST表讲解</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/20/ST%E8%A1%A8%E8%AE%B2%E8%A7%A3/" class="archive-article-date">
+        <time datetime="2020-04-20T08:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>ST表主要用于解决RMQ问题（区间最值问题）<br>当然你可以用线段树等，但今天用一种ST表（倍增算法）</p>
+<p>ST表是倍增算法的一个典型应用<br>暴力做RMQ问题，往往会超时，ST表利用对其进行优化</p>
+    
+    <a class="article-more-a" href="/2020/04/20/ST%E8%A1%A8%E8%AE%B2%E8%A7%A3/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">倍增</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ST表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RMQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构/算法讲解//" class="article-tag-list-link color5">算法讲解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/20/ST%E8%A1%A8%E8%AE%B2%E8%A7%A3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-最小生成树-模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/" target="_blank">最小生成树(模板)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/" class="archive-article-date">
+        <time datetime="2020-04-19T15:38:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>@[TOC]<br>昨天做蓝桥杯的题，最后一题最小生成树，但好久没用一下子生疏了。。。<br>最小生成树两种方法：<br>Prim和Kruskal</p>
+<h2 id="关于时间复杂度："><a href="#关于时间复杂度：" class="headerlink" title="关于时间复杂度："></a>关于时间复杂度：</h2><p>prim:该算法的时间复杂度为O(n2)。与图中边数无关，该算法适合于稠密图。</p>
+<p>kruskal:需要对图的边进行访问，所以克鲁斯卡尔算法的时间复杂度只和边又关系，可以证明其时间复杂度为O（eloge）。适合稀疏图。</p>
+    
+    <a class="article-more-a" href="/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法模板//" class="article-tag-list-link color5">算法模板</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/19/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E6%A8%A1%E6%9D%BF/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-牛客网【每日一题】4月16日-逆序对" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/19/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8816%E6%97%A5-%E9%80%86%E5%BA%8F%E5%AF%B9/" target="_blank">牛客网【每日一题】4月16日 逆序对</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/19/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8816%E6%97%A5-%E9%80%86%E5%BA%8F%E5%AF%B9/" class="archive-article-date">
+        <time datetime="2020-04-19T03:43:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+    
+    <p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/14731" target="_blank" rel="noopener">传送</a></p>
+<blockquote>
+<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 131072K，其他语言262144K<br>64bit IO Format:%lld</p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>求所有长度为n的01串中满足如下条件的二元组个数： 设第i位和第j位分别位ai和aj（i&lt;j），则ai=1,aj=0。<br>答案对1e9+7取模。</p>
+</blockquote>
+    
+    <a class="article-more-a" href="/2020/04/19/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8816%E6%97%A5-%E9%80%86%E5%BA%8F%E5%AF%B9/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">逆序对</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排列组合</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">快速幂</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/题解/牛客网每日一题//" class="article-tag-list-link color3">牛客网每日一题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/04/19/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8816%E6%97%A5-%E9%80%86%E5%BA%8F%E5%AF%B9/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-牛客网-【每日一题】4月15日-Treepath" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -505,872 +1407,9 @@ background: url('/img/biubiubiu.gif') no-repeat ;
 
 
   
-    <article id="post-小H和游戏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/17/%E5%B0%8FH%E5%92%8C%E6%B8%B8%E6%88%8F/" target="_blank">小H和游戏</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/17/%E5%B0%8FH%E5%92%8C%E6%B8%B8%E6%88%8F/" class="archive-article-date">
-        <time datetime="2020-04-17T12:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/contest/5203/D" target="_blank" rel="noopener">传送</a></p>
-<blockquote>
-<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 262144K，其他语言524288K 64bit<br>IO Format:%lld</p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<pre><code>小H正在玩一个战略类游戏，她可以操纵己方的飞机对敌国的N座城市(编号为1~N)进行轰炸
-敌国的城市形成了一棵树，小H会依次进行Q次轰炸，每次会选择一个城市A进行轰炸，和这座城市距离不超过2的城市都会受损(这里距离的定义是两点最短路径上的边数)，轰炸结束后，小H还想知道当前城市A受损的次数
-作为游戏的开发者之一，你有义务回答小H的问题 </code></pre></blockquote>
-    
-    <a class="article-more-a" href="/2020/04/17/%E5%B0%8FH%E5%92%8C%E6%B8%B8%E6%88%8F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">树上dfs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/17/%E5%B0%8FH%E5%92%8C%E6%B8%B8%E6%88%8F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-完全平方数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/17/%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/" target="_blank">完全平方数</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/17/%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/" class="archive-article-date">
-        <time datetime="2020-04-16T16:23:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/contest/5203/C" target="_blank" rel="noopener">传送</a></p>
-<blockquote>
-<p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 131072K，其他语言262144K<br>64bit IO Format:%lld</p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>多次查询[l,r]范围内的完全平方数个数</p>
-<p>定义整数x为完全平方数当且仅当可以找到整数y使得y*y=x</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2020/04/17/%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">区间处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/17/%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Music-Problem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/17/Music-Problem/" target="_blank">Music Problem</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/17/Music-Problem/" class="archive-article-date">
-        <time datetime="2020-04-16T16:22:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/contest/5203/B" target="_blank" rel="noopener">传送</a></p>
-<blockquote>
-<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 131072K，其他语言262144K<br>64bit IO Format: %lld</p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>Listening to the music is relax, but for obsessive(强迫症), it may be<br>unbearable. HH is an obsessive, he only start to listen to music at<br>12:00:00, and he will never stop unless the song he is listening ends</p>
-    
-    <a class="article-more-a" href="/2020/04/17/Music-Problem/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/17/Music-Problem/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-相反数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/17/%E7%9B%B8%E5%8F%8D%E6%95%B0/" target="_blank">相反数</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/17/%E7%9B%B8%E5%8F%8D%E6%95%B0/" class="archive-article-date">
-        <time datetime="2020-04-16T16:22:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <h2 id="A-相反数"><a href="#A-相反数" class="headerlink" title="A 相反数"></a>A 相反数</h2><p><a href="https://ac.nowcoder.com/acm/contest/5203/A" target="_blank" rel="noopener">传送</a></p>
-<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>一个数加上他的相反数</p>
-<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>用字符串存数，分出求出本身和相反数的值，然后相加输出，注意判断相反后出现0的情况</p>
-    
-    <a class="article-more-a" href="/2020/04/17/%E7%9B%B8%E5%8F%8D%E6%95%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/17/%E7%9B%B8%E5%8F%8D%E6%95%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CodeForces-282E-Sausage-Maximization" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/16/CodeForces-282E-Sausage-Maximization/" target="_blank">CodeForces 282E Sausage Maximization</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/16/CodeForces-282E-Sausage-Maximization/" class="archive-article-date">
-        <time datetime="2020-04-16T14:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p><a href="http://codeforces.com/problemset/problem/282/E" target="_blank" rel="noopener">传送cf题目</a><br> <a href="https://ac.nowcoder.com/acm/problem/109910" target="_blank" rel="noopener">传送牛客网题目</a><br><del>看了半个多小时的题解才搞明白，一下题解为自己的心得</del><br>参考博客（这两个讲的很详细）：<br><a href="https://blog.csdn.net/chy20142109/article/details/50706248?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">参考一</a><br><a href="https://www.cnblogs.com/zhj5chengfeng/archive/2013/05/14/3077621.html" target="_blank" rel="noopener">参考二</a></p>
-<blockquote>
-<p>题意：有一个长度有n的整数序列，你要在这个序列中选择一个前缀和后缀，前后缀不想交，前后缀任何一方都可以为空，问你前缀异或值与后缀异或值的异或最大是多少？</p>
-    
-    <a class="article-more-a" href="/2020/04/16/CodeForces-282E-Sausage-Maximization/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字典树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前缀异或和</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/16/CodeForces-282E-Sausage-Maximization/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-牛客网【每日一题】4月14日题目精讲-Xorto" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8814%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Xorto/" target="_blank">牛客网【每日一题】4月14日题目精讲 Xorto</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8814%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Xorto/" class="archive-article-date">
-        <time datetime="2020-04-16T14:47:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/14247" target="_blank" rel="noopener">传送</a></p>
-<blockquote>
-<p>时间限制：C/C++ 2秒，其他语言4秒 空间限制：C/C++ 32768K，其他语言65536K<br> 64bit IO Format:%lld</p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个长度为n的整数数组，问有多少对互不重叠的非空区间，使得两个区间内的数的异或和为0。 输入描述: 第一行一个数n表示数组长度；<br>第二行n个整数表示数组； 1&lt;=n&lt;=1000,0&lt;=数组元素&lt;100000。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8814%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Xorto/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前缀异或和</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解/牛客网每日一题//" class="article-tag-list-link color3">牛客网每日一题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8814%E6%97%A5%E9%A2%98%E7%9B%AE%E7%B2%BE%E8%AE%B2-Xorto/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-牛客网-【每日一题】4月10日-二分图染色-弱化版" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/" target="_blank">牛客网 【每日一题】4月10日 二分图染色(弱化版)</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/" class="archive-article-date">
-        <time datetime="2020-04-16T09:31:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/13229" target="_blank" rel="noopener">题目传送</a></p>
-<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><blockquote>
-<p>时间限制：C/C++ 1秒，其他语言2秒<br>空间限制：C/C++ 524288K，其他语言1048576K<br>64bit IO Format: %lld</p>
-</blockquote>
-<p>题目描述 </p>
-<blockquote>
-<p>给定一个完全二分图，图的左右两边的顶点数目相同。我们要给图中的每条边染成红色、蓝色、或者绿色，并使得任意两条红边不共享端点、同时任意两条蓝边也不共享端点。<br>计算所有满足条件的染色的方案数，并对10^9^+7取模。 (ps：本题数据量与实际比赛中数据量相比，少了一些)</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">组合</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">容斥</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解/牛客网每日一题//" class="article-tag-list-link color3">牛客网每日一题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/16/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8810%E6%97%A5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2-%E5%BC%B1%E5%8C%96%E7%89%88/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-牛客网【每日一题】合集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91%E5%90%88%E9%9B%86/" target="_blank">牛客网【每日一题】合集</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91%E5%90%88%E9%9B%86/" class="archive-article-date">
-        <time datetime="2020-04-15T11:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-    
-    <p>@[TOC]</p>
-<h2 id="2020年3月25日-NC50439-tokitsukaze-and-Soldier-牛客练习赛50-C"><a href="#2020年3月25日-NC50439-tokitsukaze-and-Soldier-牛客练习赛50-C" class="headerlink" title="2020年3月25日 NC50439 tokitsukaze and Soldier 牛客练习赛50-C"></a>2020年3月25日 NC50439 tokitsukaze and Soldier 牛客练习赛50-C</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8825%E6%97%A5-tokitsukaze-and-Soldier/">题解</a></p>
-<h2 id="2020年3月26日-NC13230-合并回文子串-美团2017年CodeM大赛-初赛A轮"><a href="#2020年3月26日-NC13230-合并回文子串-美团2017年CodeM大赛-初赛A轮" class="headerlink" title="2020年3月26日 NC13230 合并回文子串 美团2017年CodeM大赛-初赛A轮"></a>2020年3月26日 NC13230 合并回文子串 美团2017年CodeM大赛-初赛A轮</h2><p><a href="http://jozky.top/2020/04/06/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%913%E6%9C%8826%E6%97%A5-%E5%90%88%E5%B9%B6%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">题解</a></p>
-    
-    <a class="article-more-a" href="/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91%E5%90%88%E9%9B%86/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/比赛//" class="article-tag-list-link color3">比赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/15/%E7%89%9B%E5%AE%A2%E7%BD%91%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%91%E5%90%88%E9%9B%86/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1526,6 +1565,30 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字典树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前缀异或和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gcd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">暴力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">一起开心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LCA</a>
               </li>
              
@@ -1550,19 +1613,23 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字典树</a>
+                <a href="javascript:void(0)" class="js-tag color3">原根</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">前缀异或和</a>
+                <a href="javascript:void(0)" class="js-tag color5">欧拉函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">斐波那契数列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">exgcd</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前缀后缀和</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1582,15 +1649,39 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">DFS序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMQ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">整除分块</a>
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">费马小定理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">逆元</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DFS序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规律</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树上dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1602,19 +1693,11 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树上dp</a>
+                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧拉函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
+                <a href="javascript:void(0)" class="js-tag color5">整除分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1622,19 +1705,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">序列自动机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">换根</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树的重心</a>
+                <a href="javascript:void(0)" class="js-tag color5">取模运算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1642,7 +1713,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">取模运算</a>
+                <a href="javascript:void(0)" class="js-tag color1">序列自动机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1654,7 +1725,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">exgcd</a>
+                <a href="javascript:void(0)" class="js-tag color5">优先队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1670,15 +1741,23 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">连通块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">堆</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">换根</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">二次扫描</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">优先队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">连通块</a>
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1694,10 +1773,6 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">逆序对</a>
               </li>
              
@@ -1710,7 +1785,7 @@ background: url('/img/biubiubiu.gif') no-repeat ;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">堆</a>
+                <a href="javascript:void(0)" class="js-tag color5">树的重心</a>
               </li>
             
             <div class="clearfix"></div>
