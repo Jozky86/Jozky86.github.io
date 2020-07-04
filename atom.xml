@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jozky.top/"/>
-  <updated>2020-07-03T14:21:14.107Z</updated>
+  <updated>2020-07-04T01:35:42.022Z</updated>
   <id>http://jozky.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>逆元的求法</title>
+    <link href="http://jozky.top/2020/07/04/%E9%80%86%E5%85%83%E7%9A%84%E6%B1%82%E6%B3%95/"/>
+    <id>http://jozky.top/2020/07/04/%E9%80%86%E5%85%83%E7%9A%84%E6%B1%82%E6%B3%95/</id>
+    <published>2020-07-04T01:32:48.000Z</published>
+    <updated>2020-07-04T01:35:42.022Z</updated>
+    
+    <content type="html"><![CDATA[<p>逆元：<br>对于a和p，若 a * inv(a) % p ≡ 1，则称inv(a)为a%p的逆元。其中p为质数<br>逆元就是在mod下，不能直接除以一个数，而要乘以他的逆元<br>a * inv(a) = 1 (mod p)<br>x / a可以改成 x * inv(a) % p</p><a id="more"></a> <p>@[toc]</p><h2 id="方法一-扩展欧几里得"><a href="#方法一-扩展欧几里得" class="headerlink" title="方法一.扩展欧几里得"></a>方法一.扩展欧几里得</h2><p>a * inv(a) = 1 (mod p)<br>可以变形成 a * inv(a) +k * p = 1(前提是a和p要互素)<br>可以用扩欧的公式来计算<br>时间复杂度:O(logn)<br>适用范围：只要存在逆元即可求，适用于个数不多但是mod很大的时候，也是最常见的一种求逆元的方法。</p><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">exgcd</span><span class="params">(ll a,ll b,ll &amp;x,ll &amp;y)</span><span class="comment">//扩展欧几里得算法</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>;</span><br><span class="line">y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;  <span class="comment">//到达递归边界开始向上一层返回</span></span><br><span class="line">    &#125;</span><br><span class="line">    ll gcd=exgcd(b,a%b,x,y);</span><br><span class="line">    ll y1=y;    <span class="comment">//把x y变成上一层的</span></span><br><span class="line">    ll x1=x;</span><br><span class="line">    y=x1-(a/b)*y1;</span><br><span class="line">    x=y1;</span><br><span class="line">    <span class="keyword">return</span> gcd;     <span class="comment">//得到a b的最大公因数</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll a,ll mod)</span></span>&#123;</span><br><span class="line">ll x,y;</span><br><span class="line">ll gcd=exgcd(a,mod,x,y);</span><br><span class="line"><span class="keyword">if</span>(gcd!=<span class="number">1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> (x+mod)%mod; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="方法二-费马小定理-欧拉定理"><a href="#方法二-费马小定理-欧拉定理" class="headerlink" title="方法二.费马小定理+欧拉定理"></a>方法二.费马小定理+欧拉定理</h2><p>费马小定理：假如p是质数，且gcd(a,p)=1，那么 a^(p-1)^ ≡ 1（mod p），进一步可以推出a^p-2^ * a ≡ 1 (mod p)<br>a^p-2^就是a在mod p意义下的逆元<br>欧拉函数：a^φ(n)^≡1 (mod n) ，其中 gcd(a,n)=1<br>若n为素数，φ(n)=n-1<br>时间复杂度 O(log mod)<br>适用范围：在mod是素数的时候使用，比扩欧快</p><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">poww</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;</span><br><span class="line">ll ans=<span class="number">1</span>;</span><br><span class="line">ll base=a;</span><br><span class="line"><span class="keyword">while</span>(b)&#123;</span><br><span class="line"><span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=ans*base%mod;</span><br><span class="line">base=base*base%mod;</span><br><span class="line">b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll a,ll mod)</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> poww(a,mod<span class="number">-2</span>,mod);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="方法三-递推求逆元"><a href="#方法三-递推求逆元" class="headerlink" title="方法三:递推求逆元"></a>方法三:递推求逆元</h2><p>时间复杂度为O（n）<br>使用条件：mod为不是很大的素数，且需要多次调用</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> inv[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n,<span class="keyword">long</span> <span class="keyword">long</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">inv[i]=((p-p/i)*inv[p%i]%p);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;逆元：&lt;br&gt;对于a和p，若 a * inv(a) % p ≡ 1，则称inv(a)为a%p的逆元。其中p为质数&lt;br&gt;逆元就是在mod下，不能直接除以一个数，而要乘以他的逆元&lt;br&gt;a * inv(a) = 1 (mod p)&lt;br&gt;x / a可以改成 x * inv(a) % p&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://Jozky.top/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="逆元" scheme="http://Jozky.top/tags/%E9%80%86%E5%85%83/"/>
+    
+  </entry>
   
   <entry>
     <title>序列求和</title>
@@ -101,9 +126,9 @@
     
       <category term="数论" scheme="http://Jozky.top/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="原根" scheme="http://Jozky.top/tags/%E5%8E%9F%E6%A0%B9/"/>
-    
       <category term="欧拉函数" scheme="http://Jozky.top/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="原根" scheme="http://Jozky.top/tags/%E5%8E%9F%E6%A0%B9/"/>
     
   </entry>
   
@@ -325,9 +350,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="背包问题" scheme="http://Jozky.top/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="背包问题" scheme="http://Jozky.top/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     
       <category term="混合背包" scheme="http://Jozky.top/tags/%E6%B7%B7%E5%90%88%E8%83%8C%E5%8C%85/"/>
     
@@ -355,9 +380,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="背包问题" scheme="http://Jozky.top/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="背包问题" scheme="http://Jozky.top/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     
       <category term="混合背包" scheme="http://Jozky.top/tags/%E6%B7%B7%E5%90%88%E8%83%8C%E5%8C%85/"/>
     
@@ -384,9 +409,9 @@
       <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="背包问题" scheme="http://Jozky.top/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    
       <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
+    
+      <category term="背包问题" scheme="http://Jozky.top/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     
       <category term="混合背包" scheme="http://Jozky.top/tags/%E6%B7%B7%E5%90%88%E8%83%8C%E5%8C%85/"/>
     
@@ -600,39 +625,6 @@
       <category term="排列组合" scheme="http://Jozky.top/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"/>
     
       <category term="快速幂" scheme="http://Jozky.top/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>牛客网 【每日一题】4月15日 Treepath</title>
-    <link href="http://jozky.top/2020/04/17/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8815%E6%97%A5-Treepath/"/>
-    <id>http://jozky.top/2020/04/17/%E7%89%9B%E5%AE%A2%E7%BD%91-%E3%80%90%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E3%80%914%E6%9C%8815%E6%97%A5-Treepath/</id>
-    <published>2020-04-17T15:04:09.000Z</published>
-    <updated>2020-04-17T15:04:58.728Z</updated>
-    
-    <content type="html"><![CDATA[<p>@[TOC]<br><a href="https://ac.nowcoder.com/acm/problem/14248" target="_blank" rel="noopener">传送</a></p><blockquote><p>时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K<br>64bit IO Format: %lld</p></blockquote><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>给定一棵n个点的树，问其中有多少条长度为偶数的路径。路径的长度为经过的边的条数。x到y与y到x被视为同一条路径。路径的起点与终点不能相同。</p></blockquote><a id="more"></a><p>输入描述:</p><blockquote><p>第一行一个数n表示点的个数； 接下来n-1行，每行两个整数x，y表示边； 保证输入数据形成一棵树； 1&lt;=n&lt;=100000</p></blockquote><p>输出描述:</p><blockquote><p>一行一个整数表示答案。</p></blockquote><p>示例1<br>输入</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span></span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure><h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>求长度为偶数的路径<br>偶数层的点到偶数层的点长度是偶数<br>奇数层到奇数层的点的路径长度也是偶数<br>奇数层的点到偶数层的点路径长度就算奇数<br>所以需要统计多少个奇数层多少点偶数层多少点<br>我们发现如果层数奇偶性一样，路径长度就是偶数<br>为什么呢？引用邓老师的讲解</p><blockquote><p>我们可以考虑先让两个点里深度深的那个往上走，走到和另外一个点一样的高度，这个显然是偶数步完成的，之后两个点一起往上走直到汇合，走到步数是一样的，所以最终加起来也是偶数。</p></blockquote><p>然后我们会用到数组dp[][]<br>dp[i][0/1]表示以i为根的子树，与根节点i的距离<br>因为距离长度只有偶数奇数两种情况，所以我们把偶数设为0，奇数设为1，这样好统计<br>u是v的父亲，<br>也就是一个来自v的子树的点，到u点的路径会比到v的路径长度 长1<br>这样我们有：<br>dp[u][0]+=dp[v][1]<br>以u为根的子树，与u的距离长度为偶数的情况一个本身，另一个来自dp[v][i].因为以v为根节点，与v的距离为奇数，那到u的距离就要加1，也就是偶数<br>dp[u][1]+=dp[v][0]<br>同理</p><p>sum + = dp [ u ] [ 0 ] * dp [ v ] [ 1 ] + dp [ u] [ 1 ] * dp [ v ] [ 0 ]<br>已有dp[u][0]条以u为端点长度为偶数的路径，与dp[v][1]条以v为端点长度为奇数的路径合并可以得到 dp [ u ] [ 0 ] * dp [ v ] [ 1 ]   条长度为偶数的路径<br>同理dp[u][i]*dp[v][0]也是一样</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">2</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll dp[maxn][<span class="number">3</span>];</span><br><span class="line">ll sum=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; edge[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">dp[u][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> v : edge[u]) </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(v==fa)<span class="keyword">continue</span>;</span><br><span class="line">dfs(v,u);</span><br><span class="line"></span><br><span class="line">sum+=dp[u][<span class="number">0</span>]*dp[v][<span class="number">1</span>]+dp[u][<span class="number">1</span>]*dp[v][<span class="number">0</span>];</span><br><span class="line">dp[u][<span class="number">0</span>]+=dp[v][<span class="number">1</span>];</span><br><span class="line">dp[u][<span class="number">1</span>]+=dp[v][<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">edge[a].push_back(b);</span><br><span class="line">edge[b].push_back(a);</span><br><span class="line">&#125;</span><br><span class="line">dfs(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;@[TOC]&lt;br&gt;&lt;a href=&quot;https://ac.nowcoder.com/acm/problem/14248&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 32768K，其他语言65536K&lt;br&gt;64bit IO Format: %lld&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;给定一棵n个点的树，问其中有多少条长度为偶数的路径。路径的长度为经过的边的条数。x到y与y到x被视为同一条路径。路径的起点与终点不能相同。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="题解" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-      <category term="牛客网每日一题" scheme="http://Jozky.top/categories/%E9%A2%98%E8%A7%A3/%E7%89%9B%E5%AE%A2%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="dp" scheme="http://Jozky.top/tags/dp/"/>
-    
-      <category term="树上dp" scheme="http://Jozky.top/tags/%E6%A0%91%E4%B8%8Adp/"/>
     
   </entry>
   
